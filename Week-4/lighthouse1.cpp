@@ -13,25 +13,27 @@ using namespace std;
 
 int main()
 {
-
   int lighthouseHeight; 
   lighthouseHeight = 220; 
 
-  int sightDistance; 
+  double sightDistance; 
 
   //distance in miles = square root of: 0.8 times the height in feet
 
-  sightDistance = sqrt((double)(0.8 * lighthouseHeight)); 
-  cout.setf(ios::fixed|ios::showpoint);
-  cout << setprecision(3); 
-  cout << (double)sightDistance << endl; ;
+  sightDistance = sqrt((0.8 * lighthouseHeight)); 
+  cout << sightDistance << endl; ;
 
-  cout << "A " << lighthouseHeight << " foot tall lighthouse can be seen from " << sightDistance << " feet away." << endl; 
+  cout << "A " << lighthouseHeight << " foot tall lighthouse can be seen from "; 
+
+  cout.setf(ios::fixed);
+  cout << setprecision(0); 
+  cout << sightDistance << " miles away." << endl; 
 
   // identifying output statements
   cout << endl; 
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms. The input is from the console keyboard," << endl;
+  cout << "Description: This program calculates the" << endl;
+  cout << " distance a lighthouse can be seen based on its height." << endl;
+  cout << " The input is from the programmer," << endl;
   cout << " and output is to the console screen." << endl;
 }
