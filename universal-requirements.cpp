@@ -12,6 +12,7 @@ using namespace std;
 int main()
 {
   // identifying output statements
+  cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program converts pounds" << endl;
   cout << " to kilograms. The input is from the console keyboard," << endl;

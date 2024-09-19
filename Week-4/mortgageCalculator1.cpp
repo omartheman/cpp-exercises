@@ -37,6 +37,7 @@ int main()
   cout << "Amount borrowed (programmer input) = $" << p << endl; 
   cout << "Annual interest rate (programmer input) = "; 
   
+  
   cout.setf(ios::fixed|ios::showpoint);
   cout << setprecision(3); 
   cout << annualInterestRateDisplay << "%" << endl;
