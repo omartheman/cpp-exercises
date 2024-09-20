@@ -5,5 +5,8 @@
     "activityBar.background": "#322E0E",
     "titleBar.activeBackground": "#464114",
     "titleBar.activeForeground": "#FBFAF1"
+  },
+  "files.associations": {
+    "ios": "cpp"
   }
 }
