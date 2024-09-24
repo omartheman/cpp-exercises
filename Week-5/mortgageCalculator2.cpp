@@ -19,11 +19,22 @@ int main()
   int n; //Number of monthly payments
   int yearsForPayback;
 
-  cout << "Please enter mortgage amount in dollars";
+  cout << "Please enter mortgage amount in dollars: ";
   cin >> p; //Mortgage amount
 
-  annualInterestRate = 0.10567;
-  yearsForPayback = 30; 
+  double annualInterestRatePercentage; 
+  cout << endl; 
+  cout << "Please enter the interest rate, with or without decimals." << endl; 
+  cout << "You can use a rate with as many decimal places as you like:" << endl;
+  cin >> annualInterestRatePercentage; 
+
+  cout << endl; //Extra line 
+  cout << "Rate parsed from input: " << annualInterestRatePercentage; 
+  cout << endl;
+
+  annualInterestRate = annualInterestRatePercentage / 100;
+  yearsForPayback = 30;
+
   n = yearsForPayback * 12; //Months for payback
   r =  annualInterestRate / 12; //Monthly decimal interest rate
 
@@ -36,8 +47,8 @@ int main()
   double annualInterestRateDisplay; 
   annualInterestRateDisplay = annualInterestRate * 100; 
 
-  cout << "Amount borrowed (programmer input) = $" << p << endl; 
-  cout << "Annual interest rate (programmer input) = "; 
+  cout << "Amount borrowed (user input) = $" << p << endl; 
+  cout << "Annual interest rate (user input) = "; 
   
   
   cout.setf(ios::fixed|ios::showpoint);
