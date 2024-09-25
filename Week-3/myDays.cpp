@@ -40,8 +40,12 @@ int main()
   int daysInFirstYearIWasAlive = daysOfFirstSeptemberIWasAlive + numberDaysInOctober + numberDaysInNovember + numberDaysInDecember;
   cout << "daysInFirstYearIWasAlive: " << daysInFirstYearIWasAlive << endl;
 
-  
 
-  cout << "DOB: " << myDOB << endl;
+  int daysInMiddleYears = 365 * (2023 - 1995) - leapYearsSinceBirthday;
+  cout << "daysInMiddleYears since i was alive (1995 - 2023), including leap years: " << endl << daysInMiddleYears << endl << endl;
+
+  int daysIn2024; //Days in the year 2024 I have been alive 
+
+
   cout << "Due: " << dueDate << endl; 
 }
