@@ -24,8 +24,8 @@ int main()
 
   double annualInterestRatePercentage; 
   cout << endl; 
-  cout << "Please enter the interest rate, with or without decimals." << endl; 
-  cout << "You can use a rate with as many decimal places as you like:" << endl;
+  cout << "Please enter the interest rate." << endl; 
+  cout << "You can use as many decimal places as you like:" << endl;
   cin >> annualInterestRatePercentage; 
 
   cout << endl; //Extra line 
@@ -68,6 +68,6 @@ int main()
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program calculates the monthly" << endl;
-  cout << "payment on a loan. The input comes from the programmer," << endl;
+  cout << "payment on a loan. The inputs come from the programmer and the user," << endl;
   cout << "and output is to the console screen." << endl;
 }
