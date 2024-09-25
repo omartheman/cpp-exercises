@@ -22,7 +22,6 @@ int main()
   int daysInNormalYear = 365; 
 
   int yearsSinceBirthday = 2024 - 1994; 
-  cout << "yearsSinceBirthday: " << yearsSinceBirthday << endl;
 
   int numberDaysInFirstYear;
   int numberDaysInSeptember = 30; 
@@ -32,7 +31,7 @@ int main()
   daysInFirstSepBeforeMyBirthday = 3; 
   daysOfFirstSeptemberIWasAlive = numberDaysInSeptember - daysInFirstSepBeforeMyBirthday; 
 
-  cout << "daysOfFirstSeptemberIWasAlive: " << daysOfFirstSeptemberIWasAlive << endl;
+  // cout << "daysOfFirstSeptemberIWasAlive: " << daysOfFirstSeptemberIWasAlive << endl;
 
   int numberDaysInOctober = 31;  
   int numberDaysInNovember = 30;  
@@ -40,7 +39,8 @@ int main()
 
   //Number of days I was alive in the first year of life 
   int daysInFirstYearIWasAlive = daysOfFirstSeptemberIWasAlive + numberDaysInOctober + numberDaysInNovember + numberDaysInDecember;
-  cout << "daysInFirstYearIWasAlive: " << daysInFirstYearIWasAlive << endl;
+  
+  // cout << "daysInFirstYearIWasAlive: " << daysInFirstYearIWasAlive << endl;
 
   //Add to "days" the result of this multiplication: 365 times the number of years in which you've lived.
   days = days + 365 * 30; 
@@ -50,7 +50,6 @@ int main()
 
   //Subtract from "days" the number of days in your birth year before you were born.
   days = days - (365 - daysInFirstYearIWasAlive); 
-  cout << "days in first year before i was alive " << endl << days << endl << endl;
 
   int daysLeftInSep = 30 - 29; 
 
@@ -59,16 +58,9 @@ int main()
   //Subtract from "days" the number of days remaining in the current year after the due date.
   days = days - daysAfterDueDate; 
 
-  cout << "days in first year before i was alive " << endl << days << endl << endl;
-
   cout << "DOB: " << myDOB << endl; 
   cout << "Due: " << dueDate << endl; 
   //Output the value of "days" with an appropriate label.
   cout << "Days: " << days << endl; 
-
-  int daysInMiddleYears = 365 * (2023 - 1995) + leapYearsSinceBirthday;
-  cout << "daysInMiddleYears since i was alive (1995 - 2023), including leap years: " << endl << daysInMiddleYears << endl << endl;
-
-  int daysIn2024; //Days in the year 2024 I have been alive 
 
 }
