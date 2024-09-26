@@ -12,8 +12,16 @@ using namespace std;
 
 int main()
 {
-  int cashPayment = 45674;
-  int amountTendered = 100000;
+  int cashPayment;
+  int amountTendered;
+
+  cout << "Please enter the required cash payment amount: ";
+  cin >> cashPayment;
+
+  cout << endl; 
+  cout << "Please enter the amount tendered: ";
+  cin >> amountTendered;
+
   int changeDue = amountTendered - cashPayment;
 
   cout << "Cash payment amount: " << cashPayment << endl;
@@ -66,7 +74,9 @@ int main()
   cout << endl; //Extra line
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program calculates the" << endl;
-  cout << " distance a lighthouse can be seen based on its height." << endl;
+  cout << " amount of change owed to a customer after a transaction." << endl;
+  cout << " The program also calculates the denominations of" << endl;
+  cout << " bills required to provide the correct amount of change." << endl;
   cout << " The input is from the user," << endl;
   cout << " and output is to the console screen." << endl;
 }
