@@ -18,11 +18,21 @@ int main()
   //input values 
   int ageIRetire = 50; 
   int currentAge = 30; 
-  int yearsUntilIRetire = ageIRetire - currentAge;
-  int D = 1500; //Amount deposited per month
+  
+  int yearsUntilIRetire;
+  cout << "Please enter the number of years until retirement: ";
+  cin >> yearsUntilIRetire; 
 
   // output (calculated) values
-  double annualInterestRatePercentage = 10.00;
+  double annualInterestRatePercentage;
+
+  cout << "Please enter the annual interest rate percentage, with any number of decimal places: "; 
+  cin >> annualInterestRatePercentage;
+
+  int D;
+  cout << "Please enter the dollar amount that will be deposited each month: "; 
+  cin >> D;  //Amount deposited per month
+
   double annualInterestRate = annualInterestRatePercentage / 100; //annual interest rate 
   double p = annualInterestRate / 12; 
   double T = yearsUntilIRetire * 12; 
@@ -42,8 +52,8 @@ int main()
   cout << endl; // Extra line
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program calculates the amount" << endl;
-  cout << " of money that will be saved after a number of years";
-  cout << " from a given monthly deposit and interest rate.";
-  cout << " The inputs are from the programmer," << endl;
+  cout << " of money that will be saved after a number of years" << endl;
+  cout << " from a given monthly deposit and interest rate." << endl;
+  cout << " The inputs are from the user," << endl;
   cout << " and output is to the console screen." << endl;
 }
