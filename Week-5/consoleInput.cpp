@@ -11,6 +11,21 @@ using namespace std;
 
 int main()
 {
+
+  int age; 
+  cout << "Please enter your age: ";
+  cin >> age; 
+
+  cout << "Please enter your name: ";
+  string name;
+  cin >> name; 
+
+  double temp;
+  cout << "Please enter the current outside temperature: ";
+  cin >> temp; 
+
+  cout << name << " is " << age << " years old. It's " << temp << " degrees Fahrenheit in Pleasant Hill.";  
+
   // identifying output statements
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
