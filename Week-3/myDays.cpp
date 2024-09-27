@@ -17,19 +17,13 @@ int main()
   int leapYearsSinceBirthday;
   leapYearsSinceBirthday = 7; //1994 was not a leap year. 2024 is a leap year, but the last day of the year is excluded from the end of the year, so this one is not counted.  
 
-  int daysInLeapYear = 364; 
-
-  int daysInNormalYear = 365; 
-
-  int yearsSinceBirthday = 2024 - 1994; 
-
   int numberDaysInFirstYear;
   int numberDaysInSeptember = 30; 
   int daysOfFirstSeptemberIWasAlive;
   int daysInFirstSepBeforeMyBirthday;
 
   daysInFirstSepBeforeMyBirthday = 3; 
-  daysOfFirstSeptemberIWasAlive = numberDaysInSeptember - daysInFirstSepBeforeMyBirthday; 
+  daysOfFirstSeptemberIWasAlive = numberDaysInSeptember - daysInFirstSepBeforeMyBirthday; //27 days 
 
   // cout << "daysOfFirstSeptemberIWasAlive: " << daysOfFirstSeptemberIWasAlive << endl;
 
@@ -42,21 +36,23 @@ int main()
   
   // cout << "daysInFirstYearIWasAlive: " << daysInFirstYearIWasAlive << endl;
 
-  //Add to "days" the result of this multiplication: 365 times the number of years in which you've lived.
-  days = days + 365 * 30; 
+  //Add number of days in the years 1995 - 2024
+  days = days + 365 * 29; 
 
-  //Add to "days" the number of those years that were leap years.
+  //Add to "days" the number of leap years in the 30 years you've been alive.
   days = days + leapYearsSinceBirthday; 
 
-  //Subtract from "days" the number of days in your birth year before you were born.
-  days = days - (365 - daysInFirstYearIWasAlive); 
+  //Add the number of days I was alive in 1994
+  days = days + daysInFirstYearIWasAlive;
 
   int daysLeftInSep = 30 - 29; 
 
-  int daysAfterDueDate = (daysLeftInSep + 31 + 30 + 31); //Days left in sep, oct, nov, dec
+  int daysAfterDueDate = (daysLeftInSep + 31 + 30 + 32); //Days left in sep, oct, nov, dec (leap)
 
-  //Subtract from "days" the number of days remaining in the current year after the due date.
-  days = days - daysAfterDueDate; 
+  //Add the number of days in 2024 up to Sep 28
+  int daysIn2024; 
+  daysIn2024 = 366 - daysAfterDueDate; 
+  days = days + daysIn2024; 
 
   cout << "DOB: " << myDOB << endl; 
   cout << "Due: " << dueDate << endl; 
