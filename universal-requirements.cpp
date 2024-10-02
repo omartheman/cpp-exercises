@@ -15,6 +15,7 @@ int main()
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms. The input is from the console keyboard," << endl;
+  cout << " to kilograms." << endl; 
+  cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl;
 }
