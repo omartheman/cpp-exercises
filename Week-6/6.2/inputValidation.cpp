@@ -41,6 +41,8 @@ int main()
   double interestPercentage;
   cin >> interestPercentage;
 
+  cout << endl; 
+
   double interestDecimal = interestPercentage / 100; 
 
   // output (calculated) values
@@ -60,8 +62,11 @@ int main()
   // identifying output statements
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
+  cout << "Description: This program asks for a password," << endl;
+  cout << " then determines the" << endl; 
+  cout << " amount of money that an input monthly investment" << endl; 
+  cout << " grows to after an input number of years and" << endl; 
+  cout << " interest rate." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl;
 }

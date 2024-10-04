@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/omarshishani/Coding/cpp",
-      "program": "/Users/omarshishani/Coding/cpp/Week-5/mortgageCalculator2"
+      "cwd": "/Users/omarshishani/Coding/cpp/Week-6/6.2",
+      "program": "/Users/omarshishani/Coding/cpp/Week-6/6.2/build/Debug/outDebug"
     },
     {
       "name": "C/C++: g++ build and debug active file",
