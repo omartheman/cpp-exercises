@@ -56,19 +56,30 @@ int main()
   int ones = changeDue / 1; 
   changeDue = changeDue % 1; 
 
-  cout << " this many hundred thousand dollar bills: " << hundredThousands << endl;
-  cout << " this many ten thousand dollar bills: " << tenThousands << endl;
-  cout << " this many five thousand dollar bills: " << fiveThousands << endl;
-  cout << " this many one thousand dollar bills: " << oneThousands << endl;
-  cout << " this many five hundred dollar bills: " << fiveHundreds << endl;
-  cout << " this many one hundred dollar bills: " << oneHundreds << endl;
-
-  cout << " this many fifty dollar bills: " << fifties << endl;
-  cout << " this many twenty dollar bills: " << twenties << endl;
-  cout << " this many ten dollar bills: " << tens << endl;
-  cout << " this many five dollar bills: " << fives << endl;
-  cout << " this many two dollar bills: " << twos << endl;
-  cout << " this many one dollar bills: " << ones << endl;
+  if (hundredThousands > 0)
+    cout << " this many hundred thousand dollar bills: " << hundredThousands << endl;
+  if (tenThousands > 0)
+    cout << " this many ten thousand dollar bills: " << tenThousands << endl;
+  if (fiveThousands > 0)
+    cout << " this many five thousand dollar bills: " << fiveThousands << endl;
+  if (oneThousands > 0)
+    cout << " this many one thousand dollar bills: " << oneThousands << endl;
+  if (fiveHundreds > 0)
+    cout << " this many five hundred dollar bills: " << fiveHundreds << endl;
+  if (oneHundreds > 0)
+    cout << " this many one hundred dollar bills: " << oneHundreds << endl;
+  if (fifties > 0)
+    cout << " this many fifty dollar bills: " << fifties << endl;
+  if (twenties > 0)
+    cout << " this many twenty dollar bills: " << twenties << endl;
+  if (tens > 0)
+    cout << " this many ten dollar bills: " << tens << endl;
+  if (fives > 0)
+    cout << " this many five dollar bills: " << fives << endl;
+  if (twos > 0)
+    cout << " this many two dollar bills: " << twos << endl;
+  if (ones > 0)
+    cout << " this many one dollar bills: " << ones << endl;
 
   // identifying output statements
   cout << endl; //Extra line
@@ -77,6 +88,7 @@ int main()
   cout << " amount of change owed to a customer after a transaction." << endl;
   cout << " The program also calculates the denominations of" << endl;
   cout << " bills required to provide the correct amount of change." << endl;
+  cout << " The program only outputs the required denominations." << endl;
   cout << " The input is from the user," << endl;
   cout << " and output is to the console screen." << endl;
 }
