@@ -17,11 +17,11 @@ int main()
 
   double temperatureFahrenheit =  9.0/5 * temperatureCelsius + 32; 
 
-  cout.setf(ios::fixed);
-  cout << setprecision(1); 
 
   cout << endl; 
   cout << temperatureCelsius;
+  cout.setf(ios::fixed);
+  cout << setprecision(1); 
   cout << " degrees Celsius equals ";  
   cout << temperatureFahrenheit; 
   cout << " degrees Fahrenheit."; 

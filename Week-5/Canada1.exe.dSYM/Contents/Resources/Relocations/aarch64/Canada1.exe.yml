@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/omarshishani/Coding/cpp/Week-5/Canada1.exe'
+relocations:     []
+...
