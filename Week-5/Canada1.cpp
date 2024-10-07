@@ -20,9 +20,11 @@ int main()
 
   cout << endl; 
   cout << temperatureCelsius;
+  cout << " degrees Celsius equals ";  
+  
   cout.setf(ios::fixed);
   cout << setprecision(1); 
-  cout << " degrees Celsius equals ";  
+
   cout << temperatureFahrenheit; 
   cout << " degrees Fahrenheit."; 
   cout << endl; 
