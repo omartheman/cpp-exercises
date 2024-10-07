@@ -18,25 +18,25 @@ int main()
 
   int computerCard = 2 + (rand() % 13);
 
-  cout << "The computer's card value is: "; 
+  cout << "The computer's card is the "; 
 
   if (computerCard == 11) {
-    cout << "Jack" << endl;
+    cout << "Jack";
   }
   if (computerCard == 12) {
-    cout << "Queen" << endl;
+    cout << "Queen";
   }
   if (computerCard == 13) {
-    cout << "King" << endl;
+    cout << "King";
   }
   if ((computerCard > 0) && (computerCard < 11)) {
-    cout << computerCard << endl << endl; 
+    cout << computerCard; 
   }
 
 
   int computerCardSuit = (rand() % 4);
 
-  cout << "Computer card suit: ";
+  cout << " of ";
   if (computerCardSuit == 0){
     cout << "spades.";
   }
@@ -55,20 +55,38 @@ int main()
 
   int humanCard = 2 + (rand() % 13);
 
-  cout << "The human's card value is: "; 
+  cout << "The human's card is the "; 
 
   if (humanCard == 11) {
-    cout << "Jack" << endl;
+    cout << "Jack";
   }
   if (humanCard == 12) {
-    cout << "Queen" << endl;
+    cout << "Queen";
   }
   if (humanCard == 13) {
-    cout << "King" << endl;
+    cout << "King";
   }
   if ((humanCard > 0) && (humanCard < 11)) {
-    cout << humanCard << endl << endl; 
+    cout << humanCard; 
   }
+
+  int humanCardSuit = (rand() % 4);
+
+  cout << " of ";
+  if (humanCardSuit == 0){
+    cout << "spades.";
+  }
+  if (humanCardSuit == 1){
+    cout << "diamonds.";
+  }
+  if (humanCardSuit == 2){
+    cout << "hearts.";
+  }
+  if (humanCardSuit == 3){
+    cout << "clubs.";
+  }
+
+  cout << endl << endl; 
   
   // identifying output statements
   // cout << endl; // Extra line 
