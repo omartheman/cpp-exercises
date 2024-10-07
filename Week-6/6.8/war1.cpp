@@ -30,7 +30,7 @@ int main()
     cout << "King" << endl;
   }
   if ((computerCard > 0) && (computerCard < 11)) {
-    cout << computerCard << endl; 
+    cout << computerCard << endl << endl; 
   }
 
 
@@ -48,6 +48,26 @@ int main()
   }
   if (computerCardSuit == 3){
     cout << "clubs.";
+  }
+
+
+  cout << endl << endl; 
+
+  int humanCard = 2 + (rand() % 13);
+
+  cout << "The human's card value is: "; 
+
+  if (humanCard == 11) {
+    cout << "Jack" << endl;
+  }
+  if (humanCard == 12) {
+    cout << "Queen" << endl;
+  }
+  if (humanCard == 13) {
+    cout << "King" << endl;
+  }
+  if ((humanCard > 0) && (humanCard < 11)) {
+    cout << humanCard << endl << endl; 
   }
   
   // identifying output statements
