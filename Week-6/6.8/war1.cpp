@@ -87,6 +87,18 @@ int main()
   }
 
   cout << endl << endl; 
+
+  if (humanCard > computerCard) {
+    cout << "Human wins!" << endl; 
+  }
+
+  if (computerCard > humanCard) {
+    cout << "Computer wins!" << endl; 
+  }
+
+  if (computerCard == humanCard) {
+    cout << "It's a tie!" << endl; 
+  }
   
   // identifying output statements
   // cout << endl; // Extra line 
