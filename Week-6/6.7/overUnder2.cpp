@@ -13,12 +13,11 @@ using namespace std;
 
 int main()
 {
-
   srand(time(0));
 
-  int randomNumber = 1 + (rand() % 10);
+  int randomNumber = 1 + (rand() % 100);
 
-  cout << "Guess a number between 1 and 10: ";
+  cout << "Guess a number between 1 and 100: ";
 
   int userGuess; 
 
@@ -27,14 +26,15 @@ int main()
 
     if (randomNumber == userGuess){
       cout << "That's correct! It's " << userGuess << endl; 
+      break;
     }
 
     if (userGuess < randomNumber){
-      cout << "Too low. The number is " << randomNumber << endl; 
+      cout << "Too low. Guess again: ";
     }
 
     if (userGuess > randomNumber){
-      cout << "Too high. The number is " << randomNumber << endl; 
+      cout << "Too high. Guess again: ";
     }
   }
 
@@ -42,7 +42,9 @@ int main()
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program generates a random number between" << endl;
-  cout << " 1 and 10, and asks the user to guess what it is." << endl; 
+  cout << " 1 and 100. The program asks the user to guess what the number is." << endl; 
+  cout << " The program allows the user to retry if they guess wrong, and" << endl; 
+  cout << " the program tells the user if they guess too low or too high." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl;
 }
