@@ -1,4 +1,4 @@
-// Lab 6.6
+// Lab 6.7
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -22,18 +22,20 @@ int main()
 
   int userGuess; 
 
-  cin >> userGuess; 
+  while (true) {
+    cin >> userGuess; 
 
-  if (randomNumber == userGuess){
-    cout << "That's correct! It's " << userGuess << endl; 
-  }
+    if (randomNumber == userGuess){
+      cout << "That's correct! It's " << userGuess << endl; 
+    }
 
-  if (userGuess < randomNumber){
-    cout << "Too low. The number is " << randomNumber << endl; 
-  }
+    if (userGuess < randomNumber){
+      cout << "Too low. The number is " << randomNumber << endl; 
+    }
 
-  if (userGuess > randomNumber){
-    cout << "Too high. The number is " << randomNumber << endl; 
+    if (userGuess > randomNumber){
+      cout << "Too high. The number is " << randomNumber << endl; 
+    }
   }
 
   // identifying output statements
