@@ -17,7 +17,6 @@ int main()
 
   double temperatureFahrenheit =  9.0/5 * temperatureCelsius + 32; 
 
-
   cout << endl; 
   cout << temperatureCelsius;
   cout << " degrees Celsius equals ";  
