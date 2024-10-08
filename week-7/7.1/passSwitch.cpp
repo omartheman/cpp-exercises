@@ -18,17 +18,26 @@ int main()
   cin >> grade; 
   cin.ignore(1000, 10); 
 
-  if (grade == 'A' || grade == 'B' || grade == 'C')
-    cout << "You pass" << endl; 
-  else 
-    cout << "You do not pass" << endl; 
-  ;
+  switch (grade) {
+    case 'A': 
+    case 'B': 
+    case 'C': 
+      cout << "You pass" << endl; 
+      break; 
+    case 'D': 
+    case 'F': 
+      cout << "You do not pass" << endl; 
+      break; 
+    default: 
+      cout << "Invalid input" << endl; 
+      break; 
+  }
 
-  // identifying output statements
-  cout << endl; // Extra line 
-  cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
-  cout << " The input is from the console keyboard," << endl;
-  cout << " and output is to the console screen." << endl;
+  // // identifying output statements
+  // cout << endl; // Extra line 
+  // cout << "Programmer: Omar Shishani" << endl;
+  // cout << "Description: This program converts pounds" << endl;
+  // cout << " to kilograms." << endl; 
+  // cout << " The input is from the console keyboard," << endl;
+  // cout << " and output is to the console screen." << endl;
 }
