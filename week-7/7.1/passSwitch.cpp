@@ -11,6 +11,19 @@ using namespace std;
 
 int main()
 {
+
+  //Read a grade from the keyboard (see 5.1)
+  char grade; 
+  cout << "What is your grade? [A, B, C, D, or F]: ";
+  cin >> grade; 
+  cin.ignore(1000, 10); 
+
+  if (grade == 'A' || grade == 'B' || grade == 'C')
+    cout << "You pass" << endl; 
+  else 
+    cout << "You do not pass" << endl; 
+  ;
+
   // identifying output statements
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
