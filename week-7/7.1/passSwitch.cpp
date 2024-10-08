@@ -33,11 +33,12 @@ int main()
       break; 
   }
 
-  // // identifying output statements
-  // cout << endl; // Extra line 
-  // cout << "Programmer: Omar Shishani" << endl;
-  // cout << "Description: This program converts pounds" << endl;
-  // cout << " to kilograms." << endl; 
-  // cout << " The input is from the console keyboard," << endl;
-  // cout << " and output is to the console screen." << endl;
+  // identifying output statements
+  cout << endl; // Extra line 
+  cout << "Programmer: Omar Shishani" << endl;
+  cout << "Description: This program tells a user whether their" << endl;
+  cout << " grade is passing or not. The program takes only valid letter" << endl; 
+  cout << " grades as inputs, and doesn't accept other characters." << endl; 
+  cout << " The input is from the console keyboard," << endl;
+  cout << " and output is to the console screen." << endl;
 }
