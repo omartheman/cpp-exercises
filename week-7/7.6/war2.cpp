@@ -34,7 +34,6 @@ int main()
       cout << computerCard; 
     }
 
-
     int computerCardSuit = (rand() % 4);
 
     cout << " of ";
@@ -54,7 +53,7 @@ int main()
 
     cout << endl << endl; 
 
-    int humanCard = 2 + (rand() % 13);
+    int humanCard = 2 + (rand() % 12);
 
     cout << "The human's card is the "; 
 
@@ -98,7 +97,7 @@ int main()
     }
 
     if (computerCard == humanCard) {
-      cout << "It's a tie!" << endl; 
+      cout << "It's a tie!" << endl << endl; 
     }
 
     if (computerCard != humanCard) {break;} //Exit loop if not a tie
