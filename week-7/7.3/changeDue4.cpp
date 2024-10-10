@@ -23,6 +23,10 @@ int main()
       break;
     }
 
+    if (cashPayment < 0){
+      break;
+    }
+
     cout << endl; 
     cout << "Please enter the amount tendered: ";
     cin >> amountTendered;
@@ -85,6 +89,8 @@ int main()
       cout << " this many two dollar bills: " << twos << endl;
     if (ones > 0)
       cout << " this many one dollar bills: " << ones << endl;
+    ;
+    cout << endl; //Last break before next loop 
   }
 
 
