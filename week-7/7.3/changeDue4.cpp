@@ -93,7 +93,6 @@ int main()
     cout << endl; //Last break before next loop 
   }
 
-
   // identifying output statements
   cout << endl; //Extra line
   cout << "Programmer: Omar Shishani" << endl;
