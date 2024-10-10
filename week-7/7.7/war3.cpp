@@ -102,9 +102,17 @@ int main()
       cout << "It's a tie!" << endl << endl; 
     }
 
-    cout << "Would you like to replay? [Y/N]: ";
-    char replay;
-    cin >> replay;
+    char replay; 
+
+    while (true) {
+      cout << "Would you like to replay? [Y/N]: ";
+      cin >> replay;
+
+      if (replay == 'N'){ break; };
+      if (replay == 'n'){ break; }
+      if (replay == 'Y'){ break; }
+      if (replay == 'y'){ break; }
+    }
 
     if (replay == 'N' || replay == 'n') {break;} //Exit loop if not a tie
   }
