@@ -18,6 +18,9 @@ int main()
 
   srand(time(0));
 
+  int humanScore = 0; 
+  int computerScore = 0; 
+
   while (true){
     int computerCard = 2 + (rand() % 13);
 
@@ -92,15 +95,20 @@ int main()
 
     if (humanCard > computerCard) {
       cout << "Human wins!" << endl; 
+      humanScore++;
     }
 
     if (computerCard > humanCard) {
       cout << "Computer wins!" << endl; 
+      computerScore++; 
     }
 
     if (computerCard == humanCard) {
       cout << "It's a tie!" << endl << endl; 
     }
+
+    cout << "Human score: " << humanScore << endl; 
+    cout << "Computer score: " << computerScore << endl;
 
     char replay; 
 
@@ -125,7 +133,8 @@ int main()
   cout << " card game 'war'. The program assigns a card to the" << endl; 
   cout << " computer and the human, then chooses a winner" << endl;
   cout << " based on which card has a higher value." << endl;
-  cout << " If the game is a tie, the game will repeat." << endl;
-  cout << " There is no input," << endl;
+  cout << " The user can choose whether the game will repeat." << endl;
+  cout << " The program keeps track of the user's score vs the computer's." << endl;
+  cout << " The input is from the console," << endl;
   cout << " and the output is to the console screen." << endl;
 }
