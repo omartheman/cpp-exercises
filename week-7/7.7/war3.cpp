@@ -8,6 +8,8 @@
 #include <string>
 #include <ctime>
 #include <cstdlib>
+#include <cctype>
+
 
 using namespace std; 
 
@@ -100,7 +102,11 @@ int main()
       cout << "It's a tie!" << endl << endl; 
     }
 
-    if (computerCard != humanCard) {break;} //Exit loop if not a tie
+    cout << "Would you like to replay? [Y/N]: ";
+    char replay;
+    cin >> replay;
+
+    if (replay == 'N' || replay == 'n') {break;} //Exit loop if not a tie
   }
 
   
