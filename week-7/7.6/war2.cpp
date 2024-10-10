@@ -111,6 +111,7 @@ int main()
   cout << " card game 'war'. The program assigns a card to the" << endl; 
   cout << " computer and the human, then chooses a winner" << endl;
   cout << " based on which card has a higher value." << endl;
+  cout << " If the game is a tie, the game will repeat." << endl;
   cout << " There is no input," << endl;
   cout << " and the output is to the console screen." << endl;
 }
