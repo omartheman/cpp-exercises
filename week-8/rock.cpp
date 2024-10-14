@@ -25,8 +25,18 @@ int main()
   cout << " There is no input," << endl;
   cout << " and the output is to the console screen." << endl;
 
-  srand(time(0));
-  int computerChoice = rand() % 3;
 
+  // initialize the computer's random number generator
+  srand(time(0)); 
+  rand();
+  // declare variables
+  // start loop
+    // determine computer's choice (code block #1)
+    // prompt for, and read, the human's choice (code block #2)
+    // if human wants to quit, break out of loop (code block #3)
+    // determine the winner (code block #4)
+    // print results (code block #5)
+  // end loop
+  // end program
 
 }
