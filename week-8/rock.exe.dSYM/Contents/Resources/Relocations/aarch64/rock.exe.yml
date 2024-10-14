@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/omarshishani/Coding/cpp/week-8/rock.exe'
+relocations:     []
+...

@@ -17,12 +17,13 @@ int main()
   // identifying output statements
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program is a simple version of the" << endl;
-  cout << " card game 'war'. The program assigns a card to the" << endl; 
-  cout << " computer and the human, then chooses a winner" << endl;
-  cout << " based on which card has a higher value." << endl;
-  cout << " If the game is a tie, the game will repeat." << endl;
-  cout << " There is no input," << endl;
+  cout << "Description: This program is a rock-paper-scissors game." << endl;
+  cout << " The human will choose either rock, paper, or scissors, " << endl; 
+  cout << " and the computer will choose as well. " << endl; 
+  cout << " The program will output the result, telling" << endl; 
+  cout << " who won, or if the game was a tie." << endl; 
+  cout << " The game will exit when the human enters 'Q'" << endl; 
+  cout << " The input is from the console," << endl;
   cout << " and the output is to the console screen." << endl;
 
 
