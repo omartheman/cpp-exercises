@@ -29,19 +29,21 @@ int main()
   // initialize the computer's random number generator
   srand(time(0)); 
   rand();
+
   // declare variables
   char humanChoice; 
   char computerChoice; 
   int result; 
+
   // start loop
   while (true){
     // determine computer's choice (code block #1)
     computerChoice = 'R'; 
+
     // prompt for, and read, the human's choice (code block #2)
     humanChoice = 'Q'; 
     cout << "Choose your move (R, S, P, or Q): "; 
     cin >> humanChoice; 
-
     if (
       humanChoice != 'R'
       && humanChoice != 'r'
@@ -54,12 +56,22 @@ int main()
     ){
       continue; //Skip wrong answers
     }
+    //Print human and computer choices 
+    cout << "Human choice is: " << humanChoice << endl;
+    cout << "Computer choice is: " << computerChoice << endl; 
+     
+
     // if human wants to quit, break out of loop (code block #3)
     if (humanChoice == 'Q' || humanChoice == 'q'){break;} //Exit game
+
     // determine the winner (code block #4)
+
     // print results (code block #5)
+
   }
+
   // end loop
+
   // end program
 
 }
