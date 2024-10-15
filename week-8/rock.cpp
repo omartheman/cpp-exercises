@@ -22,9 +22,9 @@ int main()
   cout << " and the computer will choose as well. " << endl; 
   cout << " The program will output the result, telling" << endl; 
   cout << " who won, or if the game was a tie." << endl; 
-  cout << " The game will exit when the human enters 'Q'" << endl; 
+  cout << " The game will exit when the human enters 'Q'." << endl; 
   cout << " The input is from the console," << endl;
-  cout << " and the output is to the console screen." << endl;
+  cout << " and the output is to the console screen." << endl << endl;
 
   // initialize the computer's random number generator
   srand(time(0)); 
@@ -52,7 +52,7 @@ int main()
 
     // prompt for, and read, the human's choice (code block #2)
     humanChoice = 'Q'; 
-    cout << "Choose your move (R, S, P, or Q): "; 
+    cout << "Choose your move: rock, paper, scissors, or quit (R, P, S, or Q): "; 
     cin >> humanChoice; 
     if (
       humanChoice != 'R'
@@ -72,8 +72,21 @@ int main()
     // if human wants to quit, break out of loop (code block #3)
     if (humanChoice == 'Q' || humanChoice == 'q'){break;} //Exit game
 
+    char humanChoicePrinted; // Capitalize human lowercase choices 
+    switch (humanChoice) {
+      case 'r': 
+        humanChoicePrinted = 'R'; 
+        break; 
+      case 'p': 
+        humanChoicePrinted = 'P'; 
+        break; 
+      case 's': 
+        humanChoicePrinted = 'S'; 
+        break; 
+    }
+
     // determine the winner (code block #4)
-    cout << "Human choice is: " << humanChoice << endl;
+    cout << "Human choice is: " << humanChoicePrinted << endl;
     cout << "Computer choice is: " << computerChoice << endl; 
 
     string result; 
@@ -123,7 +136,7 @@ int main()
     }
 
     // print results (code block #5)
-    cout << result << endl; 
+    cout << result << endl << endl; 
 
   }
   // end loop
