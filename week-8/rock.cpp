@@ -50,7 +50,6 @@ int main()
       computerChoice = 'S'; 
     }
 
-
     // prompt for, and read, the human's choice (code block #2)
     humanChoice = 'Q'; 
     cout << "Choose your move (R, S, P, or Q): "; 
@@ -76,6 +75,22 @@ int main()
     // determine the winner (code block #4)
     cout << "Human choice is: " << humanChoice << endl;
     cout << "Computer choice is: " << computerChoice << endl; 
+
+    switch (humanChoice) {
+      case 'R':
+      case 'r': 
+        switch(computerChoice) {
+          case 'R':
+            cout << "It's a tie!" << endl; 
+            break;
+          case 'P':
+            cout << "Computer wins!" << endl; 
+            break; 
+          case 'S': 
+            cout << "Human wins!" << endl; 
+            break;  
+        }
+    }
 
     // print results (code block #5)
 
