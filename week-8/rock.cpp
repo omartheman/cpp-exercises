@@ -76,18 +76,20 @@ int main()
     cout << "Human choice is: " << humanChoice << endl;
     cout << "Computer choice is: " << computerChoice << endl; 
 
+    string result; 
+
     switch (humanChoice) {
       case 'R':
       case 'r': 
         switch(computerChoice) {
           case 'R':
-            cout << "It's a tie!" << endl; 
+            result = "It's a tie!";  
             break;
           case 'P':
-            cout << "Computer wins!" << endl; 
+            result = "Computer wins!";
             break; 
           case 'S': 
-            cout << "Human wins!" << endl; 
+            result = "Human wins!";
             break;  
         }
         break; 
@@ -95,13 +97,13 @@ int main()
       case 'p': 
         switch(computerChoice) {
           case 'R':
-            cout << "Human wins!" << endl; 
+            result = "Human wins!";
             break;
           case 'P':
-            cout << "It's a tie!" << endl; 
+            result = "It's a tie!";
             break; 
           case 'S': 
-            cout << "Computer wins!" << endl; 
+            result = "Computer wins!";
             break;  
         }
         break; 
@@ -109,23 +111,22 @@ int main()
       case 's': 
         switch(computerChoice) {
           case 'R':
-            cout << "Computer wins!" << endl; 
+            result = "Computer wins!";
             break;
           case 'P':
-            cout << "Human wins!" << endl; 
+            result = "Human wins!";
             break; 
           case 'S': 
-            cout << "It's a tie!" << endl; 
+            result = "It's a tie!"; 
             break;  
         }
     }
 
     // print results (code block #5)
+    cout << result << endl; 
 
   }
-
   // end loop
 
   // end program
-
 }
