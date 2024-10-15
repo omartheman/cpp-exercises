@@ -90,6 +90,20 @@ int main()
             cout << "Human wins!" << endl; 
             break;  
         }
+        break; 
+      case 'P':
+      case 'p': 
+        switch(computerChoice) {
+          case 'R':
+            cout << "Human wins!" << endl; 
+            break;
+          case 'P':
+            cout << "It's a tie!" << endl; 
+            break; 
+          case 'S': 
+            cout << "Computer wins!" << endl; 
+            break;  
+        }
     }
 
     // print results (code block #5)
