@@ -39,10 +39,23 @@ int main()
     computerChoice = 'R'; 
     // prompt for, and read, the human's choice (code block #2)
     humanChoice = 'Q'; 
-    cout << "Choose your move: "; 
+    cout << "Choose your move (R, S, P, or Q): "; 
     cin >> humanChoice; 
+
+    if (
+      humanChoice != 'R'
+      && humanChoice != 'r'
+      && humanChoice != 'S'
+      && humanChoice != 's'
+      && humanChoice != 'P'
+      && humanChoice != 'p'
+      && humanChoice != 'Q'
+      && humanChoice != 'q'
+    ){
+      continue; //Skip wrong answers
+    }
     // if human wants to quit, break out of loop (code block #3)
-    if (humanChoice == 'Q'){break;}
+    if (humanChoice == 'Q' || humanChoice == 'q'){break;} //Exit game
     // determine the winner (code block #4)
     // print results (code block #5)
   }
