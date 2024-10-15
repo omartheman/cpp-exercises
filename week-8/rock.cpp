@@ -104,6 +104,20 @@ int main()
             cout << "Computer wins!" << endl; 
             break;  
         }
+        break; 
+      case 'S':
+      case 's': 
+        switch(computerChoice) {
+          case 'R':
+            cout << "Computer wins!" << endl; 
+            break;
+          case 'P':
+            cout << "Human wins!" << endl; 
+            break; 
+          case 'S': 
+            cout << "It's a tie!" << endl; 
+            break;  
+        }
     }
 
     // print results (code block #5)
