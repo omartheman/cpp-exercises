@@ -26,17 +26,25 @@ int main()
   cout << " The input is from the console," << endl;
   cout << " and the output is to the console screen." << endl;
 
-
   // initialize the computer's random number generator
   srand(time(0)); 
   rand();
   // declare variables
+  char humanChoice; 
+  int computerChoice; 
+  int result; 
   // start loop
+  while (true){
     // determine computer's choice (code block #1)
+    computerChoice = rand() % 3; 
     // prompt for, and read, the human's choice (code block #2)
+    cout << "Choose your move: "; 
+    cin >> humanChoice; 
     // if human wants to quit, break out of loop (code block #3)
+    if (humanChoice == 'Q'){break;}
     // determine the winner (code block #4)
     // print results (code block #5)
+  }
   // end loop
   // end program
 
