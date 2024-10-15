@@ -31,13 +31,14 @@ int main()
   rand();
   // declare variables
   char humanChoice; 
-  int computerChoice; 
+  char computerChoice; 
   int result; 
   // start loop
   while (true){
     // determine computer's choice (code block #1)
-    computerChoice = rand() % 3; 
+    computerChoice = 'R'; 
     // prompt for, and read, the human's choice (code block #2)
+    humanChoice = 'Q'; 
     cout << "Choose your move: "; 
     cin >> humanChoice; 
     // if human wants to quit, break out of loop (code block #3)
