@@ -38,7 +38,18 @@ int main()
   // start loop
   while (true){
     // determine computer's choice (code block #1)
-    computerChoice = 'R'; 
+    int computerChoiceValue = rand() % 3;
+
+    if (computerChoiceValue == 0){
+      computerChoice = 'R'; 
+    } 
+    else if (computerChoiceValue == 1){
+      computerChoice = 'P'; 
+    }
+    else if (computerChoiceValue == 2){
+      computerChoice = 'S'; 
+    }
+
 
     // prompt for, and read, the human's choice (code block #2)
     humanChoice = 'Q'; 
@@ -57,14 +68,14 @@ int main()
       continue; //Skip wrong answers
     }
     //Print human and computer choices 
-    cout << "Human choice is: " << humanChoice << endl;
-    cout << "Computer choice is: " << computerChoice << endl; 
-     
+
 
     // if human wants to quit, break out of loop (code block #3)
     if (humanChoice == 'Q' || humanChoice == 'q'){break;} //Exit game
 
     // determine the winner (code block #4)
+    cout << "Human choice is: " << humanChoice << endl;
+    cout << "Computer choice is: " << computerChoice << endl; 
 
     // print results (code block #5)
 
