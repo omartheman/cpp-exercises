@@ -9,6 +9,13 @@
 
 using namespace std; 
 
+double calcAverage(int a, int b)
+{
+  double result = 0.0;
+  result = (a + b) / 2.0;
+  return result; 
+} // calcAverage 
+
 int main()
 {
   // identifying output statements
@@ -19,5 +26,8 @@ int main()
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl;
 
-  
-}
+  int x = 100; 
+  int y = 200; 
+  double z = calcAverage(x, y); 
+  cout << z << endl; 
+} // main
