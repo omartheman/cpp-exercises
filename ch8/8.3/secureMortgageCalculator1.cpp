@@ -11,8 +11,41 @@
 
 using namespace std; 
 
+bool passwordChecker(){
+
+  string correctPassword = "pwsafe";
+
+  while (true){
+    //Prompt user to enter password 
+    cout << "Please enter password: ";
+
+    string passwordAttempt; 
+    cin >> passwordAttempt; 
+
+    if (passwordAttempt == correctPassword){
+      cout << "Password correct!" << endl; 
+      break;
+    }
+    else {
+      cout << "Invalid password" << endl; 
+    }
+  }
+}
+
 int main()
 {
+  cout << endl; // Extra blank line
+  // identifying output statements
+  cout << "Programmer: Omar Shishani" << endl;
+  cout << "Description: This program calculates the monthly" << endl;
+  cout << " payment on a loan." << endl; 
+  cout << " The program requires the user to " << endl; 
+  cout << " enter a password." << endl; 
+  cout << " The inputs come from the user and the programmer," << endl;
+  cout << " and output is to the console screen." << endl << endl; 
+
+  passwordChecker();
+
   int p;
   double r; //monthly decmial interest rate 
   double annualInterestRate; 
@@ -24,7 +57,7 @@ int main()
 
   double annualInterestRatePercentage; 
   cout << endl; 
-  cout << "Please enter the interest rate." << endl; 
+  cout << "Please enter the interest rate as a percentage number." << endl; 
   cout << "You can use as many decimal places as you like:" << endl;
   cin >> annualInterestRatePercentage; 
 
@@ -63,11 +96,4 @@ int main()
   cout.setf(ios::fixed|ios::showpoint);
   cout << setprecision(2); 
   cout << monthlyPayment << endl;
-
-  cout << endl; // Extra blank line
-  // identifying output statements
-  cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program calculates the monthly" << endl;
-  cout << "payment on a loan. The inputs come from the programmer and the user," << endl;
-  cout << "and output is to the console screen." << endl;
 }
