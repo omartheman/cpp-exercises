@@ -32,7 +32,14 @@ int main()
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
-  additionProblem(8,2);
+  // initialize the computer's random number generator
+  srand(time(0)); 
+  rand();
+
+  int firstNumber = rand() % 10;
+  int secondNumber = rand() % 10; 
+
+  additionProblem(firstNumber, secondNumber);
   additionProblem(4,8);
   additionProblem(3,7);
   additionProblem(4,10);
