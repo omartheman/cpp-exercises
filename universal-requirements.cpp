@@ -17,5 +17,5 @@ int main()
   cout << "Description: This program converts pounds" << endl;
   cout << " to kilograms." << endl; 
   cout << " The input is from the console keyboard," << endl;
-  cout << " and output is to the console screen." << endl;
+  cout << " and output is to the console screen." << endl << endl;
 }
