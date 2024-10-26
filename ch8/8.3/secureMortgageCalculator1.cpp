@@ -11,7 +11,7 @@
 
 using namespace std; 
 
-bool passwordChecker(){
+int passwordChecker(){
 
   string correctPassword = "pwsafe";
 
