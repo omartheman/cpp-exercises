@@ -9,6 +9,21 @@
 
 using namespace std; 
 
+int askQuestion(string question, string correctAnswer){
+
+  cout << question << ":";
+
+  string userAnswer; 
+  getline(cin, userAnswer); cout << endl; 
+
+  if (userAnswer == correctAnswer){
+    cout << "Correct!" << endl; 
+  }
+  else {
+    cout << "Incorrect." << endl; 
+  }
+}
+
 int main()
 {
   // identifying output statements
@@ -18,6 +33,8 @@ int main()
   cout << " solve three addition/subtraction problems." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl;
+
+  askQuestion("Who is the current US President?: ", "Joe Biden");
 
   int answer1; 
   cout << "4 + 9 = ";
