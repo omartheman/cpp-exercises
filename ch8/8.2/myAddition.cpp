@@ -36,12 +36,10 @@ int main()
   srand(time(0)); 
   rand();
 
-  int firstNumber = rand() % 10;
-  int secondNumber = rand() % 10; 
+  for (int i = 0; i < 5; i++){
+    int firstNumber = rand() % 10;
+    int secondNumber = rand() % 10; 
 
-  additionProblem(firstNumber, secondNumber);
-  additionProblem(4,8);
-  additionProblem(3,7);
-  additionProblem(4,10);
-  additionProblem(11,2);
+    additionProblem(firstNumber, secondNumber);
+  }
 } //main
