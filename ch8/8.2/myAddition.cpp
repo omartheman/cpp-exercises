@@ -5,9 +5,22 @@
 //
 
 #include <iostream>
-#include <string>
 
 using namespace std; 
+
+void additionProblem(int topNumber, int bottomNumber)
+{
+  int userAnswer; 
+  cout << "\n\n\n     " << topNumber << " + " << bottomNumber << " = ";
+  cin >> userAnswer; 
+  cin.ignore(1000, 10);
+
+  int theAnswer = topNumber + bottomNumber;
+  if (theAnswer == userAnswer)
+    cout << "     Correct!" << endl; 
+  else 
+    cout << "     Very good, but a better answer is " << theAnswer << endl;
+} //additionProblem 
 
 int main()
 {
@@ -18,4 +31,10 @@ int main()
   cout << " to kilograms." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
-}
+
+  additionProblem(8,2);
+  additionProblem(4,8);
+  additionProblem(3,7);
+  additionProblem(4,10);
+  additionProblem(11,2);
+} //main
