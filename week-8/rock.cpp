@@ -53,19 +53,26 @@ int main()
     // prompt for, and read, the human's choice (code block #2)
     humanChoice = 'Q'; 
     cout << "Choose your move: rock, paper, scissors, or quit (R, P, S, or Q): "; 
-    cin >> humanChoice; 
-    if (
-      humanChoice != 'R'
-      && humanChoice != 'r'
-      && humanChoice != 'S'
-      && humanChoice != 's'
-      && humanChoice != 'P'
-      && humanChoice != 'p'
-      && humanChoice != 'Q'
-      && humanChoice != 'q'
-    ){
-      continue; //Skip wrong answers
+
+    while (true){
+      cin >> humanChoice; 
+      if (
+        humanChoice == 'R'
+        && humanChoice == 'r'
+        && humanChoice == 'S'
+        && humanChoice == 's'
+        && humanChoice == 'P'
+        && humanChoice == 'p'
+        && humanChoice == 'Q'
+        && humanChoice == 'q'
+      ) {
+        break; 
+      }
+      else {
+        cout << "Invalid input. Please try again: "; 
+      }
     }
+
     //Print human and computer choices 
 
 
