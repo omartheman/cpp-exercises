@@ -11,7 +11,7 @@ using namespace std;
 
 int askQuestion(string question, string correctAnswer){
 
-  cout << question << ":";
+  cout << question << ": ";
 
   string userAnswer; 
   getline(cin, userAnswer); cout << endl; 
@@ -29,40 +29,12 @@ int main()
   // identifying output statements
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program asks the user to" << endl;
-  cout << " solve three addition/subtraction problems." << endl; 
+  cout << "Description: This program asks the user three different questions," << endl;
+  cout << " and checks the user's answers." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl;
 
-  askQuestion("Who is the current US President?: ", "Joe Biden");
-
-  int answer1; 
-  cout << "4 + 9 = ";
-  cin >> answer1; 
-
-  if (answer1 == 13)
-    cout << "Your answer is correct!" << endl;
-  else 
-    cout << "Your answer is incorrect." << endl;
-  ;
-
-  int answer2; 
-  cout << "1 - 10 = ";
-  cin >> answer2; 
-
-  if (answer2 == -9)
-    cout << "Your answer is correct!" << endl;
-  else 
-    cout << "Your answer is incorrect." << endl;
-  ;
-
-  int answer3; 
-  cout << "100 + 200 = ";
-  cin >> answer3; 
-
-  if (answer3 == 300)
-    cout << "Your answer is correct!" << endl;
-  else 
-    cout << "Your answer is incorrect." << endl;
-  ;
+  askQuestion("What is the last name of the current US President?", "Biden");
+  askQuestion("How many states are in the United States?", "50");
+  askQuestion("What is the capital city of California?", "Sacramento");
 }
