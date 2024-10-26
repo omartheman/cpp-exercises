@@ -1,4 +1,4 @@
-// Lab 4.1
+// Lab 8.2
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -27,8 +27,10 @@ int main()
   // identifying output statements
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
+  cout << "Description: This program randomly generates two" << endl;
+  cout << " numbers, and asks the user to add them." << endl; 
+  cout << " The computer tells the user if the answer is" << endl; 
+  cout << " correct or not." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
