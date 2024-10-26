@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/omarshishani/Coding/cpp/ch8/8.4/secureMortgageCalculator2.exe'
+relocations:     []
+...

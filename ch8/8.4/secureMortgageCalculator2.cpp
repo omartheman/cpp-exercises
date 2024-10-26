@@ -1,4 +1,4 @@
-// Lab 8.3
+// Lab 8.4
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -11,11 +11,11 @@
 
 using namespace std; 
 
-int passwordChecker(){
+bool passwordChecker(){
 
   string correctPassword = "pwsafe";
 
-  while (true){
+  for (int i = 0; i < 3; i++){
     //Prompt user to enter password 
     cout << "Please enter password: ";
 
@@ -23,13 +23,16 @@ int passwordChecker(){
     cin >> passwordAttempt; 
 
     if (passwordAttempt == correctPassword){
-      cout << "Password correct!" << endl; 
-      break;
+      cout << "Password correct!" << endl;
+      return true;
     }
     else {
       cout << "Invalid password" << endl; 
     }
   }
+
+  cout << "Max attempts reached for password input." << endl; 
+  return false; 
 }
 
 int main()
@@ -40,11 +43,14 @@ int main()
   cout << "Description: This program calculates the monthly" << endl;
   cout << " payment on a loan." << endl; 
   cout << " The program requires the user to " << endl; 
-  cout << " enter a password." << endl; 
+  cout << " enter a password, and gives the user 3 tries to" << endl; 
+  cout << " enter the correct password." << endl; 
   cout << " The inputs come from the user and the programmer," << endl;
   cout << " and output is to the console screen." << endl << endl; 
 
-  passwordChecker();
+  if (passwordChecker() == false) { //If password is incorrect, exit mortgage function
+    return 0; //Exit function
+  }
 
   int p;
   double r; //monthly decmial interest rate 
