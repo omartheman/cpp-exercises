@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/omarshishani/Coding/cpp/ch8/8.1",
-      "program": "/Users/omarshishani/Coding/cpp/ch8/8.1/build/Debug/outDebug"
+      "cwd": "/Users/omarshishani/Coding/cpp/ch9/9.1",
+      "program": "/Users/omarshishani/Coding/cpp/ch9/9.1/build/Debug/outDebug"
     },
     {
       "name": "C/C++: g++ build and debug active file",

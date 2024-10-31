@@ -9,7 +9,7 @@
 
 using namespace std; 
 
-int askQuestion(string question, string correctAnswer){
+bool askQuestion(string question, string correctAnswer){
 
   cout << question << ": ";
 
@@ -18,9 +18,11 @@ int askQuestion(string question, string correctAnswer){
 
   if (userAnswer == correctAnswer){
     cout << "Correct!" << endl; 
+    return true; 
   }
   else {
     cout << "Incorrect." << endl; 
+    return false; 
   }
 }
 
@@ -30,11 +32,17 @@ int main()
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program asks the user three different questions," << endl;
-  cout << " and checks the user's answers." << endl; 
+  cout << " and checks the user's answers. The program tells" << endl; 
+  cout << " the user how many questions they got correct at " << endl; 
+  cout << " the end." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl;
 
-  askQuestion("What is the last name of the current US President?", "Biden");
-  askQuestion("How many states are in the United States?", "50");
-  askQuestion("What is the capital city of California?", "Sacramento");
+  int correct = 0; 
+
+  if (askQuestion("What is the last name of the current US President?", "Biden")){correct++;};
+  if (askQuestion("How many states are in the United States?", "50")){correct++;};
+  if(askQuestion("What is the capital city of California?", "Sacramento")){correct++;};
+  
+  cout << endl << "Correct answers: " << correct << " out of 3." << endl;
 }
