@@ -18,4 +18,10 @@ int main()
   cout << " to kilograms." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
+
+  double x; 
+  for (x = 0; x != 1; x+= 0.1)
+    cout << x << endl; 
+
+  
 } //main() 
