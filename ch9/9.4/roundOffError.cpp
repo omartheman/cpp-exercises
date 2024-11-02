@@ -20,8 +20,8 @@ int main()
   cout << " and output is to the console screen." << endl << endl;
 
   double x; 
-  for (x = 0; x != 1; x+= 0.1)
+  for (x = 0; x != 4.05; x+= 0.05)
     cout << x << endl; 
 
-  
+
 } //main() 
