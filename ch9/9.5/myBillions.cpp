@@ -71,6 +71,6 @@ int main()
 
   cout << "It will take " << weeksToThousand << " weeks to become a thousandaire" << endl; 
   cout << "It will take " << weeksToMillion << " weeks to become a millionaire" << endl; 
-  cout << "It will take " << weeksToBillion << " weeks to become a millionaire" << endl; 
+  cout << "It will take " << weeksToBillion << " weeks to become a billionaire" << endl; 
 
 } //main() 
