@@ -21,21 +21,36 @@ int main()
   //Calculate the number of weeks it takes to be a billionaire. 
   // A billion is 1,000,000,000.00 
   // You start at 0.05 at the end of the first week, and double every week 
+ 
 
+  //total + 0.05
+  //total + 0.10
+  //total + 0.20
+  //total + 0.40
+
+  //increment = 0.5 
+  //increment * 2 = 0.10 
+  //increment * 2 = 0.20 
+ 
   double total; 
-  double incrementCount; 
+  double increment = 0.05;
 
-  for (total = 0; total >= 1000; total += (0.05 * i)) {
+  for (int i = 1; total <= 1000; i++) {
+
+    cout << "Number of weeks passed: " << i << endl; 
+
+    cout << "Current increment: " << increment << endl; 
+
+    total += increment; 
+    cout << "Total: " << total << endl;
+
+    increment *= 2; //Double increment: Multiply itself by 2. Starting at 0.05 * 2 = 0.10 
 
     //i needs to double each week
     //First week i get 5 cents
     //Second week I get 10 cents 
     //Third week I get 20 cents 
     //Fourth week I get 40 cents 
-    total += i;
-
-    cout << "Current number of weeks: " << i << endl; 
-    cout << 
   }
 
 } //main() 
