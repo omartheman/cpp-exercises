@@ -1,4 +1,4 @@
-// Lab 9.3
+// Lab 9.5
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -13,9 +13,11 @@ int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
-  cout << " The input is from the console keyboard," << endl;
+  cout << "Description: This program calculates how long it will take" << endl;
+  cout << " for a child to earn a thousand, million," << endl; 
+  cout << " and billion dollars if they are given" << endl; 
+  cout << " a starting 5-cent allowance, which is doubled each week." << endl; 
+  cout << " There is no input," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
   //Calculate the number of weeks it takes to be a billionaire. 
