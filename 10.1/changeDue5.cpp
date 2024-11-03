@@ -26,8 +26,15 @@ int main()
   int amountTendered;
 
   while (true){
+
+    string fileName = "./change.txt";
+    fin.open(fileName.c_str());
+
+    if (!fin.good()) throw "I/O error";  
+
     cout << "Please enter the required cash payment amount [enter 0 to exit]: ";
-    cin >> cashPayment;
+    fin >> cashPayment;
+    fin.ignore(1000, 10); 
 
     if (cashPayment == 0) {
       break;
@@ -39,7 +46,9 @@ int main()
 
     cout << endl; 
     cout << "Please enter the amount tendered: ";
-    cin >> amountTendered;
+
+    fin >> amountTendered;
+    fin.ignore(1000, 10); 
 
     int changeDue = amountTendered - cashPayment;
 
