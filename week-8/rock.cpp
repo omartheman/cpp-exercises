@@ -58,13 +58,13 @@ int main()
       cin >> humanChoice; 
       if (
         humanChoice == 'R'
-        && humanChoice == 'r'
-        && humanChoice == 'S'
-        && humanChoice == 's'
-        && humanChoice == 'P'
-        && humanChoice == 'p'
-        && humanChoice == 'Q'
-        && humanChoice == 'q'
+        || humanChoice == 'r'
+        || humanChoice == 'S'
+        || humanChoice == 's'
+        || humanChoice == 'P'
+        || humanChoice == 'p'
+        || humanChoice == 'Q'
+        || humanChoice == 'q'
       ) {
         break; 
       }
