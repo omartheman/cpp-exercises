@@ -68,7 +68,12 @@
     "variant": "cpp",
     "vector": "cpp",
     "algorithm": "cpp",
-    "deque": "cpp"
+    "deque": "cpp",
+    "__verbose_abort": "cpp",
+    "execution": "cpp",
+    "print": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",
@@ -126,5 +131,6 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "C_Cpp.default.compilerPath": "/usr/bin/clang"
 }
