@@ -35,14 +35,16 @@ int main()
   double total; 
   double increment = 0.05;
 
-  for (int i = 1; total <= 1000; i++) {
+  int weeksToThousand = 0; 
+  int weeksToMillion = 0; 
+  int weeksToBillion = 0; 
 
-    cout << "Number of weeks passed: " << i << endl; 
+  for (int i = 1; total <= 1000000000; i++) {
 
-    cout << "Current increment: " << increment << endl; 
-
+    // cout << "Number of weeks passed: " << i << endl; 
+    // cout << "Current increment: " << increment << endl; 
     total += increment; 
-    cout << "Total: " << total << endl;
+    // cout << "Total: " << total << endl;
 
     increment *= 2; //Double increment: Multiply itself by 2. Starting at 0.05 * 2 = 0.10 
 
@@ -51,6 +53,22 @@ int main()
     //Second week I get 10 cents 
     //Third week I get 20 cents 
     //Fourth week I get 40 cents 
+
+    if (total >= 1000 && weeksToThousand == 0){
+      weeksToThousand = i; 
+    }
+
+    if (total >= 1000000 && weeksToMillion == 0){
+      weeksToMillion = i; 
+    }
+
+    if (total >= 1000000000 && weeksToBillion == 0){
+      weeksToBillion = i; 
+    }
   }
+
+  cout << "It will take " << weeksToThousand << " weeks to become a thousandaire" << endl; 
+  cout << "It will take " << weeksToMillion << " weeks to become a millionaire" << endl; 
+  cout << "It will take " << weeksToBillion << " weeks to become a millionaire" << endl; 
 
 } //main() 
