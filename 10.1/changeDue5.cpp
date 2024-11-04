@@ -27,7 +27,6 @@ int main()
   int amountTendered;
 
   ifstream fin;   
-
   string fileName = "./change.txt";
   fin.open(fileName.c_str());
 

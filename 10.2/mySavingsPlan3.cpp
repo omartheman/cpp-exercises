@@ -7,6 +7,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <fstream> 
 
 using namespace std; 
 
@@ -14,24 +15,36 @@ using namespace std;
 
 int main()
 {
+  // identifying output statements
+  cout << "Programmer: Omar Shishani" << endl;
+  cout << "Description: This program calculates the amount" << endl;
+  cout << " of money that will be saved after a number of years" << endl;
+  cout << " from a given monthly deposit and interest rate." << endl;
+  cout << " The inputs are from a file," << endl;
+  cout << " and output is to the console screen." << endl << endl;
+
+  ifstream fin;   
+  string fileName = "./savings.txt";
+  fin.open(fileName.c_str());
+  if (!fin.good()) throw "I/O error";  
 
   //input values 
   int ageIRetire = 50; 
   int currentAge = 30; 
   
   int yearsUntilIRetire;
-  cout << "Please enter the number of years until retirement: ";
-  cin >> yearsUntilIRetire; 
+  fin >> yearsUntilIRetire; cout << endl;  
+  cout << "Years until retirement from file: " << yearsUntilIRetire << endl; 
 
   // output (calculated) values
   double annualInterestRatePercentage;
 
-  cout << "Please enter the annual interest rate percentage, with any number of decimal places: "; 
-  cin >> annualInterestRatePercentage;
+  fin >> annualInterestRatePercentage;
+  cout << "Annual interest rate from file: " << annualInterestRatePercentage << "%" << endl; 
 
   int D;
-  cout << "Please enter the dollar amount that will be deposited each month: "; 
-  cin >> D;  //Amount deposited per month
+  fin >> D;  //Amount deposited per month
+  cout << "Amount deposited per month from file: $" << D << endl; 
 
   double annualInterestRate = annualInterestRatePercentage / 100; //annual interest rate 
   double p = annualInterestRate / 12; 
@@ -47,13 +60,4 @@ int main()
 
   // formatting output (see 4.2) 
   cout << S << "." << endl; 
-
-  // identifying output statements
-  cout << endl; // Extra line
-  cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program calculates the amount" << endl;
-  cout << " of money that will be saved after a number of years" << endl;
-  cout << " from a given monthly deposit and interest rate." << endl;
-  cout << " The inputs are from the user," << endl;
-  cout << " and output is to the console screen." << endl;
 }
