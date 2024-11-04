@@ -20,8 +20,7 @@ int main()
   cout << " The program also calculates the denominations of" << endl;
   cout << " bills required to provide the correct amount of change." << endl;
   cout << " The program only outputs the required denominations." << endl;
-  cout << " The user can input zero or a negative number to exit." << endl;
-  cout << " The input is from the user," << endl;
+  cout << " The input is from a file," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
   int cashPayment;
