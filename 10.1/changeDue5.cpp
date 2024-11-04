@@ -4,7 +4,9 @@
 // Compiler(s) used: Apple clang version 14.0.0
 //
 
+#include <fstream> 
 #include <iostream>
+#include <string> 
 
 using namespace std; 
 
@@ -26,6 +28,8 @@ int main()
   int amountTendered;
 
   while (true){
+
+    ifstream fin; 
 
     string fileName = "./change.txt";
     fin.open(fileName.c_str());
