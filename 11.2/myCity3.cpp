@@ -18,6 +18,8 @@ int main()
   int highTempSep17;
   int highTempSep18;
 
+  const int SIZE = 5; 
+
   int temps[] = {
     91, 
     83,
@@ -33,4 +35,16 @@ int main()
   cout << "Tuesday, Sep 17, " << temps[3] << " degrees." << endl; 
   cout << "Wednesday, Sep 18, " << temps[4] << " degrees." << endl;
   cout << "Source: https://weather.com/" << endl; 
+
+  int max = temps[0];
+  int min = temps[0];
+
+  for (int i = 1; i < SIZE; i++) {
+    if (max < temps[i]) max = temps[i];
+    if (min > temps[i]) min = temps[i]; 
+  }
+
+  cout << "The high for the week is " << max << " degrees." << endl;
+  cout << "The low for the week is " << min << " degrees." << endl; 
+
 }
