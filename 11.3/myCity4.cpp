@@ -3,8 +3,6 @@
 
 using namespace std; 
 
-
-
 int main() 
 {
   // identifying output statements
@@ -43,33 +41,45 @@ int main()
 
   int counts[5]; 
 
-  int maxCount;
-  int minCount; 
+  int maxCount = 1;
+  int minCount = 1; 
+
+  int max = temps[0];
+  int min = temps[0];
+
+
+  for (int i = 1; i < SIZE; i++) {
+    if (max < temps[i]) {
+      max = temps[i];
+    };
+
+    if (min > temps[i]) {
+      min = temps[i];
+    }; 
+  }
 
   for (int i = 0; i < SIZE; i++) {
     
     //Loop though array again. Check if any values match temps[i], as long as the index of the array being checked is not [i]
     int count = 1; 
     for (int j = 0; j < SIZE; j++) {
+
       if (i != j && temps[i] == temps[j]){
         //increase count for duplicate
         count++; 
       }
+
+      cout << "Count is " << count << endl; 
+
+
+
     }
     cout << "The value " << temps[i] << " occurs " << count << " times." << endl;
     counts[i] = count; 
   }
 
 
-  int max = temps[0];
-  int min = temps[0];
-
-  for (int i = 1; i < SIZE; i++) {
-    if (max < temps[i]) max = temps[i];
-    if (min > temps[i]) min = temps[i]; 
-  }
-
-  cout << "The high for the week is " << max << " degrees." << "This temperature occurs " << endl;
-  cout << "The low for the week is " << min << " degrees." << endl; 
+  cout << "The high for the week is " << max << " degrees." << "This temperature occurs " << maxCount << " times" << endl;
+  cout << "The low for the week is " << min << " degrees." << "This temperature occurs " << minCount << " times" << endl;
 
 }
