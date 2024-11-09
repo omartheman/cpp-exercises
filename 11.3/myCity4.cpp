@@ -20,20 +20,18 @@ int main()
 
   const int SIZE = 5; 
 
-  int temps[] = {
-    91, 
-    83,
-    72, 
-    73, 
-    78
-  };
+  int temps[5];
+
+  cout << "Enter the high for Walnut Creek on Fri, Nov 8th: " << endl;
+  cin >> temps[0];
 
   cout << "Walnut Creek, CA forecast high temperatures:" << endl; 
-  cout << "Saturday, Sep 14, " << temps[0] << " degrees." << endl; 
-  cout << "Sunday, Sep 15, " << temps[1] << " degrees." << endl; 
-  cout << "Monday, Sep 16, " << temps[2] << " degrees." << endl; 
-  cout << "Tuesday, Sep 17, " << temps[3] << " degrees." << endl; 
-  cout << "Wednesday, Sep 18, " << temps[4] << " degrees." << endl;
+  cout << "Fri, Nov 8th: " << temps[0] << " degrees." << endl; 
+  // cout << "Sunday, Sep 15, " << temps[1] << " degrees." << endl; 
+  // cout << "Monday, Sep 16, " << temps[2] << " degrees." << endl; 
+  // cout << "Tuesday, Sep 17, " << temps[3] << " degrees." << endl; 
+  // cout << "Wednesday, Sep 18, " << temps[4] << " degrees." << endl;
+
   cout << "Source: https://weather.com/" << endl; 
 
   int max = temps[0];
