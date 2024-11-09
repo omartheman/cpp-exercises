@@ -39,27 +39,32 @@ int main()
 
   //Search for how many times the input repeats 
 
-  int counts[5]; 
-
   int maxCount = 1;
   int minCount = 1; 
 
   int max = temps[0];
   int min = temps[0];
 
+  int maxIndex = 0; 
+  int minIndex = 0; 
 
   for (int i = 1; i < SIZE; i++) {
     if (max < temps[i]) {
       max = temps[i];
+      maxIndex = i; 
     };
 
     if (min > temps[i]) {
       min = temps[i];
+      minIndex = i; 
     }; 
   }
 
+  //Set counts array 
+  int counts[5]; 
+
   for (int i = 0; i < SIZE; i++) {
-    
+
     //Loop though array again. Check if any values match temps[i], as long as the index of the array being checked is not [i]
     int count = 1; 
     for (int j = 0; j < SIZE; j++) {
@@ -68,18 +73,16 @@ int main()
         //increase count for duplicate
         count++; 
       }
-
       cout << "Count is " << count << endl; 
-
-
-
     }
+
     cout << "The value " << temps[i] << " occurs " << count << " times." << endl;
+
     counts[i] = count; 
   }
 
 
-  cout << "The high for the week is " << max << " degrees." << "This temperature occurs " << maxCount << " times" << endl;
-  cout << "The low for the week is " << min << " degrees." << "This temperature occurs " << minCount << " times" << endl;
+  cout << "The high for the week is " << max << " degrees." << "This temperature occurs " << counts[maxIndex] << " times" << endl;
+  cout << "The low for the week is " << min << " degrees." << "This temperature occurs " << counts[minIndex] << " times" << endl;
 
 }
