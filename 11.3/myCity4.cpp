@@ -3,6 +3,8 @@
 
 using namespace std; 
 
+
+
 int main() 
 {
   // identifying output statements
@@ -36,13 +38,6 @@ int main()
 
   cout << "Source: https://weather.com/" << endl; 
 
-  int max = temps[0];
-  int min = temps[0];
-
-  for (int i = 1; i < SIZE; i++) {
-    if (max < temps[i]) max = temps[i];
-    if (min > temps[i]) min = temps[i]; 
-  }
 
   //Search for how many times the input repeats 
 
@@ -51,7 +46,7 @@ int main()
   int maxCount;
   int minCount; 
 
-  for (int i = 1; i < SIZE; i++) {
+  for (int i = 0; i < SIZE; i++) {
     
     //Loop though array again. Check if any values match temps[i], as long as the index of the array being checked is not [i]
     int count = 1; 
@@ -63,6 +58,15 @@ int main()
     }
     cout << "The value " << temps[i] << " occurs " << count << " times." << endl;
     counts[i] = count; 
+  }
+
+
+  int max = temps[0];
+  int min = temps[0];
+
+  for (int i = 1; i < SIZE; i++) {
+    if (max < temps[i]) max = temps[i];
+    if (min > temps[i]) min = temps[i]; 
   }
 
   cout << "The high for the week is " << max << " degrees." << "This temperature occurs " << endl;
