@@ -44,6 +44,25 @@ int main()
     if (min > temps[i]) min = temps[i]; 
   }
 
+  //Search for how many times the input repeats 
+
+  for (int i = 1; i < SIZE; i++) {
+    if (max < temps[i]) max = temps[i];
+
+    //Loop through each item. For each item, loop again and check how many times there is a match.
+    const int VALUE = temps[i];
+    
+    //Loop though array again. Check if any values match temps[i], as long as the index of the array being checked is not [i]
+    int count = 1; 
+    for (int j = 0; j < SIZE; j++) {
+      if (i != j && temps[i] == temps[j]){
+        //increase count for duplicate
+        count++; 
+      }
+    }
+    cout << "The value " << temps[i] << " occurs " << count << " times.";
+  }
+
   cout << "The high for the week is " << max << " degrees." << endl;
   cout << "The low for the week is " << min << " degrees." << endl; 
 
