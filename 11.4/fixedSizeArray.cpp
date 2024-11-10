@@ -14,7 +14,8 @@ int main()
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program takes 4 scores from the user" << endl;
-  cout << " and calculates the average." << endl; 
+  cout << " and calculates the average. The program tells the " << endl; 
+  cout << " user how many of the scores were above the average." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
@@ -24,10 +25,10 @@ int main()
   int score[4];
 
   cout << "Please enter four scores for an average calculation: ";
-  cin >> score[0];  cout << endl; 
-  cin >> score[1];  cout << endl; 
-  cin >> score[2];  cout << endl; 
-  cin >> score[3];  cout << endl; 
+  cin >> score[0]; 
+  cin >> score[1]; 
+  cin >> score[2]; 
+  cin >> score[3]; 
 
   //calculate and output the average 
   int scoreTotal = 0; 
