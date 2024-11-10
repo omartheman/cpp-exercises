@@ -17,7 +17,7 @@ int main()
   cout << " high temperatures for 5 different days. The program" << endl; 
   cout << " then tells the user which was the high and low of" << endl; 
   cout << " the input temperatures, and how many times these occurred." << endl; 
-  cout << " The input is from the programmer," << endl;
+  cout << " The input is from the user," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
   const int SIZE = 5; 
