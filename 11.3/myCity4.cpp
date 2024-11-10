@@ -13,8 +13,10 @@ int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program uses an array to print the" << endl;
-  cout << " high temperatures for 5 different days." << endl; 
+  cout << "Description: This program asks the user to input the" << endl;
+  cout << " high temperatures for 5 different days. The program" << endl; 
+  cout << " then tells the user which was the high and low of" << endl; 
+  cout << " the input temperatures, and how many times these occurred." << endl; 
   cout << " The input is from the programmer," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
@@ -39,9 +41,6 @@ int main()
   cout << "Sun, Nov 10th: " << temps[2] << " degrees." << endl; 
   cout << "Mon, Nov 11th: " << temps[3] << " degrees." << endl; 
   cout << "Tue, Nov 12th: " << temps[4] << " degrees." << endl; 
-
-  cout << "Source: https://weather.com/" << endl; 
-
 
   //Search for how many times the input repeats 
 
@@ -79,10 +78,9 @@ int main()
         //increase count for duplicate
         count++; 
       }
-      cout << "Count is " << count << endl; 
     }
 
-    cout << "The value " << temps[i] << " occurs " << count << " times." << endl;
+    // cout << "The value " << temps[i] << " occurs " << count << " times." << endl;
 
     counts[i] = count; 
   }
