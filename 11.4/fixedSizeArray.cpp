@@ -4,7 +4,6 @@
 // Compiler(s) used: Apple clang version 14.0.0
 //
 
-#include <fstream> 
 #include <iostream>
 #include <string>
 
@@ -19,33 +18,28 @@ int main()
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
-
   //open 8scores.txt for input 
 
-  ifstream fin; 
-  fin.open("8Scores.txt"); 
-  if (!fin.good()) throw "I/O error"; 
-
   //read and save the scored
-  int score[8];
-  int i; //loop counter 
-  for (i = 0; i < 8; i++){
-    fin >> score[i];
-    fin.ignore(1000, 10); 
-  } // for 
-  fin.close(); 
+  int score[4];
+
+  cout << "Please enter four scores for an average calculation: ";
+  cin >> score[0];  cout << endl; 
+  cin >> score[1];  cout << endl; 
+  cin >> score[2];  cout << endl; 
+  cin >> score[3];  cout << endl; 
 
   //calculate and output the average 
   int scoreTotal = 0; 
-  for (i = 0; i < 8; i++) {
+  for (int i = 0; i < 4; i++) {
     scoreTotal += score[i]; 
   } // for 
-  double average = scoreTotal / 8.0;
-  cout << "The average of 8 numbers is " << average << endl; 
+  double average = scoreTotal / 4.0;
+  cout << "The average of 4 scores is " << average << endl; 
 
   // count # of scores > average 
   int nGreater = 0; 
-  for (i = 0; i < 8; i++){
+  for (int i = 0; i < 8; i++){
     if (score[i] > average) nGreater++; 
   } // for 
 
