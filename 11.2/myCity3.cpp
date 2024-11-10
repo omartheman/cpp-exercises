@@ -1,3 +1,9 @@
+// Lab 11.2
+// Programmer: Omar Shishani
+// Editor(s) used: VSCode
+// Compiler(s) used: Apple clang version 14.0.0
+//
+
 #include <iostream>
 #include <string> 
 
