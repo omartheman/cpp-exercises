@@ -17,8 +17,11 @@ int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
+  cout << "Description: This program takes an input of scores" << endl;
+  cout << " and stores them in an array. The scores are printed," << endl; 
+  cout << " ordered from low to high. The max and min scores are" << endl; 
+  cout << " printed. The average is calculated and printed. Finally," << endl; 
+  cout << " the user is notified if any scores were 'A' (90 or above)." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
