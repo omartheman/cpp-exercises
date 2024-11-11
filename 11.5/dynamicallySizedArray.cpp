@@ -4,6 +4,7 @@
 // Compiler(s) used: Apple clang version 14.0.0
 //
 
+#include <algorithm> 
 #include <fstream> 
 #include <iostream>
 #include <string>
@@ -31,6 +32,8 @@ int main()
     cout << "Please enter score: ";
     cin >> score[i]; // remaining lines in txt file 
   }
+
+  sort(score, score + size); 
 
   //output scores to console 
   for (i = 0; i < size; i++)
