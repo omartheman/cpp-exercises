@@ -45,7 +45,6 @@ int main()
     cout << score[i] << ' '; 
   cout << endl; 
 
-
   int max = score[0];
   int min = score[0];
 
@@ -59,13 +58,28 @@ int main()
 
   //Calculate and output average 
   int scoreTotal = 0; 
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < size; i++) {
     scoreTotal += score[i]; 
   } // for 
+
   double average = scoreTotal / size * 1.0;
   cout << "The average of " << size << " scores is "; 
 
+  //Output to one decimal 
   cout.setf(ios::fixed|ios::showpoint); 
   cout << setprecision(1) << average << endl;
+
+  cout << "Grades that are A: " << endl; 
+  int numberA = 0; 
+  for (int i = 1; i < size; i++) {
+    if (score[i] >= 90) {
+      cout << score[i] << endl;
+      numberA++; 
+    }
+  }
+
+  if (numberA == 0){
+    cout << "None." << endl; 
+  }
 
 } //main() 
