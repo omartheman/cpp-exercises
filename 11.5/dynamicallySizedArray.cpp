@@ -19,23 +19,18 @@ int main()
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
-  ifstream fin; 
-  fin.open("scores.txt");
-  if (!fin.good()) throw "I/O" error; 
-
   //Create array of user-specified size 
+  cout << "Please enter total number of scores: "; 
   int size; 
-  fin >> size; 
-  fin.ignore (1000, 10); 
+  cin >> size;  
   int* score = new int[size];
 
   //Read and save scored 
   int i; 
   for (i = 0; i < size; i++){
-    fin >> score[i]; // remaining lines in txt file 
-    fin.ignore(1000,10); 
+    cout << "Please enter score: ";
+    cin >> score[i]; // remaining lines in txt file 
   }
-  fin.close(); 
 
   //output scores to console 
   for (i = 0; i < size; i++)
