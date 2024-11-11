@@ -69,17 +69,20 @@ int main()
   cout.setf(ios::fixed|ios::showpoint); 
   cout << setprecision(1) << average << endl;
 
-  cout << "Grades that are A: " << endl; 
+  //Tell if there was an A grade
   int numberA = 0; 
+
   for (int i = 1; i < size; i++) {
     if (score[i] >= 90) {
-      cout << score[i] << endl;
       numberA++; 
     }
   }
 
   if (numberA == 0){
-    cout << "None." << endl; 
+    cout << "No grades were 'A'." << endl;; 
+  }
+  else {
+    cout << "At least one grade was 'A'." << endl; 
   }
 
 } //main() 
