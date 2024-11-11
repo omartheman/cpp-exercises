@@ -36,8 +36,23 @@ int main()
   sort(score, score + size); 
 
   //output scores to console 
+
+  cout << "Values low to high: "; 
+
   for (i = 0; i < size; i++)
     cout << score[i] << ' '; 
   cout << endl; 
+
+
+  int max = score[0];
+  int min = score[0];
+
+  for (int i = 1; i < size; i++) {
+    if (max < score[i]) max = score[i];
+    if (min > score[i]) min = score[i]; 
+  }
+
+  cout << "Max score is " << max << endl; 
+  cout << "Min score is " << min << endl; 
 
 } //main() 
