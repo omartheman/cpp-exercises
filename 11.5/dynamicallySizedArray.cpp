@@ -8,6 +8,8 @@
 #include <fstream> 
 #include <iostream>
 #include <string>
+#include <iomanip>
+
 
 using namespace std; 
 
@@ -54,5 +56,16 @@ int main()
 
   cout << "Max score is " << max << endl; 
   cout << "Min score is " << min << endl; 
+
+  //Calculate and output average 
+  int scoreTotal = 0; 
+  for (int i = 0; i < 4; i++) {
+    scoreTotal += score[i]; 
+  } // for 
+  double average = scoreTotal / size * 1.0;
+  cout << "The average of " << size << " scores is "; 
+
+  cout.setf(ios::fixed|ios::showpoint); 
+  cout << setprecision(1) << average << endl;
 
 } //main() 
