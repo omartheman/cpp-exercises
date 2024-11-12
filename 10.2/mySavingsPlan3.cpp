@@ -23,6 +23,7 @@ int main()
   cout << " The inputs are from a file," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
+  //Read from input file
   ifstream fin;   
   string fileName = "./savings.txt";
   fin.open(fileName.c_str());

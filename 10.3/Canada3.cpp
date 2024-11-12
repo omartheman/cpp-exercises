@@ -11,6 +11,12 @@ using namespace std;
 
 int main()
 {
+  // identifying output statements
+  cout << "Programmer: Omar Shishani" << endl;
+  cout << "Description: This program calculates the" << endl;
+  cout << " temperature in degrees Fahrenheit based on a degrees Celsius temperature." << endl;
+  cout << " The input is from the user," << endl;
+  cout << " and output is to the console screen." << endl << endl;
 
   while (true) {
     double temperatureCelsius; 
@@ -33,13 +39,5 @@ int main()
     cout << temperatureFahrenheit; 
     cout << " degrees Fahrenheit."; 
     cout << endl; 
-
-    // identifying output statements
-    cout << endl; 
-    cout << "Programmer: Omar Shishani" << endl;
-    cout << "Description: This program calculates the" << endl;
-    cout << " temperature in degrees Fahrenheit based on a degrees Celsius temperature." << endl;
-    cout << " The input is from the user," << endl;
-    cout << " and output is to the console screen." << endl;
   }
 }
