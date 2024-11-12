@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <iomanip> 
+#include <fstream>
 
 using namespace std; 
 
@@ -18,10 +19,17 @@ int main()
   cout << " The input is from the user," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
+  //Read from input file
+  ifstream fin;   
+  string fileName = "./temps.txt";
+  fin.open(fileName.c_str());
+  if (!fin.good()) throw "I/O error";  
+  
   while (true) {
+
     double temperatureCelsius; 
     cout << "Please enter a temperature in degrees Celsius, with any number of decimal places: ";
-    cin >> temperatureCelsius;
+    fin >> temperatureCelsius;
 
     if (temperatureCelsius == -999) {
       break; 
