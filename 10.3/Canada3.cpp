@@ -34,7 +34,7 @@ int main()
     fin.ignore(1000, 10); //Skip to next line in file input
 
     if (temperatureCelsius == -999) {
-      cout << endl << "Surrogate value -999 detected. Exiting program." << endl; 
+      cout << endl << "Sentinel value -999 detected. Exiting program." << endl; 
       break; 
     }
 
