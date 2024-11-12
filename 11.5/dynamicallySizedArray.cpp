@@ -17,4 +17,9 @@ int main()
   cout << " to kilograms." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
+
+  ifstream fin; 
+  fin.open("scores.txt");
+  in (!fin.good()) throw "I/O error"; 
+
 } //main() 
