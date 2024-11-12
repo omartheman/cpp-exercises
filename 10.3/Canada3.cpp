@@ -31,6 +31,8 @@ int main()
     cout << "Please enter a temperature in degrees Celsius, with any number of decimal places: ";
     fin >> temperatureCelsius;
 
+    fin.ignore(1000, 10); //Skip to next line in file input
+
     if (temperatureCelsius == -999) {
       break; 
     }
@@ -47,5 +49,8 @@ int main()
     cout << temperatureFahrenheit; 
     cout << " degrees Fahrenheit."; 
     cout << endl; 
+
+    if (!fin.good()) break; //Close program if end-of-file reached
   }
+
 }
