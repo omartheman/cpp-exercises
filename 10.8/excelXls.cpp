@@ -1,4 +1,4 @@
-// Lab 7.3
+// Lab 10.8
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -7,11 +7,23 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <fstream>
 
 using namespace std; 
 
 int main()
 {
+  // identifying output statements
+  cout << "Programmer: Omar Shishani" << endl;
+  cout << "Description: This program calculates the" << endl;
+  cout << " amount of change owed to a customer after a transaction." << endl;
+  cout << " The program also calculates the denominations of" << endl;
+  cout << " bills required to provide the correct amount of change." << endl;
+  cout << " The program only outputs the required denominations." << endl;
+  cout << " The user can input zero or a negative number to exit." << endl;
+  cout << " The input is from the user," << endl;
+  cout << " and output is to the console screen." << endl << endl;
+
   int cashPayment;
   int amountTendered;
 
@@ -93,15 +105,9 @@ int main()
     cout << endl; //Last break before next loop 
   }
 
-  // identifying output statements
-  cout << endl; //Extra line
-  cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program calculates the" << endl;
-  cout << " amount of change owed to a customer after a transaction." << endl;
-  cout << " The program also calculates the denominations of" << endl;
-  cout << " bills required to provide the correct amount of change." << endl;
-  cout << " The program only outputs the required denominations." << endl;
-  cout << " The user can input zero or a negative number to exit." << endl;
-  cout << " The input is from the user," << endl;
-  cout << " and output is to the console screen." << endl;
+  ofstream fout; // requires fstream
+  fout.open("data.xls");
+  if (!fout.good()) throw "I/O error";
+  fout << "name" << '\t' << "age" << endl; // header row
+  fout << "omar" << '\t' << "30" << endl; // data row
 }
