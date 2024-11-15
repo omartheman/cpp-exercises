@@ -1,0 +1,1 @@
+- Need to fix loop so that setprecision doesn't set the precision of following inputs after first loop 
