@@ -1,4 +1,4 @@
-// Lab 5.1
+// Lab 10.5
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -8,29 +8,34 @@
 #include <string>
 #include <cmath>
 #include <iomanip>
+#include <fstream>
 
 using namespace std; 
 
 int main()
 {
+  // identifying output statements
+  cout << "Programmer: Omar Shishani" << endl;
+  cout << "Description: This program calculates the monthly" << endl;
+  cout << "payment on a loan. The inputs come from the programmer and a file," << endl;
+  cout << "and output is to the console screen." << endl << endl;;
+
+  //Read from input file
+  ifstream fin;   
+  string fileName = "./mortgage.txt";
+  fin.open(fileName.c_str());
+  if (!fin.good()) throw "I/O error";
+
   int p;
   double r; //monthly decmial interest rate 
   double annualInterestRate; 
   int n; //Number of monthly payments
   int yearsForPayback;
 
-  cout << "Please enter mortgage amount in dollars: ";
-  cin >> p; //Mortgage amount
+  fin >> p; //Mortgage amount
 
   double annualInterestRatePercentage; 
-  cout << endl; 
-  cout << "Please enter the interest rate." << endl; 
-  cout << "You can use as many decimal places as you like:" << endl;
-  cin >> annualInterestRatePercentage; 
-
-  cout << endl; //Extra line 
-  cout << "Rate parsed from input: " << annualInterestRatePercentage; 
-  cout << endl;
+  fin >> annualInterestRatePercentage; 
 
   annualInterestRate = annualInterestRatePercentage / 100;
   yearsForPayback = 30;
@@ -47,8 +52,8 @@ int main()
   double annualInterestRateDisplay; 
   annualInterestRateDisplay = annualInterestRate * 100; 
 
-  cout << "Amount borrowed (user input) = $" << p << endl; 
-  cout << "Annual interest rate (user input) = "; 
+  cout << "Amount borrowed (file input) = $" << p << endl; 
+  cout << "Annual interest rate (file input) = "; 
   
   cout.setf(ios::fixed|ios::showpoint);
   cout << setprecision(3); 
@@ -63,11 +68,4 @@ int main()
   cout.setf(ios::fixed|ios::showpoint);
   cout << setprecision(2); 
   cout << monthlyPayment << endl;
-
-  cout << endl; // Extra blank line
-  // identifying output statements
-  cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program calculates the monthly" << endl;
-  cout << "payment on a loan. The inputs come from the programmer and the user," << endl;
-  cout << "and output is to the console screen." << endl;
 }
