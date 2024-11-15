@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std; 
 
@@ -19,10 +20,14 @@ int main()
   cout << " The input is from a file," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
-  cout << "Please enter a line of text: "; 
+  //Read from input file
+  ifstream fin;   
+  string fileName = "./secret.txt";
+  fin.open(fileName.c_str());
+  if (!fin.good()) throw "I/O error";
 
   string userEntry; 
-  getline(cin, userEntry); 
+  getline(fin, userEntry); 
 
   for (int i = 0; i < userEntry.length(); i++){
     userEntry[i]++; 
