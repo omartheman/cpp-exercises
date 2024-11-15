@@ -27,6 +27,13 @@ int main()
   int cashPayment;
   int amountTendered;
 
+  ofstream fout; // requires fstream
+  fout.open("data.xls");
+  if (!fout.good()) throw "I/O error";
+
+
+  fout << "denomination" << '\t' << "count" << endl; // header row
+
   while (true){
     cout << "Please enter the required cash payment amount [enter 0 to exit]: ";
     cin >> cashPayment;
@@ -79,35 +86,44 @@ int main()
 
     if (hundredThousands > 0)
       cout << " this many hundred thousand dollar bills: " << hundredThousands << endl;
+      fout << "100000" << '\t' << hundredThousands << endl; // data row
     if (tenThousands > 0)
       cout << " this many ten thousand dollar bills: " << tenThousands << endl;
+      fout << "10000" << '\t' << tenThousands << endl; // data row
     if (fiveThousands > 0)
       cout << " this many five thousand dollar bills: " << fiveThousands << endl;
+      fout << "5000" << '\t' << fiveThousands << endl; // data row
     if (oneThousands > 0)
       cout << " this many one thousand dollar bills: " << oneThousands << endl;
+      fout << "1000" << '\t' << oneThousands << endl; // data row
     if (fiveHundreds > 0)
       cout << " this many five hundred dollar bills: " << fiveHundreds << endl;
+      fout << "500" << '\t' << fiveHundreds << endl; // data row
     if (oneHundreds > 0)
       cout << " this many one hundred dollar bills: " << oneHundreds << endl;
+      fout << "100" << '\t' << oneHundreds << endl; // data row
     if (fifties > 0)
       cout << " this many fifty dollar bills: " << fifties << endl;
+      fout << "50" << '\t' << fifties << endl; // data row
     if (twenties > 0)
       cout << " this many twenty dollar bills: " << twenties << endl;
+      fout << "20" << '\t' << twenties << endl; // data row
     if (tens > 0)
       cout << " this many ten dollar bills: " << tens << endl;
+      fout << "10" << '\t' << tens << endl; // data row
     if (fives > 0)
       cout << " this many five dollar bills: " << fives << endl;
+      fout << "5" << '\t' << fives << endl; // data row
     if (twos > 0)
       cout << " this many two dollar bills: " << twos << endl;
+      fout << "2" << '\t' << twos << endl; // data row
     if (ones > 0)
       cout << " this many one dollar bills: " << ones << endl;
+      fout << "1" << '\t' << ones << endl; // data row
     ;
     cout << endl; //Last break before next loop 
   }
 
-  ofstream fout; // requires fstream
-  fout.open("data.xls");
-  if (!fout.good()) throw "I/O error";
-  fout << "name" << '\t' << "age" << endl; // header row
-  fout << "omar" << '\t' << "30" << endl; // data row
+  fout.close();
+
 }
