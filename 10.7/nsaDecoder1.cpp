@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std; 
 
@@ -16,15 +17,19 @@ int main()
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program takes an encoded string" << endl;
   cout << " and decodes it, showing the result to the user." << endl; 
-  cout << " The input is from the console keyboard," << endl;
+  cout << " The input is from a file," << endl;
   cout << " and output is to the console screen." << endl << endl;
+
+  //Read from input file
+  ifstream fin;   
+  string fileName = "./secret.txt";
+  fin.open(fileName.c_str());
+  if (!fin.good()) throw "I/O error";
 
   // decode string s by subtracting 1 from the ASCII code of each char
   string s; // = "Ifmmp-!Xpsme"; // a scrambled string
 
-  cout << "Please enter encoded string: ";
-  cin >> s; 
-  cout << endl; 
+  fin >> s; 
 
   for (int i = 0; i < s.length(); i++) // for each char in the string...
   s[i]--; // reduce its ASCII code by 1
