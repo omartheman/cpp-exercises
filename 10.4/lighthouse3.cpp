@@ -8,15 +8,29 @@
 #include <string>
 #include <cmath>
 #include <iomanip>
+#include <fstream>
 
 using namespace std; 
 
 int main()
 {
+  // identifying output statements
+  cout << endl; 
+  cout << "Programmer: Omar Shishani" << endl;
+  cout << "Description: This program calculates the" << endl;
+  cout << " distance a lighthouse can be seen based on its height." << endl;
+  cout << " The input is from a file," << endl;
+  cout << " and output is to the console screen." << endl;
+
   double lighthouseHeight; 
 
-  cout << "Please enter the height of the lighthouse (in feet), with any number of decimals: ";
-  cin >> lighthouseHeight; 
+  //Read from input file
+  ifstream fin;   
+  string fileName = "./lighthouse.txt";
+  fin.open(fileName.c_str());
+  if (!fin.good()) throw "I/O error";  
+
+  fin >> lighthouseHeight;
 
   double sightDistance; 
 
@@ -30,12 +44,4 @@ int main()
   cout.setf(ios::fixed);
   cout << setprecision(0); 
   cout << sightDistance << " miles away." << endl; 
-
-  // identifying output statements
-  cout << endl; 
-  cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program calculates the" << endl;
-  cout << " distance a lighthouse can be seen based on its height." << endl;
-  cout << " The input is from the user," << endl;
-  cout << " and output is to the console screen." << endl;
 }
