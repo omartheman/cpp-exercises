@@ -29,12 +29,32 @@ int main()
   string userEntry; 
   getline(fin, userEntry); 
 
+  const int SIZE = 5; 
+  int offset[SIZE] = {-5, 8, 12, 6, 1};
+
+  int counter = 0; 
+
+  while (true) {
+    //cycle through array 
+    int index = counter % SIZE; 
+    cout << offset[index] << endl; 
+
+    //continue cycling? 
+    char keepGoing; 
+    cout << "Keep going? Y/N: "; 
+    cin >> keepGoing; 
+    cin.ignore(1000, 10); 
+    if (keepGoing == 'n' || keepGoing == 'N') break; 
+
+    //Count how many loop cycles 
+    counter++; 
+  }
+
   for (int i = 0; i < userEntry.length(); i++){
     userEntry[i]++; 
     // cout << endl << "New letter: " << userEntry[i] << endl; //For testing
   }
 
   cout << "New secret string: " << userEntry << endl; 
-
 
 } //main() 
