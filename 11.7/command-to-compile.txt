@@ -1,0 +1,23 @@
+//Find locations of headers:
+find /Applications/Xcode.app -name "iostream"
+
+//This command will allow compilation: 
+
+clang++ -std=c++17 -I /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 nsaEncoder2.cpp -o nsaEncoder2
+
+How I set the environment variables: 
+
+//Open config file: 
+nano ~/.zshrc
+
+//Add these lines to file: 
+
+export CPLUS_INCLUDE_PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1
+export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+
+
+//Reload config: 
+source ~/.zshrc
+
+//Compile command should work now: 
+clang++ nsaEncoder2.cpp 
