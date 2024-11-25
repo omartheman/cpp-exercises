@@ -16,7 +16,7 @@ int main()
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program takes a string from" << endl;
-  cout << " a user entry, and encodes it." << endl; 
+  cout << " a file entry, and encodes it using a special sequence." << endl; 
   cout << " The input is from a file," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
@@ -37,16 +37,8 @@ int main()
   while (true) {
     //cycle through array 
     int index = counter % SIZE; 
-    cout << offset[index] << endl; 
 
-    //continue cycling? 
-    char keepGoing; 
-    cout << "Keep going? Y/N: "; 
-    cin >> keepGoing; 
-    cin.ignore(1000, 10); 
-    if (keepGoing == 'n' || keepGoing == 'N') break; 
-    
-    userEntry[counter]++; 
+    userEntry[counter]++; //Change letter of password to secret character
 
     counter++; //Count how many loop cycles 
 
