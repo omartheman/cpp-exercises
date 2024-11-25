@@ -45,14 +45,12 @@ int main()
     cin >> keepGoing; 
     cin.ignore(1000, 10); 
     if (keepGoing == 'n' || keepGoing == 'N') break; 
+    
+    userEntry[counter]++; 
 
-    //Count how many loop cycles 
-    counter++; 
-  }
+    counter++; //Count how many loop cycles 
 
-  for (int i = 0; i < userEntry.length(); i++){
-    userEntry[i]++; 
-    // cout << endl << "New letter: " << userEntry[i] << endl; //For testing
+    if (counter - 1 > userEntry.length()) break; 
   }
 
   cout << "New secret string: " << userEntry << endl; 
