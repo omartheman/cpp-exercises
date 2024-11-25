@@ -38,11 +38,16 @@ int main()
     //cycle through array 
     int index = counter % SIZE; 
 
-    userEntry[counter]++; //Change letter of password to secret character
+    // char originalChar = userEntry[counter]; // for debugging 
+    // cout << "Letter: " << originalChar << " (ASCII: " << int(originalChar) << ")" << endl;  // For debugging 
+
+    // cout << "Offset: " << offset[index] << endl; // For debugging 
+    
+    userEntry[counter] += offset[index]; //Change letter
 
     counter++; //Count how many loop cycles 
 
-    if (counter - 1 > userEntry.length()) break; 
+    if (counter > userEntry.length()) break; 
   }
 
   cout << "New secret string: " << userEntry << endl; 

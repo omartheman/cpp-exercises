@@ -16,7 +16,7 @@ int main()
   cout << endl; // Extra line 
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program takes an encoded string" << endl;
-  cout << " and decodes it, showing the result to the user." << endl; 
+  cout << " and decodes it using a special sequence, showing the result to the user." << endl; 
   cout << " The input is from a file," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
@@ -29,10 +29,30 @@ int main()
   // decode string s by subtracting 1 from the ASCII code of each char
   string s; // = "Ifmmp-!Xpsme"; // a scrambled string
 
-  fin >> s; 
+  getline(fin, s);
 
-  for (int i = 0; i < s.length(); i++) // for each char in the string...
-  s[i]--; // reduce its ASCII code by 1
+  const int SIZE = 5; 
+  int offset[SIZE] = {-5, 8, 12, 6, 1};
+
+  int counter = 0; 
+
+  while (true) {
+    //cycle through array 
+    int index = counter % SIZE; 
+
+    // char originalChar = s[counter]; // For debugging 
+    // cout << "Letter: " << originalChar << " (ASCII: " << int(originalChar) << ")" << endl; // For debugging 
+
+    // cout << "Offset: " << offset[index] << endl; // For debugging 
+
+    s[counter] -= offset[index]; //Change letter 
+
+    // cout << "New char: " << s[counter] << " (ASCII: " << int(s[counter]) << ")" << endl << endl; // For debugging 
+
+    counter++; //Count how many loop cycles 
+
+    if (counter > s.length()) break; 
+  }
 
   cout << "Decoded string: " << s << endl; 
 
