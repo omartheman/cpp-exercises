@@ -12,6 +12,15 @@
 
 using namespace std; 
 
+struct Mortgage {
+  int p;
+  double r; //monthly decmial interest rate 
+  double annualInterestRate; 
+  int n; //Number of monthly payments
+  int yearsForPayback;
+}; //Mortgage
+
+
 int main()
 {
   // identifying output statements
@@ -26,33 +35,29 @@ int main()
   fin.open(fileName.c_str());
   if (!fin.good()) throw "I/O error";
 
-  int p;
-  double r; //monthly decmial interest rate 
-  double annualInterestRate; 
-  int n; //Number of monthly payments
-  int yearsForPayback;
+  Mortgage mort;
 
-  fin >> p; //Mortgage amount
+  fin >> mort.p; //Mortgage amount
 
   double annualInterestRatePercentage; 
   fin >> annualInterestRatePercentage; 
 
-  annualInterestRate = annualInterestRatePercentage / 100;
-  yearsForPayback = 30;
+  mort.annualInterestRate = annualInterestRatePercentage / 100;
+  mort.yearsForPayback = 30;
 
-  n = yearsForPayback * 12; //Months for payback
-  r =  annualInterestRate / 12; //Monthly decimal interest rate
+  mort.n = mort.yearsForPayback * 12; //Months for payback
+  mort.r =  mort.annualInterestRate / 12; //Monthly decimal interest rate
 
   double interestRateFactor;
-  interestRateFactor = pow((1 + r), n);
+  interestRateFactor = pow((1 + mort.r), mort.n);
 
   double monthlyPayment; 
-  monthlyPayment = p * interestRateFactor * r / (interestRateFactor - 1);
+  monthlyPayment = mort.p * interestRateFactor * mort.r / (interestRateFactor - 1);
 
   double annualInterestRateDisplay; 
-  annualInterestRateDisplay = annualInterestRate * 100; 
+  annualInterestRateDisplay = mort.annualInterestRate * 100; 
 
-  cout << "Amount borrowed (file input) = $" << p << endl; 
+  cout << "Amount borrowed (file input) = $" << mort.p << endl; 
   cout << "Annual interest rate (file input) = "; 
   
   cout.setf(ios::fixed|ios::showpoint);
@@ -61,7 +66,7 @@ int main()
 
   cout << "Payback period (programmer input) = ";
   cout << setprecision(0); 
-  cout << yearsForPayback << " Years" << endl; 
+  cout << mort.yearsForPayback << " Years" << endl; 
 
   cout << "Monthly payment (calculated output) = $";
   //Format output 
