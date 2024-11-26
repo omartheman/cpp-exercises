@@ -26,21 +26,19 @@ int main()
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program calculates the monthly" << endl;
-  cout << "payment on a loan. The inputs come from the programmer and a file," << endl;
+  cout << "payment on a loan. The inputs come from the programmer and user," << endl;
   cout << "and output is to the console screen." << endl << endl;;
-
-  //Read from input file
-  ifstream fin;   
-  string fileName = "./mortgage.txt";
-  fin.open(fileName.c_str());
-  if (!fin.good()) throw "I/O error";
 
   Mortgage mort;
 
-  fin >> mort.p; //Mortgage amount
+  cout << "Enter the mortgage amount: "; 
+  cin >> mort.p; //Mortgage amount
+  cout << endl; 
 
+  cout << "Enter the interest rate percentage: "; 
   double annualInterestRatePercentage; 
-  fin >> annualInterestRatePercentage; 
+  cin >> annualInterestRatePercentage; 
+  cout << endl; 
 
   mort.annualInterestRate = annualInterestRatePercentage / 100;
   mort.yearsForPayback = 30;
