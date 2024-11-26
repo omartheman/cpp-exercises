@@ -9,6 +9,18 @@
 
 using namespace std; 
 
+// Create an object specification with these eight data fields: name, address, city, state, zip, gender, student id, and gpa
+
+struct Student {
+  string name; 
+  string address; 
+  string city; 
+  int zip;
+  string gender; 
+  int studentId; 
+  double gpa; 
+}; // Student 
+
 int main()
 {
   // identifying output statements
