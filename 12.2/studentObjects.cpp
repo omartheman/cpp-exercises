@@ -53,18 +53,18 @@ void outputStudentInfo(Student& s){
   cout << "Address: " << s.address << endl;
   cout << "City: " << s.city << endl; 
   cout << "ZIP code: " << s.zip << endl; 
-  cout << "Name: " << s.name << endl; 
   cout << "Gender: " << s.gender << endl; 
   cout << "Student ID: " << s.studentId << endl; 
   cout << "GPA: " << s.gpa << endl; 
+  cout << endl; 
 }
 
 int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
+  cout << "Description: This program collects student data in" << endl;
+  cout << " objects, and then outputs the data." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
@@ -73,7 +73,11 @@ int main()
   Student student3;   
 
   collectStudentInfo(student1); 
+  collectStudentInfo(student2); 
+  collectStudentInfo(student3); 
 
   outputStudentInfo(student1); 
+  outputStudentInfo(student2); 
+  outputStudentInfo(student3); 
 
 } //main() 
