@@ -31,23 +31,26 @@ void collectStudentInfo(Student& s){
   cout << endl; 
 
   cout << "Please input city: "; 
-  cin >> s.city; 
+  getline(cin, s.city); 
   cout << endl; 
 
   cout << "Please input ZIP code: "; 
-  cin >> s.zip; 
+  cin >> s.zip; //Input integer
+  cin.ignore(1000, 10); 
   cout << endl; 
 
   cout << "Please input gender: "; 
-  cin >> s.gender; 
+  getline(cin, s.gender); 
   cout << endl; 
 
   cout << "Please input student ID: "; 
-  cin >> s.studentId; 
+  cin >> s.studentId; //int
+  cin.ignore(1000, 10); 
   cout << endl; 
 
   cout << "Please input GPA: "; 
-  cin >> s.gpa; 
+  cin >> s.gpa; //double 
+  cin.ignore(1000, 10); 
   cout << endl;
 }
 
