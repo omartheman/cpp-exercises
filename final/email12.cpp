@@ -10,6 +10,20 @@
 
 using namespace std; 
 
+bool findEmailLine(string targetString) {
+
+  bool lineIsEmail = false; 
+
+  for (int i = 0; i < targetString.length(); i++){
+    if (targetString[i] == '@') {
+      lineIsEmail = true;
+      cout << "@ found." << endl; 
+    }; 
+  };
+   
+  return lineIsEmail; 
+}
+
 int main()
 {
   // identifying output statements
@@ -62,13 +76,6 @@ int main()
 
   cout << "Line: " << emailAddress << endl; 
 
-  bool lineIsEmail = false; 
-
-  for (int i = 0; i < emailAddress.length(); i++){
-    if (emailAddress[i] == '@') {
-      lineIsEmail = true;
-      cout << "@ found." << endl; 
-    }; 
-  };
+  findEmailLine(emailAddress); 
 
 } //main() 
