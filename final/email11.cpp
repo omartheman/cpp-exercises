@@ -1,4 +1,4 @@
-// Lab 9.3
+// Lab: Final
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -13,11 +13,12 @@ int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
+  cout << "Description: This program ..." << endl;
+  cout << " ..." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
+  // Get input file name 
   string fileName; 
   string defaultFileName = "fileContainingEmails.txt"; 
 
@@ -30,7 +31,6 @@ int main()
   }
 
   // Get output file name 
-
   string defaultOutputFileName = "copyPasteMyEmails.txt"; 
   string outputFileName; 
 
