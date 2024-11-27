@@ -17,4 +17,14 @@ int main()
   cout << " to kilograms." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
+
+  string fileName; 
+
+  string defaultFileName = "fileContainingEmails.txt"; 
+
+  cout << "Enter output file name [default: " << defaultFileName << "]: "; 
+  cin >> fileName; 
+
+  cout << endl << "File name: " << fileName << endl; 
+  
 } //main() 
