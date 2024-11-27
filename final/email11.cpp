@@ -22,17 +22,30 @@ int main()
   string defaultFileName = "fileContainingEmails.txt"; 
 
   cout << "Enter input file name [default: " << defaultFileName << "]: "; 
-  cin >> fileName; 
+  getline(cin, fileName); 
   cout << endl; 
+
+  if (fileName.length() == 0){
+    fileName = defaultFileName; 
+  }
+
+  // Get output file name 
 
   string defaultOutputFileName = "copyPasteMyEmails.txt"; 
   string outputFileName; 
 
   cout << "Enter output file name [default:" << defaultOutputFileName << "]:"; 
-  cin >> outputFileName; 
+  getline(cin, outputFileName); 
   cout << endl; 
 
+  cout << "Length: "; 
+  cout << outputFileName.length(); 
+
+  if (outputFileName.length() == 0){
+    outputFileName = defaultOutputFileName; 
+  }
+
   cout << endl << "Input file name: " << fileName << endl; 
-  cout << "Output file name: " << fileName << endl; 
+  cout << "Output file name: " << outputFileName << endl; 
   
 } //main() 
