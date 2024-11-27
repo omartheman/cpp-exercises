@@ -19,12 +19,20 @@ int main()
   cout << " and output is to the console screen." << endl << endl;
 
   string fileName; 
-
   string defaultFileName = "fileContainingEmails.txt"; 
 
-  cout << "Enter output file name [default: " << defaultFileName << "]: "; 
+  cout << "Enter input file name [default: " << defaultFileName << "]: "; 
   cin >> fileName; 
+  cout << endl; 
 
-  cout << endl << "File name: " << fileName << endl; 
+  string defaultOutputFileName = "copyPasteMyEmails.txt"; 
+  string outputFileName; 
+
+  cout << "Enter output file name [default:" << defaultOutputFileName << "]:"; 
+  cin >> outputFileName; 
+  cout << endl; 
+
+  cout << endl << "Input file name: " << fileName << endl; 
+  cout << "Output file name: " << fileName << endl; 
   
 } //main() 
