@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream> 
 
 using namespace std; 
 
@@ -48,4 +49,17 @@ int main()
   cout << endl << "Input file name: " << fileName << endl; 
   cout << "Output file name: " << outputFileName << endl; 
   
+  cout << endl; 
+
+  //Read file names 
+  
+  ifstream fin;   
+  fin.open(fileName.c_str());
+  if (!fin.good()) throw "I/O error"; 
+
+  string emailAddress; 
+  fin >> emailAddress; 
+
+  cout << "Email: " << emailAddress; 
+
 } //main() 
