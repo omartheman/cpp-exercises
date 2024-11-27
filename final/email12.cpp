@@ -71,10 +71,13 @@ int main()
 
   cout << "Lines with '@': " << endl; 
 
-  //Loop through all lines in file
   string fileLine; 
-  while (getline(fin, fileLine)){
+  //Loop through all lines in file
+  while (fin.good()){
+    getline(fin, fileLine); 
     findEmailLine(fileLine);
   }
+
+  fin.close(); 
 
 } //main() 
