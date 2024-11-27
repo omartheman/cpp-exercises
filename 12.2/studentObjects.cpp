@@ -21,6 +21,10 @@ struct Student {
   double gpa; 
 }; // Student 
 
+void outputStud(Student& s){
+  
+}
+
 int main()
 {
   // identifying output statements
@@ -29,4 +33,14 @@ int main()
   cout << " to kilograms." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
+
+  Student student1 = {
+    "Omar"
+  }; 
+  Student student2; 
+  Student student3;   
+
+
+  cout << student1.name << endl;
+
 } //main() 
