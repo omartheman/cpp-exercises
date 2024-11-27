@@ -29,9 +29,10 @@ int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program ..." << endl;
-  cout << " ..." << endl; 
-  cout << " The input is from the console keyboard," << endl;
+  cout << "Description: This program reads an input file and" << endl;
+  cout << " checks which lines contain '@'. The lines with '@'" << endl; 
+  cout << " are printed to the console." << endl; 
+  cout << " The input is from a file," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
   // Get input file name 
