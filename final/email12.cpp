@@ -60,6 +60,15 @@ int main()
   string emailAddress; 
   fin >> emailAddress; 
 
-  cout << "Email: " << emailAddress; 
+  cout << "Line: " << emailAddress << endl; 
+
+  bool lineIsEmail = false; 
+
+  for (int i = 0; i < emailAddress.length(); i++){
+    if (emailAddress[i] == '@') {
+      lineIsEmail = true;
+      cout << "@ found." << endl; 
+    }; 
+  };
 
 } //main() 
