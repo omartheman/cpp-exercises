@@ -24,34 +24,39 @@ struct Student {
 void collectStudentInfo(Student& s){
   cout << "Please input name: "; 
   getline(cin, s.name); 
-  cout << endl; 
 
   cout << "Please input address: "; 
   getline(cin, s.address); 
-  cout << endl; 
 
   cout << "Please input city: "; 
   getline(cin, s.city); 
-  cout << endl; 
 
   cout << "Please input ZIP code: "; 
   cin >> s.zip; //Input integer
   cin.ignore(1000, 10); 
-  cout << endl; 
 
   cout << "Please input gender: "; 
   getline(cin, s.gender); 
-  cout << endl; 
 
   cout << "Please input student ID: "; 
   cin >> s.studentId; //int
   cin.ignore(1000, 10); 
-  cout << endl; 
 
   cout << "Please input GPA: "; 
   cin >> s.gpa; //double 
   cin.ignore(1000, 10); 
   cout << endl;
+}
+
+void outputStudentInfo(Student& s){
+  cout << "Name: " << s.name << endl; 
+  cout << "Address: " << s.address << endl;
+  cout << "City: " << s.city << endl; 
+  cout << "ZIP code: " << s.zip << endl; 
+  cout << "Name: " << s.name << endl; 
+  cout << "Gender: " << s.gender << endl; 
+  cout << "Student ID: " << s.studentId << endl; 
+  cout << "GPA: " << s.gpa << endl; 
 }
 
 int main()
@@ -69,7 +74,6 @@ int main()
 
   collectStudentInfo(student1); 
 
-
-  cout << "Student name: " << student1.name << endl;
+  outputStudentInfo(student1); 
 
 } //main() 
