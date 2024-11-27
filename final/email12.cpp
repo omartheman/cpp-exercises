@@ -62,20 +62,18 @@ int main()
 
   cout << endl << "Input file name: " << fileName << endl; 
   cout << "Output file name: " << outputFileName << endl; 
-  
   cout << endl; 
 
   //Read file names 
-  
   ifstream fin;   
   fin.open(fileName.c_str());
   if (!fin.good()) throw "I/O error"; 
 
-  string emailAddress; 
-  fin >> emailAddress; 
-
-  cout << "Line: " << emailAddress << endl; 
-
-  findEmailLine(emailAddress); 
+  //Loop through all lines in file
+  string fileLine; 
+  while (getline(fin, fileLine)){
+    cout << "Line: " << fileLine << endl; 
+    findEmailLine(fileLine);
+  }
 
 } //main() 
