@@ -22,7 +22,8 @@ struct Student {
 }; // Student 
 
 void outputStud(Student& s){
-  
+  cout << "Please input name: "; 
+  cin >> s.name; 
 }
 
 int main()
@@ -34,13 +35,13 @@ int main()
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
-  Student student1 = {
-    "Omar"
-  }; 
+  Student student1; 
   Student student2; 
   Student student3;   
 
+  outputStud(student1); 
 
-  cout << student1.name << endl;
+
+  cout << "Student name: " << student1.name << endl;
 
 } //main() 
