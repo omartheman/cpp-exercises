@@ -18,6 +18,7 @@ bool findEmailLine(string targetString) {
     if (targetString[i] == '@') {
       lineIsEmail = true;
       cout << targetString << endl; 
+      break;
     }; 
   };
    
@@ -73,7 +74,7 @@ int main()
 
   string fileLine; 
   //Loop through all lines in file
-  while (fin.good()){
+  while (fin.good()){ //check if end of file is reached 
     getline(fin, fileLine); 
     findEmailLine(fileLine);
   }
