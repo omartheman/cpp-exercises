@@ -76,11 +76,9 @@ int main()
 
     printCardValue(computerCard.value); 
 
-    int computerCardSuit = (rand() % 4);
-
     cout << " of ";
     
-    printCardSuit(computerCardSuit); 
+    printCardSuit(computerCard.suit); 
 
     cout << endl << endl; 
 
@@ -93,11 +91,9 @@ int main()
 
     printCardValue(humanCard.value); 
 
-    int humanCardSuit = (rand() % 4);
-
     cout << " of ";
     
-    printCardSuit(humanCardSuit); 
+    printCardSuit(humanCard.suit); 
 
     cout << endl << endl; 
 
