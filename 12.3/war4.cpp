@@ -31,6 +31,21 @@ void printCardValue(int cardValue){
   }
 }
 
+void printCardSuit(int cardSuit){
+  if (cardSuit == 0){
+    cout << "spades.";
+  }
+  if (cardSuit == 1){
+    cout << "diamonds.";
+  }
+  if (cardSuit == 2){
+    cout << "hearts.";
+  }
+  if (cardSuit == 3){
+    cout << "clubs.";
+  }
+}
+
 int main()
 {
   // identifying output statements
@@ -62,18 +77,8 @@ int main()
     int computerCardSuit = (rand() % 4);
 
     cout << " of ";
-    if (computerCardSuit == 0){
-      cout << "spades.";
-    }
-    if (computerCardSuit == 1){
-      cout << "diamonds.";
-    }
-    if (computerCardSuit == 2){
-      cout << "hearts.";
-    }
-    if (computerCardSuit == 3){
-      cout << "clubs.";
-    }
+    
+    printCardSuit(computerCardSuit); 
 
     cout << endl << endl; 
 
@@ -91,18 +96,8 @@ int main()
     int humanCardSuit = (rand() % 4);
 
     cout << " of ";
-    if (humanCardSuit == 0){
-      cout << "spades.";
-    }
-    if (humanCardSuit == 1){
-      cout << "diamonds.";
-    }
-    if (humanCardSuit == 2){
-      cout << "hearts.";
-    }
-    if (humanCardSuit == 3){
-      cout << "clubs.";
-    }
+    
+    printCardSuit(humanCardSuit); 
 
     cout << endl << endl; 
 
