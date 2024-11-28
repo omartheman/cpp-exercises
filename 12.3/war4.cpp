@@ -72,25 +72,20 @@ int main()
 
     cout << endl << endl; 
 
-    PlayingCard humanCard {
-      2 + (rand() % 12), //number
+    PlayingCard humanCard = {
+      1 + (rand() % 13), //number
       rand() % 4, //suit 
     };
-
-    int humanCard = 2 + (rand() % 12);
 
     cout << "The human's card is the "; 
 
     if (humanCard.value == 11) {
       cout << "Jack";
-    }
-    if (humanCard.value == 12) {
+    } else if (humanCard.value == 12) {
       cout << "Queen";
-    }
-    if (humanCard.value == 13) {
+    } else if (humanCard.value == 13) {
       cout << "King";
-    }
-    if ((humanCard.value > 0) && (humanCard.value < 11)) {
+    } else {
       cout << humanCard.value; 
     }
 
@@ -112,17 +107,17 @@ int main()
 
     cout << endl << endl; 
 
-    if (humanCard > computerCard) {
+    if (humanCard.value > computerCard) {
       cout << "Human wins!" << endl; 
       humanScore++;
     }
 
-    if (computerCard > humanCard) {
+    if (computerCard > humanCard.value) {
       cout << "Computer wins!" << endl; 
       computerScore++; 
     }
 
-    if (computerCard == humanCard) {
+    if (computerCard == humanCard.value) {
       cout << "It's a tie!" << endl << endl; 
     }
 
@@ -142,5 +137,7 @@ int main()
     }
 
     if (replay == 'N' || replay == 'n') {break;} //Exit loop if not a tie
+
+    cout << "============" << endl; //Add divider for next game
   }
 }
