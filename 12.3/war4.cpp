@@ -46,6 +46,12 @@ void printCardSuit(int cardSuit){
   }
 }
 
+void printCard(PlayingCard& card){
+  printCardValue(card.value); 
+  cout << " of ";
+  printCardSuit(card.suit);
+}
+
 int main()
 {
   // identifying output statements
@@ -74,11 +80,7 @@ int main()
 
     cout << "The computer's card is the "; 
 
-    printCardValue(computerCard.value); 
-
-    cout << " of ";
-    
-    printCardSuit(computerCard.suit); 
+    printCard(computerCard);
 
     cout << endl << endl; 
 
@@ -89,11 +91,7 @@ int main()
 
     cout << "The human's card is the "; 
 
-    printCardValue(humanCard.value); 
-
-    cout << " of ";
-    
-    printCardSuit(humanCard.suit); 
+    printCard(humanCard);
 
     cout << endl << endl; 
 
