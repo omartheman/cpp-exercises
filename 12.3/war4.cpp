@@ -72,8 +72,6 @@ int main()
       rand() % 4, //suit 
     };
 
-    cout << "COMP CARD VALUE: " << computerCard.value << endl; 
-
     cout << "The computer's card is the "; 
 
     printCardValue(computerCard.value); 
@@ -90,8 +88,6 @@ int main()
       1 + (rand() % 13), //value
       rand() % 4, //suit 
     };
-
-    cout << "HUMAN CARD VALUE: " << humanCard.value << endl; 
 
     cout << "The human's card is the "; 
 
