@@ -79,7 +79,9 @@ int main()
 
     cout << "The human's card is the "; 
 
-    if (humanCard.value == 11) {
+    if (humanCard.value == 1) {
+      cout << "Ace";
+    } else if (humanCard.value == 11) {
       cout << "Jack";
     } else if (humanCard.value == 12) {
       cout << "Queen";
