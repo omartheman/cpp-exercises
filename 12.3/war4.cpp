@@ -17,6 +17,20 @@ struct PlayingCard {
   int suit; 
 };
 
+void printCardValue(int cardValue){
+  if (cardValue == 1) {
+    cout << "Ace";
+  } else if (cardValue == 11) {
+    cout << "Jack";
+  } else if (cardValue == 12) {
+    cout << "Queen";
+  } else if (cardValue == 13) {
+    cout << "King";
+  } else {
+    cout << cardValue; 
+  }
+}
+
 int main()
 {
   // identifying output statements
@@ -43,18 +57,7 @@ int main()
 
     cout << "The computer's card is the "; 
 
-    if (computerCard == 11) {
-      cout << "Jack";
-    }
-    if (computerCard == 12) {
-      cout << "Queen";
-    }
-    if (computerCard == 13) {
-      cout << "King";
-    }
-    if ((computerCard > 0) && (computerCard < 11)) {
-      cout << computerCard; 
-    }
+    printCardValue(computerCard); 
 
     int computerCardSuit = (rand() % 4);
 
@@ -83,17 +86,7 @@ int main()
 
     cout << "The human's card is the "; 
 
-    if (humanCard.value == 1) {
-      cout << "Ace";
-    } else if (humanCard.value == 11) {
-      cout << "Jack";
-    } else if (humanCard.value == 12) {
-      cout << "Queen";
-    } else if (humanCard.value == 13) {
-      cout << "King";
-    } else {
-      cout << humanCard.value; 
-    }
+    printCardValue(humanCard.value); 
 
     int humanCardSuit = (rand() % 4);
 
