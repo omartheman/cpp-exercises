@@ -37,7 +37,9 @@ int main()
   int computerScore = 0; 
 
   while (true){
-    int computerCard = 2 + (rand() % 13);
+
+    int computerCard = 1 + (rand() % 13);
+    cout << "COMP CARD VALUE: " << computerCard << endl; 
 
     cout << "The computer's card is the "; 
 
@@ -73,9 +75,11 @@ int main()
     cout << endl << endl; 
 
     PlayingCard humanCard = {
-      1 + (rand() % 13), //number
+      1 + (rand() % 13), //value
       rand() % 4, //suit 
     };
+
+    cout << "HUMAN CARD VALUE: " << humanCard.value << endl; 
 
     cout << "The human's card is the "; 
 
