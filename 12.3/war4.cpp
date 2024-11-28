@@ -67,12 +67,16 @@ int main()
 
   while (true){
 
-    int computerCard = 1 + (rand() % 13);
-    cout << "COMP CARD VALUE: " << computerCard << endl; 
+    PlayingCard computerCard = {
+      1 + (rand() % 13), //value
+      rand() % 4, //suit 
+    };
+
+    cout << "COMP CARD VALUE: " << computerCard.value << endl; 
 
     cout << "The computer's card is the "; 
 
-    printCardValue(computerCard); 
+    printCardValue(computerCard.value); 
 
     int computerCardSuit = (rand() % 4);
 
@@ -101,17 +105,17 @@ int main()
 
     cout << endl << endl; 
 
-    if (humanCard.value > computerCard) {
+    if (humanCard.value > computerCard.value) {
       cout << "Human wins!" << endl; 
       humanScore++;
     }
 
-    if (computerCard > humanCard.value) {
+    if (computerCard.value > humanCard.value) {
       cout << "Computer wins!" << endl; 
       computerScore++; 
     }
 
-    if (computerCard == humanCard.value) {
+    if (computerCard.value == humanCard.value) {
       cout << "It's a tie!" << endl << endl; 
     }
 
