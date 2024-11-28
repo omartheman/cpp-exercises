@@ -10,11 +10,26 @@
 #include <cstdlib>
 #include <cctype>
 
-
 using namespace std; 
+
+struct PlayingCard {
+  int suit; 
+  int value; 
+};
 
 int main()
 {
+  // identifying output statements
+  cout << "Programmer: Omar Shishani" << endl;
+  cout << "Description: This program is a simple version of the" << endl;
+  cout << " card game 'war'. The program assigns a card to the" << endl; 
+  cout << " computer and the human, then chooses a winner" << endl;
+  cout << " based on which card has a higher value." << endl;
+  cout << " The user can choose whether the game will repeat." << endl;
+  cout << " The program keeps track of the user's score vs the computer's." << endl;
+  cout << " The input is from the console," << endl;
+  cout << " and the output is to the console screen." << endl;
+  cout << endl; // Extra line 
 
   srand(time(0));
 
@@ -124,17 +139,4 @@ int main()
 
     if (replay == 'N' || replay == 'n') {break;} //Exit loop if not a tie
   }
-
-  
-  // identifying output statements
-  cout << endl; // Extra line 
-  cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program is a simple version of the" << endl;
-  cout << " card game 'war'. The program assigns a card to the" << endl; 
-  cout << " computer and the human, then chooses a winner" << endl;
-  cout << " based on which card has a higher value." << endl;
-  cout << " The user can choose whether the game will repeat." << endl;
-  cout << " The program keeps track of the user's score vs the computer's." << endl;
-  cout << " The input is from the console," << endl;
-  cout << " and the output is to the console screen." << endl;
 }
