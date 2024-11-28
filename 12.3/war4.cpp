@@ -52,6 +52,27 @@ void printCard(PlayingCard& card){
   printCardSuit(card.suit);
 }
 
+bool getYesOrNo(){
+  char replay; 
+
+  while (true) {
+    cout << "Would you like to replay? [Y/N]: ";
+    cin >> replay;
+
+    if (replay == 'N'){ break; };
+    if (replay == 'n'){ break; }
+    if (replay == 'Y'){ break; }
+    if (replay == 'y'){ break; }
+  }
+
+  if (replay == 'Y' || replay == 'y'){
+    return true; 
+  }
+  else {
+    return false; 
+  }
+}
+
 int main()
 {
   // identifying output statements
@@ -112,19 +133,9 @@ int main()
     cout << "Human score: " << humanScore << endl; 
     cout << "Computer score: " << computerScore << endl;
 
-    char replay; 
+    bool replay = getYesOrNo();
 
-    while (true) {
-      cout << "Would you like to replay? [Y/N]: ";
-      cin >> replay;
-
-      if (replay == 'N'){ break; };
-      if (replay == 'n'){ break; }
-      if (replay == 'Y'){ break; }
-      if (replay == 'y'){ break; }
-    }
-
-    if (replay == 'N' || replay == 'n') {break;} //Exit loop if not a tie
+    if (!replay) {break;} //Exit loop if not a tie
 
     cout << "============" << endl; //Add divider for next game
   }
