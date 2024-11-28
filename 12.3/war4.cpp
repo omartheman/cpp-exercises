@@ -13,8 +13,8 @@
 using namespace std; 
 
 struct PlayingCard {
-  int suit; 
   int value; 
+  int suit; 
 };
 
 int main()
@@ -70,24 +70,28 @@ int main()
       cout << "clubs.";
     }
 
-
     cout << endl << endl; 
+
+    PlayingCard humanCard {
+      2 + (rand() % 12), //number
+      rand() % 4, //suit 
+    };
 
     int humanCard = 2 + (rand() % 12);
 
     cout << "The human's card is the "; 
 
-    if (humanCard == 11) {
+    if (humanCard.value == 11) {
       cout << "Jack";
     }
-    if (humanCard == 12) {
+    if (humanCard.value == 12) {
       cout << "Queen";
     }
-    if (humanCard == 13) {
+    if (humanCard.value == 13) {
       cout << "King";
     }
-    if ((humanCard > 0) && (humanCard < 11)) {
-      cout << humanCard; 
+    if ((humanCard.value > 0) && (humanCard.value < 11)) {
+      cout << humanCard.value; 
     }
 
     int humanCardSuit = (rand() % 4);
