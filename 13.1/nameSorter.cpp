@@ -50,12 +50,39 @@ int main()
     else break;
   }
 
+  for (int i = 0; i < MAX_NAMES; i++){
+
+    cout << "Printing names 1..." << endl; 
+    cout << "Name: " << name[i] << endl;
+
+    for (int j = i + 1; j < MAX_NAMES; j++){
+
+      string iTemp = name[i];
+      transform(iTemp.begin(), iTemp.end(), iTemp.begin(), ::tolower);
+      
+      string jTemp = name[j];
+      transform(jTemp.begin(), jTemp.end(), jTemp.begin(), ::tolower);
+
+      if (iTemp > jTemp) {
+        //swap code 
+        string temp = name[i];
+        name[i] = name[j];
+        name[j] = temp; 
+      }
+    }
+  }
+
+  cout << "Printing names 2..." << endl; 
+  
+  for (int i = 1; i < nNames; i++){
+    cout << "Name: " << name[i] << endl;
+  }
+
+  sort(name, name + nNames);
+
   cout << "Printing names..." << endl; 
   
   for (int i = 1; i < nNames; i++){
-
-
-
     cout << "Name: " << name[i] << endl;
   }
 
