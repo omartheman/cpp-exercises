@@ -10,6 +10,10 @@
 
 using namespace std; 
 
+const int MAX_EMAILS = 1000; 
+int nEmails = 0; 
+string email[MAX_EMAILS]; 
+
 bool lineContainsAt(string targetString){
 
   bool lineHasAt = false; 
@@ -40,10 +44,6 @@ bool checkEmailForDot(string email){
 
   return emailHasDot; 
 }
-
-const int MAX_EMAILS = 1000; 
-int nEmails = 0; 
-string email[MAX_EMAILS]; 
 
 void checkForValidEmail(string targetString) {
 
