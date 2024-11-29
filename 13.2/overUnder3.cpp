@@ -39,7 +39,15 @@ int main()
   while (true) {
     cin >> userGuess; 
 
-    if (nGuesses < MAX_GUESSES) guess[nGuesses++] = userGuess; 
+    bool guessExists = false; 
+    // Check if guess is already in list
+    for (int i = 0; i < nGuesses; i++){
+      if (userGuess == guess[i]) guessExists = true;
+    }
+
+    if (!guessExists) { //If guess has not already been used
+      if (nGuesses < MAX_GUESSES) guess[nGuesses++] = userGuess; //Add guess to array list
+    }
 
     if (randomNumber == userGuess){
       cout << "That's correct! It's " << userGuess << endl; 
