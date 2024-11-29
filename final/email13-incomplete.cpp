@@ -51,6 +51,10 @@ bool checkEmailForDot(string email){
 void checkForValidEmail(string targetString) {
 
 
+  //For each "@" symbol, search backwards to a space, and forwards to a space 
+
+
+
   //Check if email address is valid 
 
   for (int j = 0; j < targetString.length(); j++){
@@ -91,7 +95,6 @@ void checkForValidEmail(string targetString) {
 
       }
 
-      break; //Break after line with '@' is found and evaluated 
     }
   }
 
