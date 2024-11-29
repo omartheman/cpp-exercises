@@ -28,9 +28,33 @@ bool findEmailLine(string targetString) {
           cout << "Checking back 2." << endl;
           cout << "j: " << j << endl;   
           for (int k = j; k > 0; k--){
-            cout << "Checking back 3." << endl;  
-            cout << "Current letter: " << targetString[k] << endl; 
+            cout << "Checking back 3." << endl;
+            cout << "Letter: " << targetString[k] << endl;
+            //Check for a space. Then check the word. 
+            if (targetString[k] == ' '){
+              cout << "Space found." << endl; 
+
+              //Now that space has been found, check the email address for validity until the next space 
+
+              //Start by just returning the word that contains the @ between the two spaces. 
+
+              string emailOnly; 
+
+              //Loop through target string to find the next space, storing characters along the way 
+              for (int l = k + 1; l < targetString.length(); l++){
+                
+                if (targetString[l] == ' '){ //Exit loop if another space is reached 
+                  break; 
+                }
+                emailOnly += targetString[l];
+                cout << "Email: " << emailOnly << endl; 
+              }
+
+            }
+
           }
+
+          break; //Break after line with '@' is found and evaluated 
         }
       }
 
