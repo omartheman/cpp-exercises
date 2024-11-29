@@ -1,4 +1,4 @@
-// Lab: 12 - Term Project Preparation
+// Lab: 13 - Term Project Preparation
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -23,7 +23,7 @@ bool lineContainsAt(string targetString){
   return lineHasAt; 
 }
 
-void findEmailLine(string targetString) {
+void checkForValidEmail(string targetString) {
 
 
   //Check if email address is valid 
@@ -119,7 +119,7 @@ int main()
     getline(fin, fileLine); 
 
     if (lineContainsAt(fileLine)){ //If line has an "@" symbol, look for a valid email address
-      findEmailLine(fileLine);
+      checkForValidEmail(fileLine);
     }
 
   }
