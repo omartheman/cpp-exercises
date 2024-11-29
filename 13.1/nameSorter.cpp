@@ -14,9 +14,9 @@ int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
-  cout << " The input is from the console keyboard," << endl;
+  cout << "Description: This program sorts a list of names in" << endl;
+  cout << " alphabetical order." << endl; 
+  cout << " The input is from the user and a file," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
   //Read file names 
@@ -50,13 +50,12 @@ int main()
     else break;
   }
 
+  //Sort names alphabetically 
   for (int i = 0; i < MAX_NAMES; i++){
-
-    cout << "Printing names 1..." << endl; 
-    cout << "Name: " << name[i] << endl;
 
     for (int j = i + 1; j < MAX_NAMES; j++){
 
+      //Convert names to lowercase to compare case-insensitively 
       string iTemp = name[i];
       transform(iTemp.begin(), iTemp.end(), iTemp.begin(), ::tolower);
       
@@ -72,10 +71,10 @@ int main()
     }
   }
 
-  cout << "Printing names 2..." << endl; 
+  cout << "Printing alphabetized names..." << endl; 
   
   for (int i = 0; i < nNames; i++){
-    cout << "Name: " << name[i] << endl;
+    cout << name[i] << endl;
   }
 
 } //main() 
