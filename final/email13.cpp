@@ -41,9 +41,12 @@ bool checkEmailForDot(string email){
   return emailHasDot; 
 }
 
+const int MAX_EMAILS = 1000; 
+int nEmails = 0; 
+string email[MAX_EMAILS]; 
+
 void checkForValidEmail(string targetString) {
 
-  
 
   //Check if email address is valid 
 
@@ -80,7 +83,7 @@ void checkForValidEmail(string targetString) {
           bool emailHasDot = checkEmailForDot(emailOnly);
 
           if (emailHasDot){ //Add email to array if has dot 
-
+            if (nEmails < MAX_EMAILS) email[nEmails++] = emailOnly; 
           }
 
           break; // Break after space is found at beginning of email 
@@ -152,5 +155,9 @@ int main()
   }
 
   fin.close(); 
+
+  //Read emails from array 
+  cout << "Reading emails from list: " << endl; 
+  for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
 
 } //main() 
