@@ -47,18 +47,20 @@ int main()
 
     if (!guessExists) { //If guess has not already been used
       if (nGuesses < MAX_GUESSES) guess[nGuesses++] = userGuess; //Add guess to array list
-    }
 
-    if (randomNumber == userGuess){
+    }
+    
+    if (guessExists) {
+      cout << "You've already guessed " << userGuess << ". Guess again: ";
+    }
+    else if (randomNumber == userGuess){
       cout << "That's correct! It's " << userGuess << endl; 
       break;
     }
-
-    if (userGuess < randomNumber){
+    else if (userGuess < randomNumber){
       cout << "Too low. Guess again: ";
     }
-
-    if (userGuess > randomNumber){
+    else if (userGuess > randomNumber){
       cout << "Too high. Guess again: ";
     }
   }
