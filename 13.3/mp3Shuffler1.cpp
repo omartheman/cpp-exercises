@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ctime>
 
 using namespace std; 
 
@@ -37,6 +38,23 @@ int main()
 
   for (int i = 0; i < nSongs; i++){
     cout << i + 1 << ": " << song[i] << endl; 
+  }
+
+  srand(time(0));
+
+  while (true){
+    cout << "Play a song? [y/n]:"; 
+    string playSong; 
+    cin >> playSong; 
+
+    if (playSong == "Y" || playSong == "y"){
+      //Choose a random song 
+      int randSong = rand() % nSongs; 
+      cout << song[randSong] << endl; 
+    }
+    else if (playSong == "N" || playSong == "n"){
+      break; 
+    }
   }
 
 } //main() 
