@@ -19,20 +19,14 @@ bool findEmailLine(string targetString) {
 
       //Check if email address is valid 
 
-      cout << "Checking back." << endl; 
       for (int j = 0; j < targetString.length(); j++){
         if (targetString[j] == '@'){
           //Loop backwards to look for invalid email address characters 
           //Go minus one character each time starting at j 
 
-          cout << "Checking back 2." << endl;
-          cout << "j: " << j << endl;   
           for (int k = j; k > 0; k--){
-            cout << "Checking back 3." << endl;
-            cout << "Letter: " << targetString[k] << endl;
             //Check for a space. Then check the word. 
             if (targetString[k] == ' '){
-              cout << "Space found." << endl; 
 
               //Now that space has been found, check the email address for validity until the next space 
 
@@ -46,10 +40,14 @@ bool findEmailLine(string targetString) {
                 if (targetString[l] == ' '){ //Exit loop if another space is reached 
                   break; 
                 }
-                emailOnly += targetString[l];
-                cout << "Email: " << emailOnly << endl; 
+                emailOnly += targetString[l]; //Add characters to build email string
+
+                // cout << emailOnly << endl; 
               }
 
+              cout << emailOnly << endl; 
+
+              break; // Break after space is found at beginning of email 
             }
 
           }
@@ -59,7 +57,7 @@ bool findEmailLine(string targetString) {
       }
 
       lineIsEmail = true;
-      cout << targetString << endl; 
+
       break;
     }; 
   };
@@ -112,8 +110,6 @@ int main()
   ifstream fin;   
   fin.open(fileName.c_str());
   if (!fin.good()) throw "I/O error"; 
-
-  cout << "Lines with '@': " << endl; 
 
   string fileLine; 
   //Loop through all lines in file
