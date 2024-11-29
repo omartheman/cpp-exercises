@@ -10,59 +10,61 @@
 
 using namespace std; 
 
-bool findEmailLine(string targetString) {
+bool lineContainsAt(string targetString){
 
-  bool lineIsEmail = false; 
+  bool lineHasAt = false; 
 
   for (int i = 0; i < targetString.length(); i++){
     if (targetString[i] == '@') {
-
-      //Check if email address is valid 
-
-      for (int j = 0; j < targetString.length(); j++){
-        if (targetString[j] == '@'){
-          //Loop backwards to look for invalid email address characters 
-          //Go minus one character each time starting at j 
-
-          for (int k = j; k > 0; k--){
-            //Check for a space. Then check the word. 
-            if (targetString[k] == ' '){
-
-              //Now that space has been found, check the email address for validity until the next space 
-
-              //Start by just returning the word that contains the @ between the two spaces. 
-
-              string emailOnly; 
-
-              //Loop through target string to find the next space, storing characters along the way 
-              for (int l = k + 1; l < targetString.length(); l++){
-                
-                if (targetString[l] == ' '){ //Exit loop if another space is reached 
-                  break; 
-                }
-                emailOnly += targetString[l]; //Add characters to build email string
-
-                // cout << emailOnly << endl; 
-              }
-
-              cout << emailOnly << endl; 
-
-              break; // Break after space is found at beginning of email 
-            }
-
-          }
-
-          break; //Break after line with '@' is found and evaluated 
-        }
-      }
-
-      lineIsEmail = true;
-
-      break;
+      lineHasAt = true;
     }; 
   };
    
-  return lineIsEmail; 
+  return lineHasAt; 
+}
+
+void findEmailLine(string targetString) {
+
+
+  //Check if email address is valid 
+
+  for (int j = 0; j < targetString.length(); j++){
+    if (targetString[j] == '@'){
+      //Loop backwards to look for invalid email address characters 
+      //Go minus one character each time starting at j 
+
+      for (int k = j; k > 0; k--){
+        //Check for a space. Then check the word. 
+        if (targetString[k] == ' '){
+
+          //Now that space has been found, check the email address for validity until the next space 
+
+          //Start by just returning the word that contains the @ between the two spaces. 
+
+          string emailOnly; 
+
+          //Loop through target string to find the next space, storing characters along the way 
+          for (int l = k + 1; l < targetString.length(); l++){
+            
+            if (targetString[l] == ' '){ //Exit loop if another space is reached 
+              break; 
+            }
+            emailOnly += targetString[l]; //Add characters to build email string
+
+            // cout << emailOnly << endl; 
+          }
+
+          cout << emailOnly << endl; 
+
+          break; // Break after space is found at beginning of email 
+        }
+
+      }
+
+      break; //Break after line with '@' is found and evaluated 
+    }
+  }
+
 }
 
 int main()
@@ -115,7 +117,11 @@ int main()
   //Loop through all lines in file
   while (fin.good()){ //check if end of file is reached 
     getline(fin, fileLine); 
-    findEmailLine(fileLine);
+
+    if (lineContainsAt(fileLine)){ //If line has an "@" symbol, look for a valid email address
+      findEmailLine(fileLine);
+    }
+
   }
 
   fin.close(); 
