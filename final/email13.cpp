@@ -23,8 +23,27 @@ bool lineContainsAt(string targetString){
   return lineHasAt; 
 }
 
+bool checkEmailForDot(string email){
+
+  bool emailHasDot = false; 
+
+  //Check each character until "@" is reached, then check for dot 
+  for (int i = 0; i < email.length(); i++){
+    if (email[i] == '@'){ //Check all characters after "@" for dot 
+      for (int j = i; j < email.length(); j++){
+        if (email[j] == '.') {
+          emailHasDot = true; 
+        }
+      }
+    }
+  }
+
+  return emailHasDot; 
+}
+
 void checkForValidEmail(string targetString) {
 
+  
 
   //Check if email address is valid 
 
@@ -55,6 +74,14 @@ void checkForValidEmail(string targetString) {
           }
 
           cout << emailOnly << endl; 
+
+          //Check if emailOnly has a dot after the "@" 
+
+          bool emailHasDot = checkEmailForDot(emailOnly);
+
+          if (emailHasDot){ //Add email to array if has dot 
+
+          }
 
           break; // Break after space is found at beginning of email 
         }
