@@ -4,6 +4,9 @@
 // Compiler(s) used: Apple clang version 14.0.0
 //
 
+//TO DO: 
+// - Check line for multiple emails. Currently only gets the first email in the line. 
+
 #include <iostream>
 #include <string>
 #include <fstream> 
