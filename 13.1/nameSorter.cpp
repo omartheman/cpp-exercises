@@ -74,15 +74,7 @@ int main()
 
   cout << "Printing names 2..." << endl; 
   
-  for (int i = 1; i < nNames; i++){
-    cout << "Name: " << name[i] << endl;
-  }
-
-  sort(name, name + nNames);
-
-  cout << "Printing names..." << endl; 
-  
-  for (int i = 1; i < nNames; i++){
+  for (int i = 0; i < nNames; i++){
     cout << "Name: " << name[i] << endl;
   }
 
