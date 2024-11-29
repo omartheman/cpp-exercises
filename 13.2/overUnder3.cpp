@@ -20,6 +20,8 @@ int main()
   cout << " 1 and 100. The program asks the user to guess what the number is." << endl; 
   cout << " The program allows the user to retry if they guess wrong, and" << endl; 
   cout << " the program tells the user if they guess too low or too high." << endl; 
+  cout << " The program tells the user to retry if they have already used" << endl; 
+  cout << " a guess." << endl; 
   cout << " The input is from the console keyboard," << endl;
   cout << " and output is to the console screen." << endl;
 
