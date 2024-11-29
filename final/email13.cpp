@@ -16,6 +16,24 @@ bool findEmailLine(string targetString) {
 
   for (int i = 0; i < targetString.length(); i++){
     if (targetString[i] == '@') {
+
+      //Check if email address is valid 
+
+      cout << "Checking back." << endl; 
+      for (int j = 0; j < targetString.length(); j++){
+        if (targetString[j] == '@'){
+          //Loop backwards to look for invalid email address characters 
+          //Go minus one character each time starting at j 
+
+          cout << "Checking back 2." << endl;
+          cout << "j: " << j << endl;   
+          for (int k = j; k > 0; k--){
+            cout << "Checking back 3." << endl;  
+            cout << "Current letter: " << targetString[k] << endl; 
+          }
+        }
+      }
+
       lineIsEmail = true;
       cout << targetString << endl; 
       break;
