@@ -75,8 +75,6 @@ void checkForValidEmail(string targetString) {
             // cout << emailOnly << endl; 
           }
 
-          cout << emailOnly << endl; 
-
           //Check if emailOnly has a dot after the "@" 
 
           bool emailHasDot = checkEmailForDot(emailOnly);
