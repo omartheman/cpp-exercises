@@ -47,7 +47,6 @@ int main()
 
     if (!guessExists) { //If guess has not already been used
       if (nGuesses < MAX_GUESSES) guess[nGuesses++] = userGuess; //Add guess to array list
-
     }
     
     if (guessExists) {
