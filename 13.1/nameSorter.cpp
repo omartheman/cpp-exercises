@@ -23,9 +23,13 @@ int main()
   ifstream fin;   
 
   //Have user input file name 
-  cout << "Please enter file name for a file containing names to sort: "; 
+  cout << "Please enter file name for a file containing names to sort [default: myFriends.txt]: "; 
   string fileName; 
-  cin >> fileName; 
+  getline(cin, fileName); 
+
+  if (fileName == ""){
+    fileName = "myFriends.txt";
+  };
 
   //Open file 
   fin.open(fileName.c_str());
@@ -35,17 +39,24 @@ int main()
   int nNames = 0;
   string name[MAX_NAMES]; 
 
-  string aName; // Value to add 
-  //Set aName's value
-  fin >> aName; 
-  if (nNames < MAX_NAMES) {
-    name[nNames++] = aName; 
-  };
+  while (fin.good()){
+    string aName; // Value to add 
+    //Set aName's value
+    fin >> aName; 
+
+    if (nNames < MAX_NAMES) {
+      name[nNames++] = aName; 
+    }
+    else break;
+  }
 
   cout << "Printing names..." << endl; 
   
   for (int i = 1; i < nNames; i++){
-    cout << "Name: " << name[i];
+
+
+
+    cout << "Name: " << name[i] << endl;
   }
 
 } //main() 
