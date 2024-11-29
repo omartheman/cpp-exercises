@@ -52,12 +52,11 @@ void checkForValidEmail(string targetString) {
 
   for (int j = 0; j < targetString.length(); j++){
     if (targetString[j] == '@'){
-      //Loop backwards to look for invalid email address characters 
-      //Go minus one character each time starting at j 
 
-      for (int k = j; k > 0; k--){
+      //Loop backwards to look for invalid email address characters 
+      for (int k = j; k >= 0; k--){
         //Check for a space. Then check the word. 
-        if (targetString[k] == ' '){
+        if (targetString[k] == ' ' || k == 0){ //Check for space, or if end of line has been reached 
 
           //Now that space has been found, check the email address for validity until the next space 
 
@@ -68,7 +67,7 @@ void checkForValidEmail(string targetString) {
           //Loop through target string to find the next space, storing characters along the way 
           for (int l = k + 1; l < targetString.length(); l++){
             
-            if (targetString[l] == ' '){ //Exit loop if another space is reached 
+            if (targetString[l] == ' ' || l == targetString.length()){ //Exit loop if another space is reached 
               break; 
             }
             emailOnly += targetString[l]; //Add characters to build email string
