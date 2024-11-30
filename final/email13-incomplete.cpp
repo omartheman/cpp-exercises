@@ -48,6 +48,47 @@ bool checkEmailForDot(string email){
   return emailHasDot; 
 }
 
+bool isValidEmailChar(char emailChar){
+
+  bool charIsValid = false; 
+
+  if ( //Check ASCII for valid email characters 
+    emailChar >= 48 && emailChar <= 57 //digits 0-9
+    ||
+    emailChar >= 97 && emailChar <= 122  // a-z
+    || 
+    emailChar >= 65 && emailChar <= 90 // A-Z
+    || emailChar == 33 //!
+    || emailChar == 35 //#
+    || emailChar == 36 //$
+    || emailChar == 37 //%
+    || emailChar == 38 // &
+    || emailChar == 39 //'
+    || emailChar == 42 //*
+    || emailChar == 43 //+
+    || emailChar == 47 // / 
+    || emailChar == 61 // =
+    || emailChar == 63 // ? 
+    || emailChar == 94 // ^
+    || emailChar == 95 // _ 
+    || emailChar == 96 // `
+    || emailChar == 123 // {
+    || emailChar == 124 // | 
+    || emailChar == 125 // } 
+    || emailChar == 126 // ~ 
+  ) {
+    charIsValid = true; 
+
+    cout << "Char is valid." << endl; 
+  }
+  else {
+    cout << "Char is not valid." << endl; 
+  }
+
+  return charIsValid; 
+
+}
+
 void checkForValidEmail(string targetString) {
 
 
@@ -61,20 +102,28 @@ void checkForValidEmail(string targetString) {
     if (targetString[j] == '@'){
 
       //Loop backwards to look for invalid email address characters 
+
       for (int k = j; k >= 0; k--){
+
         //Check for a space. Then check the word. 
-        if (targetString[k] == ' ' || k == 0){ //Check for space, or if end of line has been reached 
+
+        bool kCharIsValid = isValidEmailChar(targetString[k]);
+
+        if (!kCharIsValid || k == 0){ //Check for space, or if end of line has been reached 
 
           //Now that space has been found, check the email address for validity until the next space 
 
-          //Start by just returning the word that contains the @ between the two spaces. 
-
           string emailOnly; 
+
+          cout << "emailOnly: " << endl; 
 
           //Loop through target string to find the next space, storing characters along the way 
           for (int l = k + 1; l < targetString.length(); l++){
             
-            if (targetString[l] == ' ' || l == targetString.length()){ //Exit loop if another space is reached 
+            bool lCharIsValid = isValidEmailChar(targetString[l]);
+            // targetString[l] == ' ' || targetString[l] == ','
+
+            if (!lCharIsValid || l == targetString.length()){ //Exit loop if another space is reached 
               break; 
             }
             emailOnly += targetString[l]; //Add characters to build email string
