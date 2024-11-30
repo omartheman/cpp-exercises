@@ -50,40 +50,70 @@ bool checkEmailForDot(string email){
 
 bool isValidEmailChar(char emailChar){
 
-  bool charIsValid = false; 
+  bool charIsValid = true; 
 
-  if ( //Check ASCII for valid email characters 
-    emailChar >= 48 && emailChar <= 57 //digits 0-9
-    ||
-    emailChar >= 97 && emailChar <= 122  // a-z
-    || 
-    emailChar >= 65 && emailChar <= 90 // A-Z
-    || emailChar == 33 //!
-    || emailChar == 35 //#
-    || emailChar == 36 //$
-    || emailChar == 37 //%
-    || emailChar == 38 // &
-    || emailChar == 39 //'
-    || emailChar == 42 //*
-    || emailChar == 43 //+
-    || emailChar == 47 // / 
-    || emailChar == 61 // =
-    || emailChar == 63 // ? 
-    || emailChar == 94 // ^
-    || emailChar == 95 // _ 
-    || emailChar == 96 // `
-    || emailChar == 123 // {
-    || emailChar == 124 // | 
-    || emailChar == 125 // } 
-    || emailChar == 126 // ~ 
+  if ( //Check ASCII for invalid email characters 
+
+    // Check for digits 0-9
+    emailChar != 48 && emailChar != 49 && emailChar != 50 && emailChar != 51 && emailChar != 52 && 
+    emailChar != 53 && emailChar != 54 && emailChar != 55 && emailChar != 56 && emailChar != 57 &&
+
+    // Check for lowercase letters a-z
+    emailChar != 97 && emailChar != 98 && emailChar != 99 && emailChar != 100 && emailChar != 101 && 
+    emailChar != 102 && emailChar != 103 && emailChar != 104 && emailChar != 105 && emailChar != 106 && 
+    emailChar != 107 && emailChar != 108 && emailChar != 109 && emailChar != 110 && emailChar != 111 && 
+    emailChar != 112 && emailChar != 113 && emailChar != 114 && emailChar != 115 && emailChar != 116 && 
+    emailChar != 117 && emailChar != 118 && emailChar != 119 && emailChar != 120 && emailChar != 121 && 
+    emailChar != 122 &&
+
+    // Check for uppercase letters A-Z
+    emailChar != 65 && emailChar != 66 && emailChar != 67 && emailChar != 68 && emailChar != 69 && 
+    emailChar != 70 && emailChar != 71 && emailChar != 72 && emailChar != 73 && emailChar != 74 && 
+    emailChar != 75 && emailChar != 76 && emailChar != 77 && emailChar != 78 && emailChar != 79 && 
+    emailChar != 80 && emailChar != 81 && emailChar != 82 && emailChar != 83 && emailChar != 84 && 
+    emailChar != 85 && emailChar != 86 && emailChar != 87 && emailChar != 88 && emailChar != 89 && 
+    emailChar != 90 
+    
+    && emailChar != 33 //!
+    && emailChar != 35 //#
+    && emailChar != 36 //$
+    && emailChar != 37 //%
+    && emailChar != 38 // &
+    && emailChar != 39 //'
+    && emailChar != 42 //*
+    && emailChar != 43 //+
+    && emailChar != 47 // / 
+    && emailChar != 61 // =
+    && emailChar != 63 // ? 
+    && emailChar != 94 // ^
+    && emailChar != 95 // _ 
+    && emailChar != 96 // `
+    && emailChar != 123 // {
+    && emailChar != 124 // | 
+    && emailChar != 125 // } 
+    && emailChar != 126 // ~ 
+
+    && emailChar != '@'
+    && emailChar != '.'
   ) {
-    charIsValid = true; 
 
-    cout << "Char is valid." << endl; 
+
+    charIsValid = false; 
+
+    cout << "Char: " << emailChar << " is invalid." << endl; 
   }
-  else {
-    cout << "Char is not valid." << endl; 
-  }
+
+  //debugger: Test if conditional works in function like it does inline 
+
+  // emailChar >= 97 && emailChar <= 122  // a-z
+  // if (emailChar == ' ') {
+  //   charIsValid = false; 
+  // }
+  // else {
+  //   charIsValid = true; 
+  // }
+
+
 
   return charIsValid; 
 
