@@ -105,15 +105,15 @@ void checkForValidEmail(string targetString) {
   for (int j = 0; j < targetString.length(); j++){
     if (targetString[j] == '@'){ //Search for "@"
 
-      for (int k = j; k >= 0; k--){ //Loop backwards from "@" to look for invalid email address characters 
+      for (int s = j; s >= 0; s--){ //Loop backwards from "@" to look for first invalid email address character 
 
-        bool kCharIsValid = isValidEmailChar(targetString[k]);
+        bool kCharIsValid = isValidEmailChar(targetString[s]);
 
-        if (!kCharIsValid || k == 0){ //If char is invalid, or end of line is reached
+        if (!kCharIsValid || s == 0){ //If char is invalid, or end of line is reached
 
           string emailOnly; 
           
-          for (int l = k + 1; l < targetString.length(); l++){ //Loop through target string to find the next invalid character, storing characters in email variable along the way 
+          for (int l = s + 1; l < targetString.length(); l++){ //Loop through target string to find the next invalid character, storing characters in email variable along the way 
             
             bool lCharIsValid = isValidEmailChar(targetString[l]);
 
