@@ -96,21 +96,8 @@ bool isValidEmailChar(char emailChar){
     && emailChar != '@'
     && emailChar != '.'
   ) {
-
     charIsValid = false; 
   }
-
-  //debugger: Test if conditional works in function like it does inline 
-
-  // emailChar >= 97 && emailChar <= 122  // a-z
-  // if (emailChar == ' ') {
-  //   charIsValid = false; 
-  // }
-  // else {
-  //   charIsValid = true; 
-  // }
-
-
 
   return charIsValid; 
 
