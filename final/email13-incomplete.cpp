@@ -97,10 +97,7 @@ bool isValidEmailChar(char emailChar){
     && emailChar != '.'
   ) {
 
-
     charIsValid = false; 
-
-    cout << "Char: " << emailChar << " is invalid." << endl; 
   }
 
   //debugger: Test if conditional works in function like it does inline 
@@ -144,8 +141,6 @@ void checkForValidEmail(string targetString) {
           //Now that space has been found, check the email address for validity until the next space 
 
           string emailOnly; 
-
-          cout << "emailOnly: " << endl; 
 
           //Loop through target string to find the next space, storing characters along the way 
           for (int l = k + 1; l < targetString.length(); l++){
