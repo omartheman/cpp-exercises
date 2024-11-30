@@ -113,14 +113,14 @@ void checkForValidEmail(string targetString) {
 
           string emailOnly; 
           
-          for (int l = s + 1; l < targetString.length(); l++){ //Loop through target string to find the next invalid character, storing characters in email variable along the way 
+          for (int e = s + 1; e < targetString.length(); e++){ //Loop through target string to find the next invalid character (end character--"e" for "end"), storing characters in email variable along the way 
             
-            bool lCharIsValid = isValidEmailChar(targetString[l]);
+            bool lCharIsValid = isValidEmailChar(targetString[e]);
 
-            if (!lCharIsValid || l == targetString.length()){ //Exit loop if another space is reached 
+            if (!lCharIsValid || e == targetString.length()){ //Exit loop if another space is reached 
               break; 
             }
-            emailOnly += targetString[l]; //Add characters to build email string
+            emailOnly += targetString[e]; //Add characters to build email string
 
           }
 
