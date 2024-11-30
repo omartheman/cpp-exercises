@@ -105,44 +105,29 @@ bool isValidEmailChar(char emailChar){
 
 void checkForValidEmail(string targetString) {
 
-  //For each "@" symbol, search backwards to a space, and forwards to a space 
-
-  //Check if email address is valid 
-
   for (int j = 0; j < targetString.length(); j++){
-    if (targetString[j] == '@'){
+    if (targetString[j] == '@'){ //Search for "@"
 
-      //Loop backwards to look for invalid email address characters 
-
-      for (int k = j; k >= 0; k--){
-
-        //Check for a space. Then check the word. 
+      for (int k = j; k >= 0; k--){ //Loop backwards from "@" to look for invalid email address characters 
 
         bool kCharIsValid = isValidEmailChar(targetString[k]);
 
-        if (!kCharIsValid || k == 0){ //Check for space, or if end of line has been reached 
-
-          //Now that space has been found, check the email address for validity until the next space 
+        if (!kCharIsValid || k == 0){ //If char is invalid, or end of line is reached
 
           string emailOnly; 
-
-          //Loop through target string to find the next space, storing characters along the way 
-          for (int l = k + 1; l < targetString.length(); l++){
+          
+          for (int l = k + 1; l < targetString.length(); l++){ //Loop through target string to find the next invalid character, storing characters in email variable along the way 
             
             bool lCharIsValid = isValidEmailChar(targetString[l]);
-            // targetString[l] == ' ' || targetString[l] == ','
 
             if (!lCharIsValid || l == targetString.length()){ //Exit loop if another space is reached 
               break; 
             }
             emailOnly += targetString[l]; //Add characters to build email string
 
-            // cout << emailOnly << endl; 
           }
 
-          //Check if emailOnly has a dot after the "@" 
-
-          bool emailHasDot = checkEmailForDot(emailOnly);
+          bool emailHasDot = checkEmailForDot(emailOnly); //Check if emailOnly has a dot after the "@" 
 
           if (emailHasDot){ //Add email to array if has dot 
             if (nEmails < MAX_EMAILS) email[nEmails++] = emailOnly; 
