@@ -105,10 +105,7 @@ bool isValidEmailChar(char emailChar){
 
 void checkForValidEmail(string targetString) {
 
-
   //For each "@" symbol, search backwards to a space, and forwards to a space 
-
-
 
   //Check if email address is valid 
 
