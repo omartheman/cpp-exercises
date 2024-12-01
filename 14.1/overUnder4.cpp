@@ -40,8 +40,6 @@ int main()
 
   Guess* start = 0; 
 
-  Guess* g = new Guess; 
-
 
   cout << "Guess a number between 1 and 100: ";
 
@@ -50,15 +48,27 @@ int main()
   while (true) {
     cin >> userGuess; 
 
-    g->guessNumber = userGuess; 
-    g->next = start; 
-    start = g; 
-
     bool guessExists = false; 
+    
     // Check if guess is already in list
     for (int i = 0; i < nGuesses; i++){
       if (userGuess == guess[i]) guessExists = true;
     }
+
+    //Check if guess is in linked list 
+    Guess* p; 
+    for (p = start; p; p = p->next){
+      cout << "LL Guess number: " << p->guessNumber << endl; 
+      if (p->guessNumber == userGuess) { //Guess is already in linked list
+        cout << "Linked list says you already guessed this." << endl;
+        break;
+      }
+    }
+    
+    Guess* g = new Guess; 
+    g->guessNumber = userGuess; 
+    g->next = start; 
+    start = g; 
 
     if (!guessExists) { //If guess has not already been used
       if (nGuesses < MAX_GUESSES) guess[nGuesses++] = userGuess; //Add guess to array list
