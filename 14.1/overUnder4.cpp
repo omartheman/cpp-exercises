@@ -33,6 +33,15 @@ int main()
   int nGuesses = 0; 
   int guess[MAX_GUESSES];
 
+  struct Guess {
+    int guessNumber; 
+    Guess* next; // the 'next-link' 
+  }; // Guess 
+
+  Guess* start = 0; 
+
+  Guess* g = new Guess; 
+
 
   cout << "Guess a number between 1 and 100: ";
 
@@ -40,6 +49,10 @@ int main()
 
   while (true) {
     cin >> userGuess; 
+
+    g->guessNumber = userGuess; 
+    g->next = start; 
+    start = g; 
 
     bool guessExists = false; 
     // Check if guess is already in list
