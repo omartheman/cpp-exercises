@@ -43,15 +43,21 @@ int main()
   getline(cin, fileName); 
   cout << endl; 
 
+
   if (fileName.length() == 0){
     fileName = defaultFileName; 
   }
 
   // Get output file name 
   string defaultOutputFileName = "copyPasteMyEmails.txt"; 
+
+  if (fileName != defaultFileName){ //If user entered an input file name, set this as default output file name
+    defaultOutputFileName = fileName;
+  }
+
   string outputFileName; 
 
-  cout << "Enter output file name [default:" << defaultOutputFileName << "]:"; 
+  cout << "Enter output file name [default: " << defaultOutputFileName << "]:"; 
   getline(cin, outputFileName); 
   cout << endl; 
 
