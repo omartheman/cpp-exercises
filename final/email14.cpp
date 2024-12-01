@@ -132,7 +132,15 @@ void checkForValidEmail(string targetString) {
 
           // Check if email is already in list
           for (int i = 0; i < nEmails; i++){
-            if (emailOnly == email[i]) emailAlreadyExists = true;
+
+            //Convert emails to lowercase to compare case-insensitively 
+            string enteredEmailTemp = emailOnly;
+            transform(enteredEmailTemp.begin(), enteredEmailTemp.end(), enteredEmailTemp.begin(), ::tolower);
+            
+            string listEmailTemp = email[i];
+            transform(listEmailTemp.begin(), listEmailTemp.end(), listEmailTemp.begin(), ::tolower);
+
+            if (enteredEmailTemp == listEmailTemp) emailAlreadyExists = true;
           }
 
           //*** STORE EMAIL *** 
