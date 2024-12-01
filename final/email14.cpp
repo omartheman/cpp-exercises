@@ -126,7 +126,17 @@ void checkForValidEmail(string targetString) {
 
           bool emailHasDot = checkEmailForDot(emailOnly); //Check if emailOnly has a dot after the "@" 
 
-          if (emailHasDot){ //Add email to array if has dot 
+
+          //Loop through email array and check if current email exists already 
+          bool emailAlreadyExists = false; 
+
+          // Check if email is already in list
+          for (int i = 0; i < nEmails; i++){
+            if (emailOnly == email[i]) emailAlreadyExists = true;
+          }
+
+          //*** STORE EMAIL *** 
+          if (emailHasDot && !emailAlreadyExists){ //Add email to array if has dot, and email doesn't already exist 
             if (nEmails < MAX_EMAILS) email[nEmails++] = emailOnly; 
           }
 
