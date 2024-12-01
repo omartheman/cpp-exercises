@@ -29,10 +29,7 @@ int main()
 
   int randomNumber = 1 + (rand() % 100);
 
-  const int MAX_GUESSES = 100; 
-  int nGuesses = 0; 
-  int guess[MAX_GUESSES];
-
+  //Create linked list structure for guesses 
   struct Guess {
     int guessNumber; 
     Guess* next; // the 'next-link' 
@@ -50,28 +47,20 @@ int main()
 
     bool guessExists = false; 
     
-    // Check if guess is already in list
-    for (int i = 0; i < nGuesses; i++){
-      if (userGuess == guess[i]) guessExists = true;
-    }
-
     //Check if guess is in linked list 
     Guess* p; 
     for (p = start; p; p = p->next){
-      cout << "LL Guess number: " << p->guessNumber << endl; 
       if (p->guessNumber == userGuess) { //Guess is already in linked list
-        cout << "Linked list says you already guessed this." << endl;
+        guessExists = true;
         break;
       }
     }
     
-    Guess* g = new Guess; 
-    g->guessNumber = userGuess; 
-    g->next = start; 
-    start = g; 
-
-    if (!guessExists) { //If guess has not already been used
-      if (nGuesses < MAX_GUESSES) guess[nGuesses++] = userGuess; //Add guess to array list
+    if (!guessExists){ //If guess doesn't exist already, add to linked list
+      Guess* g = new Guess; 
+      g->guessNumber = userGuess; 
+      g->next = start; 
+      start = g; 
     }
     
     if (guessExists) {
