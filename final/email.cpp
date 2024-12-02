@@ -113,7 +113,7 @@ void checkForValidEmail(string targetString) {
 
           string emailOnly; 
           
-          for (int e = s + 1; e < targetString.length(); e++){ //Loop through target string to find the next invalid character (end character--"e" for "end"), storing characters in email variable along the way 
+          for (int e = s; e < targetString.length(); e++){ //Loop through target string to find the next invalid character (end character--"e" for "end"), storing characters in email variable along the way 
             
             bool lCharIsValid = isValidEmailChar(targetString[e]);
 
