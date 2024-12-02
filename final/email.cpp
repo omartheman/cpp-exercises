@@ -244,6 +244,8 @@ int main()
   cout << "Reading emails from list: " << endl; 
   for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
 
-  outputEmailsToFile(email, nEmails, outputFileName); 
+  if (nEmails != 0){ //If there are 0 emails, don't output to file
+    outputEmailsToFile(email, nEmails, outputFileName); 
+  }
 
 } //main() 
