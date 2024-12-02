@@ -176,6 +176,25 @@ void outputEmailsToFile(string email[], int nEmails, string outputFileName){
   fout.close(); 
 }
 
+void outputCompletionMessage(string email[], int nEmails, string outputFileName, string fileName){
+  //Read emails from array 
+
+  if (nEmails > 0){ // If there are emails found in the input file 
+    cout << nEmails << " emails were found, and printed to the output file \"" << outputFileName << "\"." << endl << endl; //Output message to user 
+
+    cout << "Reading emails from list: " << endl; 
+    for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
+    cout << endl; //Extra line after last output line 
+
+    //Include a message in the console output explaining to the user to open the output file and copy/paste its contents into the "to", "cc", or "bcc" field of any email message. But explain that it is best to use the "bcc" field so that everyone's email address does not appear in the message, to protect their privacy.
+
+    cout << "To use the output email file, open the output file and copy/paste the contents into the \"to\", \"cc\", or \"bcc\" field of any email message. (It is best to use the \"bcc\" field so that the email addresses will not appear in the message, thus protecting the privacy of all recipients.)" << endl << endl;
+  }
+  else { //If no emails are found in the input file 
+    cout << "Sorry, no emails were found in the input file \"" << fileName << "\"" << endl << endl; //Output message to user 
+  }
+}
+
 int main()
 {
   cout << endl; //Extra line after first input line in console
@@ -193,7 +212,6 @@ int main()
 
   cout << "Enter input file name [default: " << defaultFileName << "]: "; 
   getline(cin, fileName); 
-  cout << endl; 
 
   if (fileName.length() == 0){
     fileName = defaultFileName; 
@@ -210,13 +228,12 @@ int main()
 
   cout << "Enter output file name [default: " << defaultOutputFileName << "]:"; 
   getline(cin, outputFileName); 
-  cout << endl; 
 
   if (outputFileName.length() == 0){
     outputFileName = defaultOutputFileName; 
   }
 
-  cout << endl << "Input file name: " << fileName << endl << endl; 
+  cout << endl << "Input file name: " << fileName << endl; 
   cout << "Output file name: " << outputFileName << endl; 
   cout << endl << endl;
 
@@ -238,26 +255,11 @@ int main()
 
   fin.close(); 
 
-  //Read emails from array 
-
-  if (nEmails > 0){ // If there are emails found in the input file 
-    cout << nEmails << " emails were found, and printed to the output file \"" << outputFileName << "\"." << endl << endl; //Output message to user 
-
-    cout << "Reading emails from list: " << endl; 
-    for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
-    cout << endl; //Extra line after last output line 
-
-    //Include a message in the console output explaining to the user to open the output file and copy/paste its contents into the "to", "cc", or "bcc" field of any email message. But explain that it is best to use the "bcc" field so that everyone's email address does not appear in the message, to protect their privacy.
-
-    cout << "To use the output email file, open the output file and copy/paste the contents into the \"to\", \"cc\", or \"bcc\" field of any email message. (It is best to use the \"bcc\" field so that the email addresses will not appear in the message, thus protecting the privacy of all recipients.)" << endl << endl;
-  }
-  else { //If no emails are found in the input file 
-    cout << "Sorry, no emails were found in the input file \"" << fileName << "\"" << endl << endl; //Output message to user 
-  }
-
   if (nEmails != 0){ //If there are 0 emails, don't output to file
     outputEmailsToFile(email, nEmails, outputFileName); 
   }
 
+  //Output messages to user
+  outputCompletionMessage(email, nEmails, outputFileName, fileName);
 
 } //main() 
