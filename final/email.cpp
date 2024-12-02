@@ -102,19 +102,40 @@ bool isValidEmailChar(char emailChar){
 
 void checkForValidEmail(string targetString) {
 
+  cout << endl << "targetString: " << targetString << endl; //for debugging
+
   for (int j = 0; j < targetString.length(); j++){
     if (targetString[j] == '@'){ //Search for "@"
 
       for (int s = j; s >= 0; s--){ //Loop backwards from "@" to look for first invalid email address character 
+
+        cout << "Looking for invalid character: " << targetString[s] << endl; 
 
         bool kCharIsValid = isValidEmailChar(targetString[s]);
 
         if (!kCharIsValid || s == 0){ //If char is invalid, or end of line is reached
 
           string emailOnly; 
+
+          int startIndex; 
+
+          if (s == 0) { //If the beginning of the line was reached, use the first character (at the current index of 0) as the start character.
+            startIndex = s; 
+          }
+          else { // If an invalid character was found, use the last character as the start character. 
+            startIndex = s + 1; 
+          }
           
-          for (int e = s; e < targetString.length(); e++){ //Loop through target string to find the next invalid character (end character--"e" for "end"), storing characters in email variable along the way 
+          for (int e = startIndex; e < targetString.length(); e++){ //Loop through target string to find the next invalid character (end character--"e" for "end"), storing characters in email variable along the way. Use "s+1" because the character at index "s" is invalid.
+
+
             
+            cout << "Looking for end character: " << targetString[e] << endl; 
+            cout << "Looking for end character: targetString: " << targetString << endl;
+            cout << "Looking for end character: targetString[e]: " << targetString[e] << endl; 
+            cout << "Looking for end character: e: " << e << endl; 
+            cout << "s: " << s << endl; 
+
             bool lCharIsValid = isValidEmailChar(targetString[e]);
 
             if (!lCharIsValid || e == targetString.length()){ //Exit loop if another space is reached 
@@ -201,7 +222,7 @@ int main()
 {
   cout << endl; //Extra line after first input line in console
   // identifying output statements
-  cout << "---Program Details---" << endl; krist
+  cout << "---Program Details---" << endl;
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program reads an input file and" << endl;
   cout << " checks which lines contain '@'. The lines with '@'" << endl; 
@@ -238,7 +259,7 @@ int main()
   }
 
   cout << endl; 
-  cout << "---Input/output file names---" << endl;
+  cout << "---Input/Output File Names---" << endl;
   cout << "Input file name: " << fileName << endl; 
   cout << "Output file name: " << outputFileName << endl; 
   cout << endl;
