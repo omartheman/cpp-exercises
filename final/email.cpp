@@ -232,7 +232,11 @@ int main()
   if (!fout.good()) throw "I/O error."; 
 
   for (int i = 0; i < nEmails; i++) {
-    fout << email[i] << endl; 
+    fout << email[i] << ";";
+
+    if (i != nEmails - 1){ //Add space if the item is not last  
+      fout << " "; 
+    };
   }; 
 
   fout.close(); 
