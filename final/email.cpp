@@ -158,6 +158,24 @@ void checkForValidEmail(string targetString) {
 
 }
 
+void outputEmailsToFile(string email[], int nEmails, string outputFileName){
+
+  //Send emails to output file 
+  ofstream fout; 
+  fout.open(outputFileName);
+  if (!fout.good()) throw "I/O error."; 
+
+  for (int i = 0; i < nEmails; i++) {
+    fout << email[i] << ";";
+
+    if (i != nEmails - 1){ //Add space if the item is not last  
+      fout << " "; 
+    };
+  }; 
+
+  fout.close(); 
+}
+
 int main()
 {
   // identifying output statements
@@ -226,19 +244,6 @@ int main()
   cout << "Reading emails from list: " << endl; 
   for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
 
-  //Send emails to output file 
-  ofstream fout; 
-  fout.open(outputFileName);
-  if (!fout.good()) throw "I/O error."; 
-
-  for (int i = 0; i < nEmails; i++) {
-    fout << email[i] << ";";
-
-    if (i != nEmails - 1){ //Add space if the item is not last  
-      fout << " "; 
-    };
-  }; 
-
-  fout.close(); 
+  outputEmailsToFile(email, nEmails, outputFileName); 
 
 } //main() 
