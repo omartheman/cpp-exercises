@@ -240,11 +240,16 @@ int main()
 
   //Read emails from array 
 
-  cout << nEmails << " emails were found, and printed to the output file \"" << outputFileName << "\"." << endl << endl; 
+  if (nEmails > 0){ // If there are emails found in the input file 
+    cout << nEmails << " emails were found, and printed to the output file \"" << outputFileName << "\"." << endl << endl; //Output message to user 
 
-  cout << "Reading emails from list: " << endl; 
-  for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
-  cout << endl; //Extra line after last output line 
+    cout << "Reading emails from list: " << endl; 
+    for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
+    cout << endl; //Extra line after last output line 
+  }
+  else { //If no emails are found in the input file 
+    cout << "Sorry, no emails were found in the input file \"" << fileName << "\"" << endl << endl; //Output message to user 
+  }
 
   if (nEmails != 0){ //If there are 0 emails, don't output to file
     outputEmailsToFile(email, nEmails, outputFileName); 
