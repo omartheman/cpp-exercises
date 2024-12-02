@@ -180,14 +180,16 @@ void outputCompletionMessage(string email[], int nEmails, string outputFileName,
   //Read emails from array 
 
   if (nEmails > 0){ // If there are emails found in the input file 
+    cout << "---Results---" << endl; 
     cout << nEmails << " emails were found, and printed to the output file \"" << outputFileName << "\"." << endl << endl; //Output message to user 
 
-    cout << "Reading emails from list: " << endl; 
+    cout << "---Emails found--- " << endl; 
     for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
     cout << endl; //Extra line after last output line 
 
     //Include a message in the console output explaining to the user to open the output file and copy/paste its contents into the "to", "cc", or "bcc" field of any email message. But explain that it is best to use the "bcc" field so that everyone's email address does not appear in the message, to protect their privacy.
 
+    cout << "---Instructions---" << endl; 
     cout << "To use the output email file, open the output file and copy/paste the contents into the \"to\", \"cc\", or \"bcc\" field of any email message. (It is best to use the \"bcc\" field so that the email addresses will not appear in the message, thus protecting the privacy of all recipients.)" << endl << endl;
   }
   else { //If no emails are found in the input file 
@@ -199,6 +201,7 @@ int main()
 {
   cout << endl; //Extra line after first input line in console
   // identifying output statements
+  cout << "---Program Details---" << endl; krist
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program reads an input file and" << endl;
   cout << " checks which lines contain '@'. The lines with '@'" << endl; 
@@ -210,6 +213,7 @@ int main()
   string fileName; 
   string defaultFileName = "fileContainingEmails.txt"; 
 
+  cout << "---User Input---" << endl; 
   cout << "Enter input file name [default: " << defaultFileName << "]: "; 
   getline(cin, fileName); 
 
@@ -233,9 +237,11 @@ int main()
     outputFileName = defaultOutputFileName; 
   }
 
-  cout << endl << "Input file name: " << fileName << endl; 
+  cout << endl; 
+  cout << "---Input/output file names---" << endl;
+  cout << "Input file name: " << fileName << endl; 
   cout << "Output file name: " << outputFileName << endl; 
-  cout << endl << endl;
+  cout << endl;
 
   //Read file names 
   ifstream fin;   
