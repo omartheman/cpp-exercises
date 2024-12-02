@@ -226,4 +226,15 @@ int main()
   cout << "Reading emails from list: " << endl; 
   for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
 
+  //Send emails to output file 
+  ofstream fout; 
+  fout.open(outputFileName);
+  if (!fout.good()) throw "I/O error."; 
+
+  for (int i = 0; i < nEmails; i++) {
+    fout << email[i] << endl; 
+  }; 
+
+  fout.close(); 
+
 } //main() 
