@@ -246,6 +246,10 @@ int main()
     cout << "Reading emails from list: " << endl; 
     for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
     cout << endl; //Extra line after last output line 
+
+    //Include a message in the console output explaining to the user to open the output file and copy/paste its contents into the "to", "cc", or "bcc" field of any email message. But explain that it is best to use the "bcc" field so that everyone's email address does not appear in the message, to protect their privacy.
+
+    cout << "To use the output email file, open the output file and copy/paste the contents into the \"to\", \"cc\", or \"bcc\" field of any email message. (It is best to use the \"bcc\" field so that the email addresses will not appear in the message, thus protecting the privacy of all recipients.)" << endl << endl;
   }
   else { //If no emails are found in the input file 
     cout << "Sorry, no emails were found in the input file \"" << fileName << "\"" << endl << endl; //Output message to user 
@@ -254,5 +258,6 @@ int main()
   if (nEmails != 0){ //If there are 0 emails, don't output to file
     outputEmailsToFile(email, nEmails, outputFileName); 
   }
+
 
 } //main() 
