@@ -178,6 +178,7 @@ void outputEmailsToFile(string email[], int nEmails, string outputFileName){
 
 int main()
 {
+  cout << endl; //Extra line after first input line in console
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
   cout << "Description: This program reads an input file and" << endl;
@@ -211,16 +212,13 @@ int main()
   getline(cin, outputFileName); 
   cout << endl; 
 
-  cout << "Length: "; 
-  cout << outputFileName.length(); 
-
   if (outputFileName.length() == 0){
     outputFileName = defaultOutputFileName; 
   }
 
-  cout << endl << "Input file name: " << fileName << endl; 
+  cout << endl << "Input file name: " << fileName << endl << endl; 
   cout << "Output file name: " << outputFileName << endl; 
-  cout << endl; 
+  cout << endl << endl;
 
   //Read file names 
   ifstream fin;   
@@ -241,8 +239,12 @@ int main()
   fin.close(); 
 
   //Read emails from array 
+
+  cout << nEmails << " emails were found, and printed to the output file \"" << outputFileName << "\"." << endl << endl; 
+
   cout << "Reading emails from list: " << endl; 
   for (int i = 0; i < nEmails; i++) cout << email[i] << endl; 
+  cout << endl; //Extra line after last output line 
 
   if (nEmails != 0){ //If there are 0 emails, don't output to file
     outputEmailsToFile(email, nEmails, outputFileName); 
