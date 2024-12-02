@@ -102,14 +102,12 @@ bool isValidEmailChar(char emailChar){
 
 void checkForValidEmail(string targetString) {
 
-  cout << endl << "targetString: " << targetString << endl; //for debugging
+  // cout << endl << "targetString: " << targetString << endl; //for debugging
 
   for (int j = 0; j < targetString.length(); j++){
     if (targetString[j] == '@'){ //Search for "@"
 
       for (int s = j; s >= 0; s--){ //Loop backwards from "@" to look for first invalid email address character 
-
-        cout << "Looking for invalid character: " << targetString[s] << endl; 
 
         bool kCharIsValid = isValidEmailChar(targetString[s]);
 
@@ -127,14 +125,6 @@ void checkForValidEmail(string targetString) {
           }
           
           for (int e = startIndex; e < targetString.length(); e++){ //Loop through target string to find the next invalid character (end character--"e" for "end"), storing characters in email variable along the way. Use "s+1" because the character at index "s" is invalid.
-
-
-            
-            cout << "Looking for end character: " << targetString[e] << endl; 
-            cout << "Looking for end character: targetString: " << targetString << endl;
-            cout << "Looking for end character: targetString[e]: " << targetString[e] << endl; 
-            cout << "Looking for end character: e: " << e << endl; 
-            cout << "s: " << s << endl; 
 
             bool lCharIsValid = isValidEmailChar(targetString[e]);
 
