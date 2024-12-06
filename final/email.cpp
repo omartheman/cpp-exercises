@@ -224,7 +224,7 @@ int main()
   cout << " Valid non-duplicate email addresses are output to the console and " << endl; 
   cout << " saved to a new file, or overwrite the contents of the existing" << endl; 
   cout << " input file." << endl; 
-  cout << " The count of emails is printed to the console screen.." << endl; 
+  cout << " The count of emails is printed to the console screen." << endl; 
   cout << " The input is from a file and from the user," << endl;
   cout << " and output is to the console screen and to a file." << endl << endl;
 
