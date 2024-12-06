@@ -76,26 +76,12 @@ bool isValidEmailChar(char emailChar){
     emailChar != 85 && emailChar != 86 && emailChar != 87 && emailChar != 88 && emailChar != 89 && 
     emailChar != 90 
     
-    && emailChar != 33 //!
-    && emailChar != 35 //#
-    && emailChar != 36 //$
-    && emailChar != 37 //%
-    && emailChar != 38 // &
-    && emailChar != 42 //*
     && emailChar != 43 //+
-    && emailChar != 47 // / 
-    && emailChar != 61 // =
-    && emailChar != 63 // ? 
-    && emailChar != 94 // ^
-    && emailChar != 95 // _ 
-    && emailChar != 96 // `
-    && emailChar != 123 // {
-    && emailChar != 124 // | 
-    && emailChar != 125 // } 
-    && emailChar != 126 // ~ 
+    && emailChar != 95 // _   
+    && emailChar != '-'
+    && emailChar != '.'
 
     && emailChar != '@'
-    && emailChar != '.'
   ) {
     charIsValid = false; 
   }
