@@ -76,7 +76,6 @@ bool isValidEmailChar(char emailChar){
     && emailChar != 36 //$
     && emailChar != 37 //%
     && emailChar != 38 // &
-    && emailChar != 39 //'
     && emailChar != 42 //*
     && emailChar != 43 //+
     && emailChar != 47 // / 
