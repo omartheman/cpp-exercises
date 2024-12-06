@@ -19,8 +19,8 @@ bool lineContainsAt(string targetString){
 
   bool lineHasAt = false; 
 
-  for (int i = 0; i < targetString.length(); i++){
-    if (targetString[i] == '@') {
+  for (int i = 0; i < targetString.length(); i++){ //Loop through all characters in string
+    if (targetString[i] == '@') { // Identify lines with "@" characters
       lineHasAt = true;
     }; 
   };
@@ -190,10 +190,12 @@ int main()
 
   string outputFileName; 
 
+  //Prompt user to enter output file 
   cout << "Enter output file name [default: " << defaultOutputFileName << "]:"; 
   getline(cin, outputFileName); 
   cout << endl; 
 
+  //
   cout << "Length: "; 
   cout << outputFileName.length(); 
 

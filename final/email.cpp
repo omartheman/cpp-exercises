@@ -4,6 +4,7 @@
 // Compiler(s) used: Apple clang version 14.0.0
 //
 
+//Include relevant libraries
 #include <iostream>
 #include <string>
 #include <fstream> 
@@ -11,16 +12,19 @@
 
 using namespace std; 
 
+//Set maximum number of emails allowed
 const int MAX_EMAILS = 1000; 
 int nEmails = 0; 
+//Create email array-based list 
 string email[MAX_EMAILS]; 
 
 bool lineContainsAt(string targetString){
 
   bool lineHasAt = false; 
 
+  //Loop through characters in line 
   for (int i = 0; i < targetString.length(); i++){
-    if (targetString[i] == '@') {
+    if (targetString[i] == '@') { //Identify if line has "@" character
       lineHasAt = true;
     }; 
   };
@@ -144,10 +148,11 @@ void checkForValidEmail(string targetString) {
           // Check if email is already in list
           for (int i = 0; i < nEmails; i++){
 
-            //Convert emails to lowercase to compare case-insensitively 
+            //Convert user-input email to lowercase for comparison to existing emails
             string enteredEmailTemp = emailOnly;
             transform(enteredEmailTemp.begin(), enteredEmailTemp.end(), enteredEmailTemp.begin(), ::tolower);
             
+            //Convert existing email in list to lowercase for comparison 
             string listEmailTemp = email[i];
             transform(listEmailTemp.begin(), listEmailTemp.end(), listEmailTemp.begin(), ::tolower);
 
@@ -176,11 +181,12 @@ void outputEmailsToFile(string email[], int nEmails, string outputFileName){
   fout.open(outputFileName);
   if (!fout.good()) throw "I/O error."; 
 
+  //Loop to add characters to output 
   for (int i = 0; i < nEmails; i++) {
-    fout << email[i] << ";";
+    fout << email[i] << ";"; //Add semicolon to end of email addresses
 
     if (i != nEmails - 1){ //Add space if the item is not last  
-      fout << " "; 
+      fout << " "; //Add space
     };
   }; 
 
@@ -214,11 +220,13 @@ int main()
   // identifying output statements
   cout << "---Program Details---" << endl;
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program reads an input file and" << endl;
-  cout << " checks which lines contain '@'. The lines with '@'" << endl; 
-  cout << " are printed to the console." << endl; 
-  cout << " The input is from a file," << endl;
-  cout << " and output is to the console screen." << endl << endl;
+  cout << "Description: This program reads an input file to check for email addresses." << endl;
+  cout << " Valid non-duplicate email addresses are output to the console and " << endl; 
+  cout << " saved to a new file, or overwrite the contents of the existing" << endl; 
+  cout << " input file." << endl; 
+  cout << " The count of emails is printed to the console screen.." << endl; 
+  cout << " The input is from a file and from the user," << endl;
+  cout << " and output is to the console screen and to a file." << endl << endl;
 
   // Get input file name 
   string fileName; 
@@ -228,7 +236,7 @@ int main()
   cout << "Enter input file name [default: " << defaultFileName << "]: "; 
   getline(cin, fileName); 
 
-  if (fileName.length() == 0){
+  if (fileName.length() == 0){ //If no file name is entered, use the programmed default file name
     fileName = defaultFileName; 
   }
 
@@ -241,20 +249,22 @@ int main()
 
   string outputFileName; 
 
+  //Prompt user to enter an output file name 
   cout << "Enter output file name [default: " << defaultOutputFileName << "]:"; 
   getline(cin, outputFileName); 
 
-  if (outputFileName.length() == 0){
+  if (outputFileName.length() == 0){ //If no output file name is entered, use the default output file name 
     outputFileName = defaultOutputFileName; 
   }
 
+  //Write the input/output file names to the console. 
   cout << endl; 
   cout << "---Input/Output File Names---" << endl;
   cout << "Input file name: " << fileName << endl; 
   cout << "Output file name: " << outputFileName << endl; 
   cout << endl;
 
-  //Read file names 
+  //Read data in files 
   ifstream fin;   
   fin.open(fileName.c_str());
   if (!fin.good()) throw "I/O error"; 
