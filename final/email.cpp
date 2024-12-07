@@ -50,7 +50,7 @@ bool checkEmailForDot(string email){
   return emailHasDot; 
 }
 
-bool emailOnlyHasOneAt(string email){ //Check that the email has a valid format after the "@" character. E.g. the email does not have two "@"'s, or two "."'s 
+bool emailOnlyHasOneAt(string email){ //Check that the email only has one "@"
 
   bool emailIsValid = true; 
 
@@ -59,6 +59,24 @@ bool emailOnlyHasOneAt(string email){ //Check that the email has a valid format 
     if (email[i] == '@'){ //Check all characters after "@" 
       for (int j = i + 1; j < email.length(); j++){
         if (email[j] == '@') {
+          emailIsValid = false; 
+        }
+      }
+    }
+  }
+
+  return emailIsValid; 
+}
+
+bool emailOnlyHasOneDot(string email){ //Check that the email does not have two "."'s 
+
+  bool emailIsValid = true; 
+
+  //Check each character until "." is reached 
+  for (int i = 0; i < email.length(); i++){
+    if (email[i] == '.'){ //Check all characters after "." 
+      for (int j = i + 1; j < email.length(); j++){
+        if (email[j] == '.') {
           emailIsValid = false; 
         }
       }
@@ -169,6 +187,7 @@ void checkForValidEmail(string targetString) {
             emailHasDot 
             && !emailAlreadyExists
             && emailOnlyHasOneAt(emailOnly)
+            && emailOnlyHasOneDot(emailOnly)
           ){ //Add email to array if has dot, and email doesn't already exist 
             if (nEmails < MAX_EMAILS) email[nEmails++] = emailOnly; 
           }
