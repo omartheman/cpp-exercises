@@ -9,7 +9,7 @@
 
 using namespace std; 
 
-void fibonacciAddition(int userIndex, int currentIncrement = 0, int previousSum = 0, int twoSumsAgo = 0){
+void fibonacciAddition(int userIndex, int currentIncrement = 0, int previousSum = 0, int twoSumsAgo = 0, int originalUserIndex = 0){
 
   if (userIndex > 0) {
 
@@ -45,9 +45,13 @@ void fibonacciAddition(int userIndex, int currentIncrement = 0, int previousSum 
 
     if (currentIncrement == 0){
       fibonacciSum = 1; 
+      previousSum = 0; 
+      newTwoSumsAgo = 0; 
     }
     else if (currentIncrement == 1){
       fibonacciSum = 1;
+      previousSum = 1; 
+      newTwoSumsAgo = 1; 
     }
     else {
       newTwoSumsAgo = previousSum; 
@@ -63,7 +67,11 @@ void fibonacciAddition(int userIndex, int currentIncrement = 0, int previousSum 
       currentIncrement++;
     }
 
-    fibonacciAddition(--userIndex, currentIncrement, fibonacciSum, newTwoSumsAgo); //Decrement user index
+    fibonacciAddition(--userIndex, currentIncrement, fibonacciSum, newTwoSumsAgo, originalUserIndex); //Decrement user index
+  }
+
+  else {
+    cout << "The Fibonacci value at " << originalUserIndex << " is " << previousSum; 
   }
 }
 
@@ -80,6 +88,6 @@ int main()
   int userIndex; 
   cin >> userIndex; 
 
-  fibonacciAddition(userIndex);
+  fibonacciAddition(userIndex, 0, 0, 0, userIndex);
 
 } //main() 
