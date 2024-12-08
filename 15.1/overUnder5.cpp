@@ -12,6 +12,11 @@
 
 using namespace std; 
 
+//Create structure for guesses 
+struct Guess {
+  int guessNumber; 
+}; // Guess 
+
 int main()
 {
   // identifying output statements
@@ -30,45 +35,34 @@ int main()
 
   int randomNumber = 1 + (rand() % 100);
 
-  //Create linked list structure for guesses 
-  struct Guess {
-    int guessNumber; 
-    Guess* next; // the 'next-link' 
-  }; // Guess 
-
-  Guess* start = 0; 
 
   //Create collection 
 
   //Declare empty list of Guess objects 
   deque<Guess> guess; 
 
-  Guess aGuess; //A temporary guess 
-
   cout << "Guess a number between 1 and 100: ";
 
   int userGuess; 
 
   while (true) {
-    cin >> aGuess.guessNumber; //set field values for guess
-    guess.push_back(aGuess); //copy to the end
+    cin >> userGuess; //Get user input for guess
 
     bool guessExists = false; 
     
-    //Check if guess is in linked list 
-    Guess* p; 
-    for (p = start; p; p = p->next){
-      if (p->guessNumber == userGuess) { //Guess is already in linked list
+    //Check if guess is in list 
+
+    for (int p = 0; p < guess.size(); p++){
+      if (guess[p].guessNumber == userGuess) { //Guess is already in linked list
         guessExists = true;
         break;
       }
     }
     
-    if (!guessExists){ //If guess doesn't exist already, add to linked list
-      Guess* g = new Guess; 
-      g->guessNumber = userGuess; 
-      g->next = start; 
-      start = g; 
+    if (!guessExists){ //If guess doesn't exist already, add to list
+      Guess aGuess; //A temporary guess 
+      aGuess.guessNumber = userGuess; //Set aGuess property
+      guess.push_back(aGuess); //Add guess to list
     }
     
     if (guessExists) {
