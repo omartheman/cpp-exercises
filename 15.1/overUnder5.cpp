@@ -1,4 +1,4 @@
-// Lab 14.1
+// Lab 15.1
 // Programmer: Omar Shishani
 // Editor(s) used: VSCode
 // Compiler(s) used: Apple clang version 14.0.0
@@ -8,6 +8,7 @@
 #include <string>
 #include <ctime>
 #include <cstdlib>
+#include <deque> 
 
 using namespace std; 
 
@@ -37,13 +38,20 @@ int main()
 
   Guess* start = 0; 
 
+  //Create collection 
+
+  //Declare empty list of Guess objects 
+  deque<Guess> guess; 
+
+  Guess aGuess; //A temporary guess 
 
   cout << "Guess a number between 1 and 100: ";
 
   int userGuess; 
 
   while (true) {
-    cin >> userGuess; 
+    cin >> aGuess.guessNumber; //set field values for guess
+    guess.push_back(aGuess); //copy to the end
 
     bool guessExists = false; 
     
