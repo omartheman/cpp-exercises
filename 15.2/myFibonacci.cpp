@@ -33,8 +33,8 @@ void fibonacciAddition(int userIndex, int currentIncrement = 0, int previousSum 
 
     //have a starting value of 1. Each time the function runs, add the starting value to the previous result value 
 
-    cout << "currentIncrement: " << currentIncrement << endl; 
-    cout << "previousSum: " << previousSum << endl; 
+    // cout << "currentIncrement: " << currentIncrement << endl; //Debugging
+    // cout << "previousSum: " << previousSum << endl; //Debugging 
 
     //F(0) = 0
     //F(1) = 1
@@ -58,7 +58,7 @@ void fibonacciAddition(int userIndex, int currentIncrement = 0, int previousSum 
       fibonacciSum = previousSum + twoSumsAgo; 
     }
 
-    cout << "Fibonacci value: ----" << fibonacciSum << endl << endl; 
+    // cout << "Fibonacci value: ----" << fibonacciSum << endl << endl; //debugging
 
     if (previousSum == 0){
       currentIncrement = 1; 
@@ -71,7 +71,7 @@ void fibonacciAddition(int userIndex, int currentIncrement = 0, int previousSum 
   }
 
   else {
-    cout << "The Fibonacci value at " << originalUserIndex << " is " << previousSum; 
+    cout << "The Fibonacci value at " << originalUserIndex << " is " << previousSum << endl; 
   }
 }
 
@@ -79,9 +79,10 @@ int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
-  cout << " The input is from the console keyboard," << endl;
+  cout << "Description: This program asks the user for an index number," << endl;
+  cout << " and prints out the Fibonacci sequence value that is at the" << endl; 
+  cout << " user-entered index's iteration of the Fibonacci sequence." << endl; 
+  cout << " The input is from the user," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
   cout << "Enter an index [0 or greater]: "; 
