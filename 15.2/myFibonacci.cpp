@@ -71,7 +71,7 @@ void fibonacciAddition(int userIndex, int currentIncrement = 0, int previousSum 
   }
 
   else {
-    cout << "The Fibonacci value at " << originalUserIndex << " is " << previousSum << endl; 
+    cout << "The Fibonacci value at " << originalUserIndex << " is " << previousSum << endl << endl; 
   }
 }
 
@@ -88,6 +88,7 @@ int main()
   cout << "Enter an index [0 or greater]: "; 
   int userIndex; 
   cin >> userIndex; 
+  cout << endl; //extra line 
 
   fibonacciAddition(userIndex, 0, 0, 0, userIndex);
 
