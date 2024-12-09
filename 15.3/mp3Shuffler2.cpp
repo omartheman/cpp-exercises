@@ -58,20 +58,30 @@ int main()
     if (playSong == "Y" || playSong == "y"){
       //Choose a random song 
 
+
+      bool songIsInLastFive = true; 
+
       int randSong = rand() % nSongs; 
-      
-      //Check if song has been played in last five songs 
 
-      bool songIsInLastFive = false; 
+      while (songIsInLastFive) {
 
-      for (int i = 0; i < lastFiveSongs.size(); i++){
-        if (randSong == lastFiveSongs[i].songIndex){
-          songIsInLastFive = true; 
+        //Check if song has been played in last five songs 
+
+        for (int i = 0; i < lastFiveSongs.size(); i++){
+          if (randSong == lastFiveSongs[i].songIndex){
+            songIsInLastFive = true; 
+          }
         }
+
       }
+
+      //Create a function that checks if the next up song was in the last five. If it was, skip this song. If not, play this song. 
+
 
       if (songIsInLastFive){
         cout << "This song has already been played. Skipping..." << endl; 
+        //Run function again to generate random song 
+        //Can use recursion here 
       }
       else {
         //Add song to last five songs list 
@@ -89,4 +99,8 @@ int main()
   }
 
 } //main() 
- 
+
+
+void playRandomSong(){
+  
+}
