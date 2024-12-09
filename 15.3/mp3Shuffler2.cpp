@@ -80,7 +80,6 @@ int main()
 
         if (songIsInLastFive){
           cout << "This song has already been played. Skipping..." << endl; 
-          break; 
           //Run function again to generate random song 
           //Can use recursion here 
         }
