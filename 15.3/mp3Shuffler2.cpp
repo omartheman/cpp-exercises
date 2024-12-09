@@ -71,15 +71,12 @@ int main()
 
         for (int i = 0; i < lastFiveSongs.size(); i++){
           if (randSong == lastFiveSongs[i].songIndex){
-            cout << "randSong: " << randSong << endl; 
-            cout << "lastFiveSongs[i].songIndex: " << lastFiveSongs[i].songIndex << endl; 
-
             songIsInLastFive = true; 
           }
         }
 
         if (songIsInLastFive){
-          cout << "This song has already been played. Skipping..." << endl; 
+          // cout << "This song has already been played. Skipping..." << endl; //Debugging 
           //Run function again to generate random song 
           //Can use recursion here 
         }
