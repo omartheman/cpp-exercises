@@ -11,6 +11,11 @@
 
 using namespace std; 
 
+struct LastFiveSongs {
+  string songName; 
+  int songIndex; 
+};
+
 int main()
 {
   // identifying output statements
@@ -40,7 +45,10 @@ int main()
     cout << i + 1 << ": " << song[i] << endl; 
   }
 
-  srand(time(0));
+  srand(time(0)); //Prime the random function 
+
+  //Create empty song list
+  deque<LastFiveSongs> lastFiveSongs; 
 
   while (true){
     cout << "Play a song? [y/n]:"; 
@@ -49,8 +57,31 @@ int main()
 
     if (playSong == "Y" || playSong == "y"){
       //Choose a random song 
+
       int randSong = rand() % nSongs; 
-      cout << song[randSong] << endl; 
+      
+      //Check if song has been played in last five songs 
+
+      bool songIsInLastFive = false; 
+
+      for (int i = 0; i < lastFiveSongs.size(); i++){
+        if (randSong == lastFiveSongs[i].songIndex){
+          songIsInLastFive = true; 
+        }
+      }
+
+      if (songIsInLastFive){
+        cout << "This song has already been played. Skipping..." << endl; 
+      }
+      else {
+        //Add song to last five songs list 
+        LastFiveSongs aLastSong;
+        aLastSong.songIndex = randSong; //Set song index 
+        lastFiveSongs.push_back(aLastSong);
+        
+        cout << song[randSong] << endl; 
+      }
+
     }
     else if (playSong == "N" || playSong == "n"){
       break; 
