@@ -20,9 +20,12 @@ int main()
 {
   // identifying output statements
   cout << "Programmer: Omar Shishani" << endl;
-  cout << "Description: This program converts pounds" << endl;
-  cout << " to kilograms." << endl; 
-  cout << " The input is from the console keyboard," << endl;
+  cout << "Description: This program reads a list of songs from a file." << endl;
+  cout << " The song list is printed to the console. The program asks the " << endl;
+  cout << " user if they want to play a song. The program selects a" << endl;
+  cout << " random song from the list. If the song has already been" << endl;
+  cout << " played within the last 5 songs chosen, the song is skipped." << endl;
+  cout << " The input is from a file and the console keyboard," << endl;
   cout << " and output is to the console screen." << endl << endl;
 
   const int MAX_SONGS = 200; 
@@ -86,6 +89,11 @@ int main()
           LastFiveSongs aLastSong;
           aLastSong.songIndex = randSong; //Set song index 
           lastFiveSongs.push_back(aLastSong);
+
+          //If the song list is greater than 5, take a song off the front 
+          if (lastFiveSongs.size() > 5){
+            lastFiveSongs.pop_front(); 
+          }
           
           cout << song[randSong] << endl; 
 
